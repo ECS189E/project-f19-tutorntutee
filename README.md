@@ -27,6 +27,10 @@ Search for course/tutor. Upload which course he/she want to be taught then we ca
 TutorView:
 Search for course/tutee. Upload which course he/she want to tutot then we can display in TuteeView. An option to fulfill his/her personal information, like major, graduate or undergraduate, which courses has taken.
 
+Database:
+database for user information
+database for tutee needed
+database for tutor needed
 
 
 ### Sprint Two
