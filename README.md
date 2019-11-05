@@ -22,12 +22,16 @@ Home View:
 Two buttons option, "I Want To Learn" & "I Want To Teach"
 
 TuteeView: 
+Search for course/tutor. Upload which course he/she want to be taught then we can display in TutorView. An option to fulfill his/her personal information, like major, freshstudent or senior, which courses taking this quarter
 
 TutorView:
+Search for course/tutee. Upload which course he/she want to tutot then we can display in TuteeView. An option to fulfill his/her personal information, like major, graduate or undergraduate, which courses has taken.
 
 
 
 ### Sprint Two
+chat function, video function
+
 ### Sprint Three
 
 
