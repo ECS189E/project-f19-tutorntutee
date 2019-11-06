@@ -34,7 +34,7 @@ database for tutor needed
 
 
 ### Sprint Two
-chat function, video function
+Chat function, Video function
 
 ### Sprint Three
 
