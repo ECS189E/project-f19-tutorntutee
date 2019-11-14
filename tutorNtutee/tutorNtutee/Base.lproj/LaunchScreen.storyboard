@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15509"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="EHf-IW-A2E">
+            <objects>
+                <viewController id="01J-lp-oVM" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="tutorNtutee" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9ud-hO-4go">
+                                <rect key="frame" x="122" y="427" width="170" height="42"/>
+                                <fontDescription key="fontDescription" name="BradleyHandITCTT-Bold" family="Bradley Hand" pointSize="34"/>
+                                <color key="textColor" red="0.070657776780000001" green="0.116201809" blue="0.25971113239999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="output-onlinepngtools" translatesAutoresizingMaskIntoConstraints="NO" id="01K-oI-hTL">
+                                <rect key="frame" x="79" y="211" width="256" height="159"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="159" id="CRO-LH-PzK"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="01K-oI-hTL" firstAttribute="centerX" secondItem="9ud-hO-4go" secondAttribute="centerX" id="6b8-0P-ARO"/>
+                            <constraint firstItem="9ud-hO-4go" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="Iuk-84-jbw"/>
+                            <constraint firstItem="01K-oI-hTL" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="167" id="cLr-gh-5Em"/>
+                            <constraint firstItem="9ud-hO-4go" firstAttribute="top" secondItem="01K-oI-hTL" secondAttribute="bottom" constant="57" id="dyv-cl-GyZ"/>
+                            <constraint firstItem="9ud-hO-4go" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="uKi-VF-O0I"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="52.173913043478265" y="375"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="output-onlinepngtools" width="256" height="256"/>
+    </resources>
+</document>

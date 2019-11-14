@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>340200401195-2hm4sdn27rf23i4i7ijb9k7ds7quhbtl.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.340200401195-2hm4sdn27rf23i4i7ijb9k7ds7quhbtl</string>
+	<key>API_KEY</key>
+	<string>AIzaSyB4oc4G8qM5JW0pdHxAbAMLWSZ9qI6wnvU</string>
+	<key>GCM_SENDER_ID</key>
+	<string>340200401195</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.ucdavis.tutorNtutee</string>
+	<key>PROJECT_ID</key>
+	<string>tutorntutee</string>
+	<key>STORAGE_BUCKET</key>
+	<string>tutorntutee.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:340200401195:ios:f4a38b4e126d38a998bd6e</string>
+	<key>DATABASE_URL</key>
+	<string>https://tutorntutee.firebaseio.com</string>
+</dict>
+</plist>

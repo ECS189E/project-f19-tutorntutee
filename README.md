@@ -6,10 +6,11 @@ The initial idea of this app is to build a UC Davis tutoring platform where tuto
 Abudureheman Adila  
 Alessandro Liu  
 Junjie Han  
-Link to Trello: https://trello.com/b/Gw47mmuc/milestone-1  
 
 
 ### Sprint One
+Link to Trello: https://trello.com/b/Gw47mmuc/milestone-1  
+
 Goal: (User stories, what user will be able to do and how)  
 
 
@@ -34,7 +35,43 @@ database for tutor needed
 
 
 ### Sprint Two
-Chat function, Video function
+Link to Trello: https://trello.com/b/JPucTCtK/milestone-2
+
+Goals: 
+- be able to chat between tutors and tutees
+- fully working tutor and tutee view controllers
+- improvements on batabase set up
+- working tutor market view controller
+- UI implementation of home view controller
+
+Chat View Controller:
+two people have to be able to chat through out app in real time.
+
+Tutor and Tutee view controllers:
+Tutors have to be able to select the class to be tutored and pick a date and time; while, tutees have to be able to search the tutor market filtered based on the class, date, and time range.
+
+Database:
+be able to store text data into the firebase database and retrieve it.   
+
+Tutor market view controller:
+be able to display all tutors with correct information from database.
+
+Third party libaries: 
+firebase
+
+Navigation controllers:
+from log in view controller to sign up view controller; if the user is authenticated, do present to home view controller, and navigation push to tutor view and tutee view.
+
+test plan:
+find friends to sign up and log in,then measure how long it takes.
+find friends to sign in as a tutee and measure how long it finds the information he/she wanted.
+
+team members:
+![611573695166_ pic](https://user-images.githubusercontent.com/56142553/68819246-51e52e80-063c-11ea-9085-a733abdb3dc7.jpg)
+
+left:Junjie Han. https://github.com/hjunjie0324
+middle:Abudureheman Adila  https://github.com/aadila6 
+right:Alessandro Liu.  https://github.com/AlessandroAlleAlex
 
 ### Sprint Three
 
