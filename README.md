@@ -35,6 +35,7 @@ database for tutor needed
 
 
 ### Sprint Two
+All the work progress and history (git commits) are in this repository: https://github.com/AlessandroAlleAlex/tutorNtutee <br>
 Link to Trello: https://trello.com/b/JPucTCtK/milestone-2
 
 Goals: 
@@ -44,19 +45,19 @@ Goals:
 - working tutor market view controller
 - UI implementation of home view controller
 
-Chat View Controller:
+Chat View Controller:<br>
 two people have to be able to chat through out app in real time.
 
-Tutor and Tutee view controllers:
+Tutor and Tutee view controllers:<br>
 Tutors have to be able to select the class to be tutored and pick a date and time; while, tutees have to be able to search the tutor market filtered based on the class, date, and time range.
 
-Database:
+Database:<br>
 be able to store text data into the firebase database and retrieve it.   
 
-Tutor market view controller:
+Tutor market view controller:<br>
 be able to display all tutors with correct information from database.
 
-Third party libaries: 
+Third party libaries:<br>
 firebase
 
 Navigation controllers:
@@ -69,9 +70,9 @@ find friends to sign in as a tutee and measure how long it finds the information
 team members:
 ![611573695166_ pic](https://user-images.githubusercontent.com/56142553/68819246-51e52e80-063c-11ea-9085-a733abdb3dc7.jpg)
 
-left:Junjie Han. https://github.com/hjunjie0324
-middle:Abudureheman Adila  https://github.com/aadila6 
-right:Alessandro Liu.  https://github.com/AlessandroAlleAlex
+left:Junjie Han. https://github.com/hjunjie0324 <br>
+middle:Abudureheman Adila  https://github.com/aadila6 <br>
+right:Alessandro Liu.  https://github.com/AlessandroAlleAlex <br>
 
 ### Sprint Three
 
