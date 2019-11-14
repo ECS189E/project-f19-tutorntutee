@@ -15,7 +15,7 @@ class SignUpVC: UIViewController,UIApplicationDelegate {
     @IBOutlet weak var lastNameField: UITextField!
     @IBOutlet weak var userNameField: UITextField!
     @IBOutlet weak var emailField: UITextField!
-    @IBOutlet weak var passwordField: UITextField! //
+    @IBOutlet weak var passwordField: UITextField!
     
     var ref:DatabaseReference!
     override func viewDidLoad() {
@@ -32,10 +32,14 @@ class SignUpVC: UIViewController,UIApplicationDelegate {
                 if let _ = authResult{
                     if let user=Auth.auth().currentUser{
                         self.ref.child("user").child(user.uid).setValue(["username":self.userNameField.text])
-                        self.ref.child("user").child(user.uid).setValue(["first_name":self.firstNameField.text])
+                        self.ref.child(
+                            "user").child(user.uid).setValue(["first_name":self.firstNameField.text])
                         self.ref.child("user").child(user.uid).setValue(["last_name":self.lastNameField.text])
                     }
-                    self.performSegue(withIdentifier: "signupVCToSigninVC", sender: self)
+                    let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                    let vs = storyboard.instantiateViewController(identifier: "LoginNavControler")
+                    let navControllerVC = vs as! UINavigationController
+                    self.present(navControllerVC, animated: true, completion: nil)
                 }
                 
                 if let error = error{

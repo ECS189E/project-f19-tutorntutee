@@ -16,7 +16,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="eds-AB-Tkv">
-                                <rect key="frame" x="20" y="325" width="374" height="80"/>
+                                <rect key="frame" x="20" y="369" width="374" height="80"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="d8C-8z-tB7">
                                         <rect key="frame" x="0.0" y="0.0" width="374" height="30"/>
@@ -75,14 +75,14 @@
                                 </subviews>
                             </stackView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="output-onlinepngtools" translatesAutoresizingMaskIntoConstraints="NO" id="cfz-YS-kKM">
-                                <rect key="frame" x="132" y="128" width="150" height="150"/>
+                                <rect key="frame" x="132" y="172" width="150" height="150"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zic-kX-zgx">
-                                <rect key="frame" x="271" y="413" width="123" height="30"/>
+                                <rect key="frame" x="271" y="457" width="123" height="30"/>
                                 <state key="normal" title="Forgot Password?"/>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="egM-12-2Zp">
-                                <rect key="frame" x="113" y="451" width="188" height="36"/>
+                                <rect key="frame" x="113" y="495" width="188" height="36"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                 <state key="normal" title="Sign In">
                                     <color key="titleColor" red="0.1379222571849823" green="0.28326472640037537" blue="0.43277138471603394" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -127,7 +127,6 @@
                         <outlet property="SignInBt" destination="egM-12-2Zp" id="0jU-qt-3T2"/>
                         <outlet property="emailField" destination="VW5-jC-yq5" id="guT-5N-fV5"/>
                         <outlet property="passwordField" destination="UX6-O2-f4c" id="wJF-Qy-ubP"/>
-                        <segue destination="2pk-V6-6zx" kind="presentation" identifier="signinVCToChooseVC" id="0oc-Ra-GpQ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uXU-hr-Mrq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -219,7 +218,6 @@
                         <outlet property="lastNameField" destination="Bmz-Ft-TKK" id="UNG-gI-gfa"/>
                         <outlet property="passwordField" destination="4vB-Ym-Ig3" id="YW4-ZI-NLl"/>
                         <outlet property="userNameField" destination="gWe-ND-ICY" id="RfH-nS-h3g"/>
-                        <segue destination="eb8-Rg-O8T" kind="presentation" identifier="signupVCToSigninVC" id="oZ3-gy-L1P"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="N9d-Lh-CMy" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -229,7 +227,7 @@
         <!--Tutoring Sessions-->
         <scene sceneID="AXX-iz-h84">
             <objects>
-                <viewController storyboardIdentifier="TutorMarket" title="Tutoring Sessions" id="lhl-Dt-yyr" customClass="TutorMarketViewController" customModule="tutorNtutee" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="TutorMarket" title="Tutoring Sessions" modalPresentationStyle="fullScreen" id="lhl-Dt-yyr" customClass="TutorMarketViewController" customModule="tutorNtutee" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Md8-S0-tEb">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -301,7 +299,7 @@
         <!--Detailed Information-->
         <scene sceneID="AhR-Zh-zz8">
             <objects>
-                <viewController storyboardIdentifier="DetailVC" title="Detailed Information" id="jSL-iE-sW4" customClass="DetailVC" customModule="tutorNtutee" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="DetailVC" title="Detailed Information" modalPresentationStyle="fullScreen" id="jSL-iE-sW4" customClass="DetailVC" customModule="tutorNtutee" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="H8d-IS-Oz6">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -415,20 +413,20 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="I want to tutor in " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="W0V-1h-9zS">
-                                <rect key="frame" x="0.0" y="44" width="414" height="30"/>
+                                <rect key="frame" x="0.0" y="88" width="414" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="iin-vn-fdP">
-                                <rect key="frame" x="0.0" y="74" width="414" height="56"/>
+                                <rect key="frame" x="0.0" y="118" width="414" height="56"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <connections>
                                     <outlet property="delegate" destination="g6Z-gq-OeJ" id="FZE-v4-7CD"/>
                                 </connections>
                             </searchBar>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="EVA-Vs-Qdd">
-                                <rect key="frame" x="0.0" y="130" width="414" height="732"/>
+                                <rect key="frame" x="0.0" y="174" width="414" height="688"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" textLabel="Znq-6K-U49" style="IBUITableViewCellStyleDefault" id="HqT-b5-P4P">
@@ -538,7 +536,7 @@
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7II-hq-1YA">
                                         <rect key="frame" x="0.0" y="509" width="414" height="34"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="phonePad"/>
                                     </textField>
                                 </subviews>
                                 <constraints>
@@ -586,7 +584,7 @@
         <!--Navigation Controller-->
         <scene sceneID="An8-yo-uNp">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="PsU-X0-mcC" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="LoginNavControler" automaticallyAdjustsScrollViewInsets="NO" modalPresentationStyle="fullScreen" id="PsU-X0-mcC" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="13e-Fd-u29">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
@@ -604,7 +602,7 @@
         <!--Navigation Controller-->
         <scene sceneID="jNL-9D-tEn">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="x6x-JN-RuW" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="LoggedInNavController" automaticallyAdjustsScrollViewInsets="NO" modalPresentationStyle="fullScreen" id="x6x-JN-RuW" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="7eF-V2-yue">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
@@ -624,9 +622,4 @@
         <image name="default.png" width="225" height="225"/>
         <image name="output-onlinepngtools" width="341.33334350585938" height="341.33334350585938"/>
     </resources>
-    <inferredMetricsTieBreakers>
-        <segue reference="IMc-66-hom"/>
-        <segue reference="0oc-Ra-GpQ"/>
-        <segue reference="oZ3-gy-L1P"/>
-    </inferredMetricsTieBreakers>
 </document>

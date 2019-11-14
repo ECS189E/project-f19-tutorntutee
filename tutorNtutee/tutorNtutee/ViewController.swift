@@ -46,7 +46,11 @@ class ViewController: UIViewController, UITextFieldDelegate{
                         })
                     }
                     */
-                    self?.performSegue(withIdentifier: "signinVCToChooseVC", sender: self)
+                  
+                    let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                    let vs = storyboard.instantiateViewController(identifier: "LoggedInNavController")
+                    let navControllerVC = vs as! UINavigationController
+                    self?.present(navControllerVC, animated: true, completion: nil)
                 }
                 if let _ = error{
                     let errorMessage=UIAlertController(title: "error", message: "error occurs", preferredStyle: .alert)
