@@ -10,9 +10,7 @@ import UIKit
 import FirebaseAuth
 import FirebaseDatabase
 class TutorMarketViewController: UIViewController,UITableViewDataSource, UITableViewDelegate {
-    let nameTutor = "Adila Abudureheman"
-    let courseName = "ECS 189E"
-    let time = "Nov 30, 3-5pm "
+    
     
     @IBOutlet weak var tableView: UITableView!
     let cellSpacingHeight: CGFloat = 200
