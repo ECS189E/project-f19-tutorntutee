@@ -41,7 +41,7 @@ Link to Trello: https://trello.com/b/JPucTCtK/milestone-2
 Goals: 
 - be able to chat between tutors and tutees
 - fully working tutor and tutee view controllers
-- improvements on batabase set up
+- improvements on database set up
 - working tutor market view controller
 - UI implementation of home view controller
 
@@ -75,6 +75,37 @@ middle:Abudureheman Adila  https://github.com/aadila6 <br>
 right:Alessandro Liu.  https://github.com/AlessandroAlleAlex <br>
 
 ### Sprint Three
+link to trello for milestone 3: https://trello.com/b/1m1k7UMw/milestone-3
 
+Goals: 
+- be able to chat between tutors and tutees
+- fully working tutor and tutee view controllers
+- set up all databases
+- working tutor market view controller
+- UI implementation of home view controller
+- implementation of user view controller
+- implementation of menu bar
+
+Chat View Controller:<br>
+two people have to be able to chat through out app in real time.
+
+Tutor and Tutee view controllers:<br>
+Tutors have to be able to select the class to be tutored and pick a date and time; while, tutees have to be able to search the tutor market filtered based on the class, date, and time range.
+
+Database:<br>
+be able to store text data into the firebase database and retrieve it.   
+
+Tutor market view controller:<br>
+be able to display all tutors with correct information from database.
+
+Third party libaries:<br>
+firebase
+
+Navigation controllers:
+from log in view controller to sign up view controller; if the user is authenticated, do present to home view controller, and navigation push to tutor view and tutee view.
+
+test plan:
+find friends to sign up and log in, and test for classes they need help with.
+find friends to sign in as tutees and tutors and try to match them, and try to chat over through our chat system
 
 
