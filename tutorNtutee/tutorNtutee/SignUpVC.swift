@@ -28,25 +28,27 @@ class SignUpVC: UIViewController,UIApplicationDelegate {
     
     @IBAction func doneButtonPress() {
         if let email=emailField.text,let password=passwordField.text{
-            Auth.auth().createUser(withEmail: email, password: password) { authResult, error in
-                if let _ = authResult{
-                    if let user=Auth.auth().currentUser{
-                        self.ref.child("user").child(user.uid).setValue(["username":self.userNameField.text])
-                        self.ref.child(
-                            "user").child(user.uid).setValue(["first_name":self.firstNameField.text])
-                        self.ref.child("user").child(user.uid).setValue(["last_name":self.lastNameField.text])
+            if email.hasSuffix("@ucdavis.edu"){
+                Auth.auth().createUser(withEmail: email, password: password) { authResult, error in
+                    if let _ = authResult{
+                        if let user=Auth.auth().currentUser{
+                            self.ref.child("user").child(user.uid).child("username").setValue(self.userNameField.text)
+                            self.ref.child("user").child(user.uid).child("first_name").setValue(self.firstNameField.text)
+                            self.ref.child("user").child(user.uid).child("last_name").setValue(self.lastNameField.text)
+                            self.ref.child("user").child(user.uid).child("email").setValue(email)
+                        }
+                        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                        let vs = storyboard.instantiateViewController(identifier: "LoginNavControler")
+                        let navControllerVC = vs as! UINavigationController
+                        self.present(navControllerVC, animated: true, completion: nil)
                     }
-                    let storyboard = UIStoryboard(name: "Main", bundle: nil)
-                    let vs = storyboard.instantiateViewController(identifier: "LoginNavControler")
-                    let navControllerVC = vs as! UINavigationController
-                    self.present(navControllerVC, animated: true, completion: nil)
-                }
-                
-                if let error = error{
-                    let errorMessage=UIAlertController(title: "error", message: "error occurs", preferredStyle: .alert)
-                    let close = UIAlertAction(title:"close",style: .cancel,handler: nil)
-                    errorMessage.addAction(close)
-                    self.present(errorMessage,animated: true,completion: nil)
+                    
+                    if let _ = error{
+                        let errorMessage=UIAlertController(title: "error", message: "error occurs", preferredStyle: .alert)
+                        let close = UIAlertAction(title:"close",style: .cancel,handler: nil)
+                        errorMessage.addAction(close)
+                        self.present(errorMessage,animated: true,completion: nil)
+                    }
                 }
             }
         }

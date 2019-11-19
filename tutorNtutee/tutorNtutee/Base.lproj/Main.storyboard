@@ -362,10 +362,10 @@
             </objects>
             <point key="canvasLocation" x="4202.898550724638" y="740.625"/>
         </scene>
-        <!--View Controller-->
+        <!--Chat View Controller-->
         <scene sceneID="AYZ-QM-YBA">
             <objects>
-                <viewController id="mBm-oC-rVM" sceneMemberID="viewController">
+                <viewController id="mBm-oC-rVM" customClass="ChatViewController" customModule="tutorNtutee" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="qTe-RO-mjE">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
