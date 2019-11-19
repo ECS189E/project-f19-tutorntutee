@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14868" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="PsU-X0-mcC">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="PsU-X0-mcC">
     <device id="retina6_5" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14824"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15509"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -362,20 +362,89 @@
             </objects>
             <point key="canvasLocation" x="4202.898550724638" y="740.625"/>
         </scene>
-        <!--Chat View Controller-->
-        <scene sceneID="AYZ-QM-YBA">
+        <!--New Post-->
+        <scene sceneID="ekS-OU-Boi">
             <objects>
-                <viewController id="mBm-oC-rVM" customClass="ChatViewController" customModule="tutorNtutee" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="qTe-RO-mjE">
+                <viewController storyboardIdentifier="NewPostViewController" id="HfD-nR-Sff" customClass="NewPostViewController" customModule="tutorNtutee" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="thU-hN-dW3">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <viewLayoutGuide key="safeArea" id="zvu-E4-8aB"/>
+                        <viewLayoutGuide key="safeArea" id="bVi-Ug-kwo"/>
                     </view>
+                    <tabBarItem key="tabBarItem" title="New Post" image="square.and.pencil" catalog="system" id="LYp-FA-0xB"/>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="W38-1A-ko2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qX6-9G-Sdh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4920" y="745"/>
+            <point key="canvasLocation" x="7683" y="1050"/>
+        </scene>
+        <!--Profile-->
+        <scene sceneID="N79-5J-909">
+            <objects>
+                <viewController storyboardIdentifier="ProfileViewController" id="qbW-t6-tsv" customClass="ProfileViewController" customModule="tutorNtutee" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ALf-3V-cWT">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="NHy-uT-W8c"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Profile" image="person.crop.square" catalog="system" id="UvS-Ov-MIO"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ryd-5C-oaD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="6732" y="2076"/>
+        </scene>
+        <!--Chat Box-->
+        <scene sceneID="fc0-CS-jqk">
+            <objects>
+                <viewController storyboardIdentifier="ChatViewController" id="Ouc-Dy-SFK" customClass="ChatViewController" customModule="tutorNtutee" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Acn-XE-tAN">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="HYq-rL-I2V"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Chat Box" image="paperplane" catalog="system" id="bqV-0I-gQy"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nAN-7J-Gci" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="7683" y="1758"/>
+        </scene>
+        <!--Home-->
+        <scene sceneID="Gud-Qv-MOq">
+            <objects>
+                <viewController storyboardIdentifier="HomeViewController" id="XRO-BN-XIG" customClass="HomeViewController" customModule="tutorNtutee" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="C9P-kq-PbG">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="uSl-fF-9rV"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Home" image="tray" catalog="system" id="Z5f-fc-xBr"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="WNm-O5-nNp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="7683" y="371"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="R7N-9F-THM">
+            <objects>
+                <tabBarController storyboardIdentifier="MenuInitView" id="e2G-V5-zon" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="QAa-Xc-1EE">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="XRO-BN-XIG" kind="relationship" relationship="viewControllers" id="3uT-pG-RCP"/>
+                        <segue destination="HfD-nR-Sff" kind="relationship" relationship="viewControllers" id="epX-4N-MQA"/>
+                        <segue destination="Ouc-Dy-SFK" kind="relationship" relationship="viewControllers" id="8Vt-ue-u4B"/>
+                        <segue destination="qbW-t6-tsv" kind="relationship" relationship="viewControllers" id="4Ah-F6-fg9"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ciY-jA-gNo" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="6312" y="1259"/>
         </scene>
         <!--Today I Want To Be-->
         <scene sceneID="GQP-dT-Tyn">
@@ -636,5 +705,9 @@
     <resources>
         <image name="default.png" width="225" height="225"/>
         <image name="output-onlinepngtools" width="341.33334350585938" height="341.33334350585938"/>
+        <image name="paperplane" catalog="system" width="64" height="60"/>
+        <image name="person.crop.square" catalog="system" width="64" height="56"/>
+        <image name="square.and.pencil" catalog="system" width="64" height="58"/>
+        <image name="tray" catalog="system" width="64" height="44"/>
     </resources>
 </document>
