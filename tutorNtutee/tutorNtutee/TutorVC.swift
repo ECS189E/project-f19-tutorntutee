@@ -8,10 +8,12 @@
 
 import UIKit
 
+
 class TutorVC: UIViewController, UITableViewDelegate, UITableViewDataSource  {
 
     @IBOutlet weak var srcBar: UISearchBar!
     @IBOutlet weak var classTable: UITableView!
+    
     
     let classArray = ["ECS150", "ECS189E", "ESS","UWP101", "NUT10", "MATH108", "UWP104"]
     var autofillArray = [String]()
@@ -22,8 +24,6 @@ class TutorVC: UIViewController, UITableViewDelegate, UITableViewDataSource  {
         classTable.delegate = self
         classTable.dataSource = self
         classTable.allowsSelection = true
-
-        // Do any additional setup after loading the view.
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

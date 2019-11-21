@@ -27,15 +27,22 @@ class SignUpVC: UIViewController,UIApplicationDelegate {
     }
     
     @IBAction func doneButtonPress() {
-        if let email=emailField.text,let password=passwordField.text{
-            if email.hasSuffix("@ucdavis.edu"){
+        if let email=emailField.text,let password=passwordField.text {
+            if email.hasSuffix("@ucdavis.edu") {
                 Auth.auth().createUser(withEmail: email, password: password) { authResult, error in
-                    if let _ = authResult{
-                        if let user=Auth.auth().currentUser{
-                            self.ref.child("user").child(user.uid).child("username").setValue(self.userNameField.text)
-                            self.ref.child("user").child(user.uid).child("first_name").setValue(self.firstNameField.text)
-                            self.ref.child("user").child(user.uid).child("last_name").setValue(self.lastNameField.text)
-                            self.ref.child("user").child(user.uid).child("email").setValue(email)
+                    if let _ = authResult {
+                        if let user=Auth.auth().currentUser {
+                            
+                            self.ref.child("user").child(user.uid).child("username").setValue(self  .userNameField.text)
+                            
+                            self.ref.child("user").child(user.uid).child("first_name").setValue(self    .firstNameField.text)
+                            
+                            self.ref.child("user").child(user.uid).child("last_name").setValue(self .lastNameField.text)
+                            
+                            self.ref.child("user").child(user.uid).child("email")
+                                .setValue(email)
+                            self.ref.child("user").child(user.uid).child("tutor_class_time")
+                            .setValue(["dummy"])
                         }
                         let storyboard = UIStoryboard(name: "Main", bundle: nil)
                         let vs = storyboard.instantiateViewController(identifier: "LoginNavControler")
