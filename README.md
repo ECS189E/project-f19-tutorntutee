@@ -78,12 +78,12 @@ right:Alessandro Liu.  https://github.com/AlessandroAlleAlex <br>
 link to trello for milestone 3: https://trello.com/b/1m1k7UMw/milestone-3
 
 Goals: 
-- be able to chat between tutors and tutees
-- fully working tutor and tutee view controllers
+- be able to chat between tutors and tutees(Chatbox)
+- fully working Home view controllers
 - set up all databases
-- working tutor market view controller
+- working home view controller with posts,generate posts, chats and profile tabs
 - UI implementation of home view controller
-- implementation of user view controller
+- implementation of generate newpost view controller
 - implementation of menu bar
 
 Chat View Controller:<br>
@@ -95,8 +95,10 @@ Tutors have to be able to select the class to be tutored and pick a date and tim
 Database:<br>
 be able to store text data into the firebase database and retrieve it.   
 
-Tutor market view controller:<br>
+Homeview feeds view controller:<br>
 be able to display all tutors with correct information from database.
+be able to generate new posts
+be able to go into chatbox
 
 Third party libaries:<br>
 firebase
