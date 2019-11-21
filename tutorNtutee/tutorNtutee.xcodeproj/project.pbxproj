@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		66BF99FB52B0AA6F17014A7A /* Pods_tutorNtutee.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C5B72971EB42BA371BFCE2A /* Pods_tutorNtutee.framework */; };
 		7F548B312383A0C300BC9720 /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F548B302383A0C300BC9720 /* ChatViewController.swift */; };
+		7FB5092C23871654002FA08F /* ChatToSomeoneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FB5092B23871654002FA08F /* ChatToSomeoneViewController.swift */; };
 		C57B0321237BE97300183531 /* TutorMarketViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C57B0320237BE97300183531 /* TutorMarketViewController.swift */; };
 		C58B741C23849BF1005B5DC3 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C58B741B23849BF1005B5DC3 /* ProfileViewController.swift */; };
 		C58B741E23849C20005B5DC3 /* NewPostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C58B741D23849C20005B5DC3 /* NewPostViewController.swift */; };
@@ -30,6 +31,7 @@
 
 /* Begin PBXFileReference section */
 		7F548B302383A0C300BC9720 /* ChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
+		7FB5092B23871654002FA08F /* ChatToSomeoneViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatToSomeoneViewController.swift; sourceTree = "<group>"; };
 		8C5B72971EB42BA371BFCE2A /* Pods_tutorNtutee.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_tutorNtutee.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C276862310DD127343FAF98C /* Pods-tutorNtutee.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-tutorNtutee.debug.xcconfig"; path = "Target Support Files/Pods-tutorNtutee/Pods-tutorNtutee.debug.xcconfig"; sourceTree = "<group>"; };
 		C57B0320237BE97300183531 /* TutorMarketViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorMarketViewController.swift; sourceTree = "<group>"; };
@@ -123,6 +125,7 @@
 				C58B741B23849BF1005B5DC3 /* ProfileViewController.swift */,
 				C58B741D23849C20005B5DC3 /* NewPostViewController.swift */,
 				C58B741F23849C67005B5DC3 /* HomeViewController.swift */,
+				7FB5092B23871654002FA08F /* ChatToSomeoneViewController.swift */,
 			);
 			path = tutorNtutee;
 			sourceTree = "<group>";
@@ -244,6 +247,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7FB5092C23871654002FA08F /* ChatToSomeoneViewController.swift in Sources */,
 				C57B0321237BE97300183531 /* TutorMarketViewController.swift in Sources */,
 				D2DADE8D237B8C6800180A51 /* DateVC.swift in Sources */,
 				C59AC2C3237CC76A00CFCC09 /* SessionPostCell.swift in Sources */,
