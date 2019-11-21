@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14868" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="PsU-X0-mcC">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="PsU-X0-mcC">
     <device id="retina6_5" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14824"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15509"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -388,14 +388,93 @@
                     <view key="view" contentMode="scaleToFill" id="ALf-3V-cWT">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="exE-d1-eXB">
+                                <rect key="frame" x="149" y="139" width="116" height="115"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="115" id="frK-6s-wVw"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NK1-kh-krj">
+                                <rect key="frame" x="180.66666666666666" y="262" width="53" height="30"/>
+                                <state key="normal" title="Change"/>
+                                <connections>
+                                    <action selector="changeProfilebtn:" destination="qbW-t6-tsv" eventType="touchUpInside" id="V5D-9q-qhA"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Username" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BMd-rS-R57">
+                                <rect key="frame" x="167.66666666666666" y="314" width="78.666666666666657" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Email" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eVA-C0-8YZ">
+                                <rect key="frame" x="186.66666666666666" y="343" width="41" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yDo-8a-1sV">
+                                <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                                <items>
+                                    <navigationItem title="User Info" id="qrw-gY-bKk">
+                                        <barButtonItem key="rightBarButtonItem" title="Log Out" id="cJB-Q8-iII">
+                                            <connections>
+                                                <action selector="logout:" destination="qbW-t6-tsv" id="oEh-Mh-eiz"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qi0-i2-Y4K">
+                                <rect key="frame" x="20" y="413" width="374" height="30"/>
+                                <state key="normal" title="Change Password"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Txp-Tg-tXu">
+                                <rect key="frame" x="20" y="451" width="374" height="30"/>
+                                <state key="normal" title="My Posts"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Scd-IX-PWa">
+                                <rect key="frame" x="20" y="489" width="374" height="30"/>
+                                <state key="normal" title="Settings"/>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="exE-d1-eXB" firstAttribute="top" secondItem="yDo-8a-1sV" secondAttribute="bottom" constant="51" id="0V7-OW-F6V"/>
+                            <constraint firstItem="yDo-8a-1sV" firstAttribute="leading" secondItem="NHy-uT-W8c" secondAttribute="leading" id="0g5-3i-kuz"/>
+                            <constraint firstItem="Txp-Tg-tXu" firstAttribute="top" secondItem="qi0-i2-Y4K" secondAttribute="bottom" constant="8" id="6eG-f5-PTY"/>
+                            <constraint firstItem="qi0-i2-Y4K" firstAttribute="leading" secondItem="ALf-3V-cWT" secondAttribute="leadingMargin" id="965-Bz-uwq"/>
+                            <constraint firstItem="yDo-8a-1sV" firstAttribute="trailing" secondItem="NHy-uT-W8c" secondAttribute="trailing" id="APt-pa-OLa"/>
+                            <constraint firstItem="BMd-rS-R57" firstAttribute="top" secondItem="NK1-kh-krj" secondAttribute="bottom" constant="22" id="Aqs-Zr-dJu"/>
+                            <constraint firstItem="exE-d1-eXB" firstAttribute="centerX" secondItem="NK1-kh-krj" secondAttribute="centerX" id="IqW-T1-Lbb"/>
+                            <constraint firstItem="yDo-8a-1sV" firstAttribute="top" secondItem="NHy-uT-W8c" secondAttribute="top" id="K7C-X4-enP"/>
+                            <constraint firstItem="qi0-i2-Y4K" firstAttribute="trailing" secondItem="Txp-Tg-tXu" secondAttribute="trailing" id="L5E-ef-OFO"/>
+                            <constraint firstItem="exE-d1-eXB" firstAttribute="centerX" secondItem="BMd-rS-R57" secondAttribute="centerX" id="NAH-hP-5JJ"/>
+                            <constraint firstItem="Scd-IX-PWa" firstAttribute="trailing" secondItem="Txp-Tg-tXu" secondAttribute="trailing" id="NW8-xf-WqS"/>
+                            <constraint firstItem="exE-d1-eXB" firstAttribute="centerX" secondItem="yDo-8a-1sV" secondAttribute="centerX" id="Sje-Y0-jkZ"/>
+                            <constraint firstItem="exE-d1-eXB" firstAttribute="centerX" secondItem="Txp-Tg-tXu" secondAttribute="centerX" id="ZHw-FH-MDL"/>
+                            <constraint firstItem="Scd-IX-PWa" firstAttribute="leading" secondItem="Txp-Tg-tXu" secondAttribute="leading" id="ct6-DY-DYt"/>
+                            <constraint firstItem="NK1-kh-krj" firstAttribute="top" secondItem="exE-d1-eXB" secondAttribute="bottom" constant="8" id="dii-nl-KQg"/>
+                            <constraint firstItem="Scd-IX-PWa" firstAttribute="top" secondItem="Txp-Tg-tXu" secondAttribute="bottom" constant="8" id="e9V-xu-KKb"/>
+                            <constraint firstItem="qi0-i2-Y4K" firstAttribute="leading" secondItem="Txp-Tg-tXu" secondAttribute="leading" id="mhb-Ob-yIh"/>
+                            <constraint firstItem="exE-d1-eXB" firstAttribute="centerX" secondItem="eVA-C0-8YZ" secondAttribute="centerX" id="nnD-NL-59F"/>
+                            <constraint firstItem="exE-d1-eXB" firstAttribute="leading" secondItem="NHy-uT-W8c" secondAttribute="leading" constant="149" id="oCX-R9-7Dd"/>
+                            <constraint firstItem="qi0-i2-Y4K" firstAttribute="top" secondItem="eVA-C0-8YZ" secondAttribute="bottom" constant="49" id="pTR-ID-sfB"/>
+                            <constraint firstItem="eVA-C0-8YZ" firstAttribute="top" secondItem="BMd-rS-R57" secondAttribute="bottom" constant="8" id="sOm-Sk-UU6"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="NHy-uT-W8c"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Profile" image="person.crop.square" catalog="system" id="UvS-Ov-MIO"/>
+                    <connections>
+                        <outlet property="emailLabel" destination="eVA-C0-8YZ" id="A5D-Si-TX0"/>
+                        <outlet property="profileImage" destination="exE-d1-eXB" id="gwH-QH-p25"/>
+                        <outlet property="userName" destination="BMd-rS-R57" id="VR1-82-JLX"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ryd-5C-oaD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="6732" y="2076"/>
+            <point key="canvasLocation" x="6731.884057971015" y="2075.2232142857142"/>
         </scene>
         <!--Chat Box-->
         <scene sceneID="fc0-CS-jqk">

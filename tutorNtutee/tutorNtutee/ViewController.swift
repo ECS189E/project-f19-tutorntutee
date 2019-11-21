@@ -57,6 +57,7 @@ class ViewController: UIViewController, UITextFieldDelegate{
                     let storyboard = UIStoryboard(name: "Main", bundle: nil)
                     let vs = storyboard.instantiateViewController(identifier: "MenuInitView")
                     let navControllerVC = vs as! UITabBarController
+                    navControllerVC.modalPresentationStyle = .fullScreen
                     self?.present(navControllerVC, animated: true, completion: nil)
 
                 }
