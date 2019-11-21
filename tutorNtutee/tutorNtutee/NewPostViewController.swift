@@ -16,7 +16,14 @@ class NewPostViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
-
+    @IBAction func newPost(_ sender: Any) {
+                            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                            let vs = storyboard.instantiateViewController(identifier: "LoggedInNavController")
+                            let TapHomeVC = vs as! UINavigationController
+                            TapHomeVC.modalPresentationStyle = .fullScreen
+                            self.present(TapHomeVC, animated: true, completion: nil)
+    }
+    
     /*
     // MARK: - Navigation
 

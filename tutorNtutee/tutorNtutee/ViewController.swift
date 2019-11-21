@@ -48,16 +48,16 @@ class ViewController: UIViewController, UITextFieldDelegate{
                         })
                     }
                     */
-                    let storyboard = UIStoryboard(name: "Main", bundle: nil)
-                    let vs = storyboard.instantiateViewController(identifier: "LoggedInNavController")
-                    let TapHomeVC = vs as! UINavigationController
-                    TapHomeVC.modalPresentationStyle = .fullScreen
-                    self?.present(TapHomeVC, animated: true, completion: nil)
-                  
 //                    let storyboard = UIStoryboard(name: "Main", bundle: nil)
 //                    let vs = storyboard.instantiateViewController(identifier: "LoggedInNavController")
-//                    let navControllerVC = vs as! UINavigationController
-//                    self?.present(navControllerVC, animated: true, completion: nil)
+//                    let TapHomeVC = vs as! UINavigationController
+//                    TapHomeVC.modalPresentationStyle = .fullScreen
+//                    self?.present(TapHomeVC, animated: true, completion: nil)
+//
+                    let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                    let vs = storyboard.instantiateViewController(identifier: "MenuInitView")
+                    let navControllerVC = vs as! UITabBarController
+                    self?.present(navControllerVC, animated: true, completion: nil)
 
                 }
                 if let _ = error{

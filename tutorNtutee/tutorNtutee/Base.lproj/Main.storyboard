@@ -259,6 +259,7 @@
                                         <state key="normal" title="Chat With Tutor"/>
                                         <connections>
                                             <action selector="chatViewinit:" destination="jSL-iE-sW4" eventType="touchUpInside" id="Pix-TE-Xj8"/>
+                                            <action selector="chatWithTutor" destination="jSL-iE-sW4" eventType="touchUpInside" id="koQ-4n-A2V"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CQD-Gw-vga">
@@ -293,7 +294,7 @@
         <!--Chat To Someone View Controller-->
         <scene sceneID="qz4-ht-leF">
             <objects>
-                <viewController id="cIf-as-1QR" customClass="ChatToSomeoneViewController" customModule="tutorNtutee" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ChatToSomeoneVC" id="cIf-as-1QR" customClass="ChatToSomeoneViewController" customModule="tutorNtutee" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Equ-XH-NZw">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -352,11 +353,26 @@
         <!--New Post-->
         <scene sceneID="ekS-OU-Boi">
             <objects>
-                <viewController storyboardIdentifier="NewPostViewController" id="HfD-nR-Sff" customClass="NewPostViewController" customModule="tutorNtutee" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="NewPostViewController" modalPresentationStyle="fullScreen" id="HfD-nR-Sff" customClass="NewPostViewController" customModule="tutorNtutee" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="thU-hN-dW3">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cf2-2l-uyE">
+                                <rect key="frame" x="165" y="417" width="85" height="30"/>
+                                <state key="normal" title="Start  a Post"/>
+                                <connections>
+                                    <action selector="newPost:" destination="HfD-nR-Sff" eventType="touchUpInside" id="LuG-WU-NQI"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="bVi-Ug-kwo" firstAttribute="trailing" secondItem="cf2-2l-uyE" secondAttribute="trailing" constant="164" id="BOx-08-EZo"/>
+                            <constraint firstItem="cf2-2l-uyE" firstAttribute="leading" secondItem="bVi-Ug-kwo" secondAttribute="leading" constant="165" id="cAI-GR-qiV"/>
+                            <constraint firstItem="bVi-Ug-kwo" firstAttribute="bottom" secondItem="cf2-2l-uyE" secondAttribute="bottom" constant="366" id="jlD-6e-fVf"/>
+                            <constraint firstItem="cf2-2l-uyE" firstAttribute="top" secondItem="bVi-Ug-kwo" secondAttribute="top" constant="373" id="obv-xl-oRV"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="bVi-Ug-kwo"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="New Post" image="square.and.pencil" catalog="system" id="LYp-FA-0xB"/>

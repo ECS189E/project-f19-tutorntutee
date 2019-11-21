@@ -16,18 +16,14 @@ class DetailVC: UIViewController {
         // Do any additional setup after loading the view.
     }
     
+    @IBAction func chatWithTutor() {
+        let stotyboard = UIStoryboard(name: "Main", bundle: nil)
+        let vs = stotyboard.instantiateViewController(identifier: "ChatToSomeoneVC")
+        let chatWithSomeoneVC = vs as! UIViewController
+        self.present(chatWithSomeoneVC, animated: true, completion: nil)
+    }
+    
     @IBAction func chatViewinit(_ sender: Any) {
         
     }
-    
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
