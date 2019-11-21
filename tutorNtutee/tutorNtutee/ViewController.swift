@@ -49,8 +49,8 @@ class ViewController: UIViewController, UITextFieldDelegate{
                     }
                     */
                     let storyboard = UIStoryboard(name: "Main", bundle: nil)
-                    let vs = storyboard.instantiateViewController(identifier: "MenuInitView")
-                    let TapHomeVC = vs as! UITabBarController
+                    let vs = storyboard.instantiateViewController(identifier: "LoggedInNavController")
+                    let TapHomeVC = vs as! UINavigationController
                     TapHomeVC.modalPresentationStyle = .fullScreen
                     self?.present(TapHomeVC, animated: true, completion: nil)
                   

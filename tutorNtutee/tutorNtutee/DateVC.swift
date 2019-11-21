@@ -104,6 +104,10 @@ class DateVC: UIViewController {
                 // check if the chedule already exist in the databse
                 if newSchedule.isEqual(exisitingSchedule) {
                     print("the schedule already exists in the database")
+                    let errorMessage=UIAlertController(title: "error", message: "the schedule already exists in the database", preferredStyle: .alert)
+                    let close = UIAlertAction(title:"close",style: .cancel,handler: nil)
+                    errorMessage.addAction(close)
+                    self.present(errorMessage,animated: true,completion: nil)
                     return
                 }
                 print(exisitingSchedule)
