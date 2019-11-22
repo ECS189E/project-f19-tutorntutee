@@ -21,8 +21,8 @@ class ViewController: UIViewController, UITextFieldDelegate{
         emailField.delegate = self
         passwordField.delegate = self
         ref=Database.database().reference()
-        emailField.text = "aleliu@ucdavis.edu"
-        passwordField.text = "123456789"
+        emailField.text = "aadila@ucdavis.edu"
+        passwordField.text = "Adila1628"
     }
 
     func signinBordersetup(){
@@ -71,8 +71,15 @@ class ViewController: UIViewController, UITextFieldDelegate{
         }
     }
     
-   
-//    @IBAction func SignUpClicked(_ sender: Any) {
+    @IBAction func clearUfield(_ sender: Any) {
+        self.emailField.text = ""
+    }
+    
+    @IBAction func clearEfield(_ sender: Any) {
+        self.passwordField.text = ""
+    }
+    
+    //    @IBAction func SignUpClicked(_ sender: Any) {
 //        let storyboard = UIStoryboard(name: "Main", bundle: nil)
 //        let vs = storyboard.instantiateViewController(identifier: "SignUpVC")
 //        let signupview = vs as! SignUpVC

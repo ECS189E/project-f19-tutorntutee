@@ -21,6 +21,9 @@ class SignUpVC: UIViewController,UIApplicationDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         ref=Database.database().reference()
+        let storage = Storage.storage()
+        // Create a storage reference from our storage service
+        uploaddefaultImage()
         let viewTapGesture = UITapGestureRecognizer(target: self.view, action:#selector(UIView.endEditing))
         viewTapGesture.cancelsTouchesInView=true
         self.view.addGestureRecognizer(viewTapGesture)
@@ -43,6 +46,7 @@ class SignUpVC: UIViewController,UIApplicationDelegate {
                                 .setValue(email)
                             self.ref.child("user").child(user.uid).child("tutor_class_time")
                             .setValue(["dummy"])
+                            self.ref.child("user").child(user.uid).child("image").setValue("default")
                         }
                         let storyboard = UIStoryboard(name: "Main", bundle: nil)
                         let vs = storyboard.instantiateViewController(identifier: "LoginNavControler")
@@ -60,4 +64,23 @@ class SignUpVC: UIViewController,UIApplicationDelegate {
             }
         }
     }
+}
+func uploaddefaultImage(){
+    //var postImageView : UIImageView
+    //postImageView.image = UIImage(named: "default.png")
+    let thisImage: UIImage = UIImage(named: "default.png")!
+    
+    //if let img = postImageView.image {
+        let imageName = "default"
+        let imageRef = Storage.storage().reference().child(imageName)
+        if let uploadData = thisImage.pngData(){
+            imageRef.putData(uploadData, metadata:nil) { metadata, error in
+                if error != nil{
+                    print("error: \(error.debugDescription)")
+                    return
+                }
+                print("Sucessful!")
+            }
+        }
+    //}
 }

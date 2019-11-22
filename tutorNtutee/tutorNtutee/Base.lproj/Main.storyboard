@@ -42,6 +42,9 @@
                                                 <state key="normal" title=" ⓧ">
                                                     <color key="titleColor" red="0.02762995474" green="0.070218317210000006" blue="0.2795462608" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="clearUfield:" destination="eb8-Rg-O8T" eventType="touchUpInside" id="WW8-GV-7a1"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>
@@ -69,6 +72,9 @@
                                                 <state key="normal" title=" ⓧ">
                                                     <color key="titleColor" red="0.02762995474" green="0.070218317210000006" blue="0.2795462608" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="clearEfield:" destination="eb8-Rg-O8T" eventType="touchUpInside" id="god-Ek-uxS"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>
