@@ -151,6 +151,6 @@ Firebase
 Google Map Api
 
 
-test plan:
+test plan:<br>
 Test out with friends before Push it to App store
 
