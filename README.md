@@ -112,7 +112,7 @@ find friends to sign in as tutees and tutors and try to match them, and try to c
 
 
 ### Sprint Four
-link to trello for milestone 4: https://trello.com/b/1m1k7UMw/milestone-4
+link to trello for milestone 4: https://trello.com/b/JMdERqXy/milestone-4
 
 Goals: 
 - Able to store all the chat histories and chat with multiple people in a row(chat tableview)
