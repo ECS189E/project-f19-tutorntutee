@@ -111,3 +111,46 @@ find friends to sign up and log in, and test for classes they need help with.
 find friends to sign in as tutees and tutors and try to match them, and try to chat over through our chat system
 
 
+### Sprint Four
+link to trello for milestone 4: https://trello.com/b/1m1k7UMw/milestone-4
+
+Goals: 
+- Able to store all the chat histories and chat with multiple people in a row(chat tableview)
+- Able to upload profile image and set it perminently.
+- Able to change username
+- Generate Posts, chats and profile tabs
+- Able to delete a exsiting post by creater
+- Able to generate new email with prefilled receiver's email address.
+- Tentative: implement google map API for class localization
+- Tentative: implement real time class matcher
+
+Chat View Controller:<br>
+Able to store all the chat histories and chat with multiple people in a row by implementing a seperate view for scrollable chats.
+
+
+HomeView:<br>
+Polishing the existing posts and read the posts from firebase.
+Be able to have the most recent post information all the time. 
+
+
+Database:<br>
+Add class schedules & locations
+
+Homeview feeds view controller:<br>
+be able to display all tutors with correct information from database.
+be able to generate new posts. 
+be able to go into chatbox.    
+
+Class Localizer :<br>
+Tentative: implement google map api with current user's location with (longitutde, latitude) within the range in real time.
+Tentative: match classes with real time with the class time.
+If both satisfy the user's location & time, it will auto generate classes for user when user try to look for a tutor session.
+
+Third party libaries: <br>
+Firebase
+Google Map Api
+
+
+test plan:
+Test out with friends before Push it to App store
+
