@@ -9,12 +9,15 @@
 import UIKit
 import Firebase
 
-class DateVC: UIViewController {
+class DateVC: UIViewController{
+    
+    
     @IBOutlet weak var classLabel: UILabel!
     @IBOutlet weak var dateTextField: UITextField!
     @IBOutlet weak var timeTextField: UITextField!
     @IBOutlet weak var tilTimeTextField: UITextField!
     @IBOutlet weak var priceTextField: UITextField!
+    @IBOutlet weak var deleteText: UITextField!
     
     var selectedClass = ""
     
@@ -87,8 +90,19 @@ class DateVC: UIViewController {
                 
                 print(newSchedule)
                 
-                var scheduleArray = [String]()
-                ref.observeSingleEvent(of: .value, with: { (snapshot) in
+                
+                
+                addNewSchedule(newSchedule: newSchedule)
+                
+                
+    }
+    
+    func addNewSchedule(newSchedule: String) {
+        
+        
+        
+        var scheduleArray = [String]()
+        ref.observeSingleEvent(of: .value, with: { (snapshot) in
                     
                     
                     // Get user value
@@ -101,8 +115,6 @@ class DateVC: UIViewController {
         //            }
                     
                     for oneSchedule in scheduleDB ?? ["error in getting the nsarray elements"] {
-                        print("----------------------------")
-                        
                         let exisitingSchedule = oneSchedule as! String
                 
                         // check if the chedule already exist in the databse
@@ -134,7 +146,11 @@ class DateVC: UIViewController {
                         let postsArray = snapshot.value as? NSArray
                         print("exists!", postsArray ?? ["error in parsing posts"])
                         for onePost in  postsArray ?? ["error in parsing posts"] {
+                            
                             let exisitingPost = onePost as! String
+                            if newSchedule.isEqual(exisitingPost) {
+                                return
+                            }
                             newPostsArray.append(exisitingPost)
                         }
                         newPostsArray.append(newSchedule)
@@ -144,8 +160,78 @@ class DateVC: UIViewController {
                 }) { (error) in
                         print(error.localizedDescription)
                 }
-
+        
+        
+        
     }
+    @IBAction func deleteBtn(_ sender: Any) {
+        print("delete clicked")
+        deleteSelectedSchedule(deleteSchedule: deleteText.text ?? "")
+    }
+    
+    func deleteSelectedSchedule(deleteSchedule : String) {
+        var scheduleArray2 = [String]()
+        
+        ref.observeSingleEvent(of: .value, with: { (snapshot) in
+                    
+                    
+                    // Get user value
+
+        //            let value = snapshot.value as? NSDictionary
+                    let scheduleDB = snapshot.value as? NSArray
+        //            guard let val = snapshot.value else {
+        //                print("error in getting snapshot.value")
+        //                return
+        //            }
+                    
+                    for oneSchedule in scheduleDB ?? ["error in getting the nsarray elements"] {
+                        let dbSchedule = oneSchedule as! String
+                
+                        // check if the chedule already exist in the databse
+                        if deleteSchedule.isEqual(dbSchedule) {
+                            print("removed from local database: \(dbSchedule)")
+                            continue
+                        }
+                        scheduleArray2.append(dbSchedule)
+                        
+                    }
+                    self.updateRef.updateChildValues(["tutor_class_time":scheduleArray2])
+                    
+        //          let sss = scheduleDB?[0] as? String ?? "error in the class"
+        //          print("sss -->", sss)
+
+                  }) { (error) in
+                    print(error.localizedDescription)
+                }
+        
+//        let oldPost = onePost as! String
+//        if deleteSchedule.isEqual(oldPost) {
+//            continue
+//        }
+                
+                var newPostsArray = [String]()
+                postsRef.observeSingleEvent(of: .value, with: { (snapshot) in
+                    if (snapshot.exists()){
+                        let postsArray = snapshot.value as? NSArray
+                        print("exists!", postsArray ?? ["error in parsing posts"])
+                        for onePost in  postsArray ?? ["error in parsing posts"] {
+                            let oldPost = onePost as! String
+                            if deleteSchedule.isEqual(oldPost) {
+                                print("removed from global database: \(oldPost)")
+                                continue
+                            }
+                            
+                            newPostsArray.append(oldPost)
+                        }
+                        self.updatePostsRef.updateChildValues(["posts":newPostsArray])
+                        
+                    }
+                }) { (error) in
+                        print(error.localizedDescription)
+                }
+    }
+    
+    
     
     @objc func tilTimeChanged(tilTimePicker: UIDatePicker) {
         print("tilTimeChanged")
@@ -176,7 +262,6 @@ class DateVC: UIViewController {
         view.endEditing(true)
         print("viewTapped")
     }
-    
 
 
     /*
