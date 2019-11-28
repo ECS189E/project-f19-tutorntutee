@@ -8,8 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		66BF99FB52B0AA6F17014A7A /* Pods_tutorNtutee.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C5B72971EB42BA371BFCE2A /* Pods_tutorNtutee.framework */; };
+		7F0D0853238E2CA400147B5B /* MessageUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F0D0852238E2CA400147B5B /* MessageUser.swift */; };
 		7F548B312383A0C300BC9720 /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F548B302383A0C300BC9720 /* ChatViewController.swift */; };
 		7F6C63E62388CC2200D01DE0 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F6C63E52388CC2200D01DE0 /* Message.swift */; };
+		7F6C63EC238B83D600D01DE0 /* SendTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F6C63EB238B83D600D01DE0 /* SendTableViewCell.swift */; };
+		7F6C63F0238B8EB800D01DE0 /* ReceiveTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F6C63EF238B8EB800D01DE0 /* ReceiveTableViewCell.swift */; };
+		7F6C63F2238BA08B00D01DE0 /* ChatBoxTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F6C63F1238BA08B00D01DE0 /* ChatBoxTableViewCell.swift */; };
 		7FB5092C23871654002FA08F /* ChatToSomeoneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FB5092B23871654002FA08F /* ChatToSomeoneViewController.swift */; };
 		C57B0321237BE97300183531 /* TutorMarketViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C57B0320237BE97300183531 /* TutorMarketViewController.swift */; };
 		C58B741C23849BF1005B5DC3 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C58B741B23849BF1005B5DC3 /* ProfileViewController.swift */; };
@@ -31,8 +35,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		7F0D0852238E2CA400147B5B /* MessageUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageUser.swift; sourceTree = "<group>"; };
 		7F548B302383A0C300BC9720 /* ChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
 		7F6C63E52388CC2200D01DE0 /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
+		7F6C63EB238B83D600D01DE0 /* SendTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendTableViewCell.swift; sourceTree = "<group>"; };
+		7F6C63EF238B8EB800D01DE0 /* ReceiveTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReceiveTableViewCell.swift; sourceTree = "<group>"; };
+		7F6C63F1238BA08B00D01DE0 /* ChatBoxTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatBoxTableViewCell.swift; sourceTree = "<group>"; };
 		7FB5092B23871654002FA08F /* ChatToSomeoneViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatToSomeoneViewController.swift; sourceTree = "<group>"; };
 		8C5B72971EB42BA371BFCE2A /* Pods_tutorNtutee.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_tutorNtutee.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C276862310DD127343FAF98C /* Pods-tutorNtutee.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-tutorNtutee.debug.xcconfig"; path = "Target Support Files/Pods-tutorNtutee/Pods-tutorNtutee.debug.xcconfig"; sourceTree = "<group>"; };
@@ -129,6 +137,10 @@
 				C58B741F23849C67005B5DC3 /* HomeViewController.swift */,
 				7FB5092B23871654002FA08F /* ChatToSomeoneViewController.swift */,
 				7F6C63E52388CC2200D01DE0 /* Message.swift */,
+				7F6C63EB238B83D600D01DE0 /* SendTableViewCell.swift */,
+				7F6C63EF238B8EB800D01DE0 /* ReceiveTableViewCell.swift */,
+				7F6C63F1238BA08B00D01DE0 /* ChatBoxTableViewCell.swift */,
+				7F0D0852238E2CA400147B5B /* MessageUser.swift */,
 			);
 			path = tutorNtutee;
 			sourceTree = "<group>";
@@ -254,6 +266,7 @@
 				C57B0321237BE97300183531 /* TutorMarketViewController.swift in Sources */,
 				D2DADE8D237B8C6800180A51 /* DateVC.swift in Sources */,
 				C59AC2C3237CC76A00CFCC09 /* SessionPostCell.swift in Sources */,
+				7F0D0853238E2CA400147B5B /* MessageUser.swift in Sources */,
 				D2FE4E492378CF4C005F6797 /* SignUpVC.swift in Sources */,
 				D2DADE8B237B576400180A51 /* TutorVC.swift in Sources */,
 				C58B741E23849C20005B5DC3 /* NewPostViewController.swift in Sources */,
@@ -262,9 +275,12 @@
 				D28DBACB23789D1000A7627E /* ViewController.swift in Sources */,
 				D28DBAC723789D1000A7627E /* AppDelegate.swift in Sources */,
 				7F548B312383A0C300BC9720 /* ChatViewController.swift in Sources */,
+				7F6C63F0238B8EB800D01DE0 /* ReceiveTableViewCell.swift in Sources */,
 				7F6C63E62388CC2200D01DE0 /* Message.swift in Sources */,
 				C58B742023849C67005B5DC3 /* HomeViewController.swift in Sources */,
+				7F6C63F2238BA08B00D01DE0 /* ChatBoxTableViewCell.swift in Sources */,
 				D28DBAC923789D1000A7627E /* SceneDelegate.swift in Sources */,
+				7F6C63EC238B83D600D01DE0 /* SendTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

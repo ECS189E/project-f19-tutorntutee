@@ -13,20 +13,25 @@ class ChatToSomeoneViewController: UIViewController,UITableViewDelegate,UITableV
     
     @IBOutlet weak var messageTextField: UITextField!
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var nameField: UILabel!
     
     var fromId:String? // = "0000"
-    var toId:String="qd1pYL2agYQB7b2TotHc9MbgtXC3"
+    var toId:String="V45TFWp0ahU0OfX8Kp5FPwxpvQA3"
     var messageArray:[Message]=[]
-    //var ref:DatabaseReference!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         messageTextField.placeholder="Enter message..."
         
         if let sender=Auth.auth().currentUser{
             self.fromId=sender.uid
         }
+        
+        
+        Database.database().reference().child("user").child(toId).observeSingleEvent(of: .value, with: {(snapshot) in
+            let value = snapshot.value as? NSDictionary
+            self.nameField.text=value?["username"] as? String ?? ""
+        })
         
         observeMessage()
         
@@ -36,11 +41,24 @@ class ChatToSomeoneViewController: UIViewController,UITableViewDelegate,UITableV
     
     func observeMessage(){
         let ref = Database.database().reference().child("messages")
+        let messageRef = Database.database().reference().child("messageUser")
+        
         ref.observe(.childAdded, with: { [weak self] snapshot in
             if let dictionary = snapshot.value as? [String: Any]{
                 let message = Message(dictionary: dictionary)
                 if((message.fromId == self?.fromId && message.toId == self?.toId) || (message.toId == self?.fromId && message.fromId == self?.toId)){
                     self?.messageArray.append(message)
+                    let values = ["lastMessage":message.text,"timestamp":message.timestamp] as [String : Any]
+                    
+                    messageRef.child(message.fromId ?? "error").child(message.toId ?? "error").updateChildValues(values)
+                    messageRef.child(message.toId ?? "error").child(message.fromId ?? "error").updateChildValues(values)
+                    
+                    /*
+                    if(message.fromId == self?.fromId){
+                        messageRef.child(message.fromId ?? "error").child(message.toId ?? "error").updateChildValues(values)
+                    }else{
+                        messageRef.child(message.toId ?? "error").child(message.fromId ?? "error").updateChildValues(values)
+                    }*/
                     
                     DispatchQueue.main.async(execute: {
                         self?.tableView.reloadData()
@@ -68,13 +86,18 @@ class ChatToSomeoneViewController: UIViewController,UITableViewDelegate,UITableV
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let message = messageArray[indexPath.row]
-        var cell = tableView.dequeueReusableCell(withIdentifier: "receiveCell") ?? UITableViewCell(style: .default, reuseIdentifier: "receiveCell")
         if(message.fromId == fromId){
-            cell = tableView.dequeueReusableCell(withIdentifier: "sendCell") ?? UITableViewCell(style: .default, reuseIdentifier: "sendCell")
+            guard let sendCell = tableView.dequeueReusableCell(withIdentifier: "sendCell") as? SendTableViewCell else{
+                return UITableViewCell()
+            }
+            sendCell.messageLabel.text=message.text
+            return sendCell
         }
-        cell.textLabel?.text=message.text
         
-        return cell
+        guard let receiveCell = tableView.dequeueReusableCell(withIdentifier: "receiveCell") as? ReceiveTableViewCell else{
+            return UITableViewCell()
+        }
+        receiveCell.messageLabel.text=message.text
+        return receiveCell
     }
-    
 }
