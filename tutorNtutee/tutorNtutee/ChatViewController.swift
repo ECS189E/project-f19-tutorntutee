@@ -29,13 +29,6 @@ class ChatViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
         self.tableView.dataSource=self
     }
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let chatToSomeoneVC : ChatToSomeoneViewController = segue.destination as! ChatToSomeoneViewController
-        if let rowIndex = tableView.indexPathForSelectedRow?.row{
-            chatToSomeoneVC.toId = self.messageUserArray[rowIndex].friendId ?? "error"
-        }
-    }
-    
     func getMessageUser(){
         if let userId = self.userId{
             let messageRef = Database.database().reference().child("messageUser").child(userId)
@@ -69,7 +62,14 @@ class ChatViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        self.performSegue(withIdentifier: "chatBoxVCToChatWithSomeoneVC", sender: self)
+        
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let vc = storyboard.instantiateViewController(identifier: "ChatToSomeoneVC")
+        let chatToSomeoneVC = vc as! ChatToSomeoneViewController
+        chatToSomeoneVC.modalPresentationStyle = .fullScreen
+        chatToSomeoneVC.toId = self.messageUserArray[indexPath.row].friendId ?? "error"
+        chatToSomeoneVC.signal = 1
+        self.present(chatToSomeoneVC,animated: true,completion: nil)
     }
     
 }

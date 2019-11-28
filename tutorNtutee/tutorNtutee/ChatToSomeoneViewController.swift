@@ -18,6 +18,7 @@ class ChatToSomeoneViewController: UIViewController,UITableViewDelegate,UITableV
     var fromId:String? // = "0000"
     var toId:String="V45TFWp0ahU0OfX8Kp5FPwxpvQA3"
     var messageArray:[Message]=[]
+    var signal = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -78,6 +79,23 @@ class ChatToSomeoneViewController: UIViewController,UITableViewDelegate,UITableV
             messageTextField.text=""
         }
     }
+    
+    @IBAction func back() {
+        if(self.signal == 1){
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            let vc = storyboard.instantiateViewController(identifier: "ChatViewController")
+            let chatViewVC = vc as! ChatViewController
+            chatViewVC.modalPresentationStyle = .fullScreen
+            self.present(chatViewVC,animated: true, completion: nil)
+        }else{
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            let vc = storyboard.instantiateViewController(identifier: "DetailVC")
+            let detailVC = vc as! DetailVC
+            detailVC.modalPresentationStyle = .fullScreen
+            self.present(detailVC,animated: true, completion: nil)
+        }
+    }
+    
     
     //MARK: tableView Statement
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

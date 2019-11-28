@@ -19,7 +19,8 @@ class DetailVC: UIViewController {
     @IBAction func chatWithTutor() {
         let stotyboard = UIStoryboard(name: "Main", bundle: nil)
         let vs = stotyboard.instantiateViewController(identifier: "ChatToSomeoneVC")
-        let chatWithSomeoneVC = vs as! UIViewController
+        let chatWithSomeoneVC = vs as! ChatToSomeoneViewController
+        chatWithSomeoneVC.modalPresentationStyle = .fullScreen
         self.present(chatWithSomeoneVC, animated: true, completion: nil)
     }
     
