@@ -21,8 +21,8 @@ class ViewController: UIViewController, UITextFieldDelegate{
         emailField.delegate = self
         passwordField.delegate = self
         ref=Database.database().reference()
-        emailField.text = "aadila@ucdavis.edu"
-        passwordField.text = "Adila1628"
+        emailField.text = "aleliu@ucdavis.edu"
+        passwordField.text = "123456789"
     }
 
     func signinBordersetup(){
