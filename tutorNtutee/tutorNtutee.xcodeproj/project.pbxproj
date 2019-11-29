@@ -29,6 +29,8 @@
 		D28DBACE23789D1000A7627E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D28DBACC23789D1000A7627E /* Main.storyboard */; };
 		D28DBAD023789D1200A7627E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D28DBACF23789D1200A7627E /* Assets.xcassets */; };
 		D28DBAD323789D1200A7627E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D28DBAD123789D1200A7627E /* LaunchScreen.storyboard */; };
+		D2918DA02390B9E700FE8C73 /* CategoryVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2918D9F2390B9E700FE8C73 /* CategoryVC.swift */; };
+		D2918DA22390BA3000FE8C73 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D2918DA12390BA3000FE8C73 /* CoreLocation.framework */; };
 		D2DADE8B237B576400180A51 /* TutorVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2DADE8A237B576400180A51 /* TutorVC.swift */; };
 		D2DADE8D237B8C6800180A51 /* DateVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2DADE8C237B8C6800180A51 /* DateVC.swift */; };
 		D2FE4E492378CF4C005F6797 /* SignUpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2FE4E482378CF4C005F6797 /* SignUpVC.swift */; };
@@ -60,6 +62,8 @@
 		D28DBACF23789D1200A7627E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D28DBAD223789D1200A7627E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D28DBAD423789D1200A7627E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D2918D9F2390B9E700FE8C73 /* CategoryVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryVC.swift; sourceTree = "<group>"; };
+		D2918DA12390BA3000FE8C73 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		D2DADE8A237B576400180A51 /* TutorVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorVC.swift; sourceTree = "<group>"; };
 		D2DADE8C237B8C6800180A51 /* DateVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateVC.swift; sourceTree = "<group>"; };
 		D2FE4E482378CF4C005F6797 /* SignUpVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpVC.swift; sourceTree = "<group>"; };
@@ -71,6 +75,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D2918DA22390BA3000FE8C73 /* CoreLocation.framework in Frameworks */,
 				66BF99FB52B0AA6F17014A7A /* Pods_tutorNtutee.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -90,6 +95,7 @@
 		AC0B10DFE902C8EF94648F9C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				D2918DA12390BA3000FE8C73 /* CoreLocation.framework */,
 				8C5B72971EB42BA371BFCE2A /* Pods_tutorNtutee.framework */,
 			);
 			name = Frameworks;
@@ -141,6 +147,7 @@
 				7F6C63EF238B8EB800D01DE0 /* ReceiveTableViewCell.swift */,
 				7F6C63F1238BA08B00D01DE0 /* ChatBoxTableViewCell.swift */,
 				7F0D0852238E2CA400147B5B /* MessageUser.swift */,
+				D2918D9F2390B9E700FE8C73 /* CategoryVC.swift */,
 			);
 			path = tutorNtutee;
 			sourceTree = "<group>";
@@ -272,6 +279,7 @@
 				C58B741E23849C20005B5DC3 /* NewPostViewController.swift in Sources */,
 				C59AC2CB237CD17600CFCC09 /* DetailVC.swift in Sources */,
 				C58B741C23849BF1005B5DC3 /* ProfileViewController.swift in Sources */,
+				D2918DA02390B9E700FE8C73 /* CategoryVC.swift in Sources */,
 				D28DBACB23789D1000A7627E /* ViewController.swift in Sources */,
 				D28DBAC723789D1000A7627E /* AppDelegate.swift in Sources */,
 				7F548B312383A0C300BC9720 /* ChatViewController.swift in Sources */,
