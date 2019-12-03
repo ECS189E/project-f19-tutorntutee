@@ -15,7 +15,7 @@ class TutorVC: UIViewController, UITableViewDelegate, UITableViewDataSource  {
     @IBOutlet weak var classTable: UITableView!
     
     
-    let classArray = ["ECS150", "ECS189E", "ESS","UWP101", "NUT10", "MATH108", "UWP104"]
+    let classArray = ["ECS020","ECS032A","ECS032B","ECS032C","ECS034","ECS036A","ECS036B","ECS036C","ECS050","ECS120","ECS122A","ECS122B","ECS132","ECS140A","ECS153","ECS154A","ECS160","ECS171","ECS175","ECS188","ECS189G","ECS150", "ECS189E", "MAT012","MAT016A","MAT016B","MAT016C","MAT017A", "MAT017B","MAT017C", "MAT021A", "MAT021B", "MAT021C", "MAT021D", "MAT022A", "MAT022B", "MAT108", "MAT115A", "MAT118A", "MAT119A", "MAT127A", "MAT127B", "MAT127C", "MAT128A","MAT135A", "MAT145", "MAT150A", "MAT167", "MAT168", "MAT180", "MAT185A", "UWP101", "NUT010"]
     var autofillArray = [String]()
     var isSearching = false
     
