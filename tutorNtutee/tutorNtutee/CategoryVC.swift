@@ -56,6 +56,8 @@ class CategoryVC: UIViewController {
             let alert = UIAlertController(title: "Location Services Disabled", message: "Please, turn on your location services and try again", preferredStyle: .alert)
             let goAction = UIAlertAction(title: "Close", style: .default, handler: nil)
             alert.addAction(goAction)
+            self.present(alert, animated: true, completion: nil)
+
         }
         
     }

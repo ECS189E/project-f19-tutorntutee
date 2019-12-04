@@ -146,7 +146,6 @@ class DateVC: UIViewController{
                         let postsArray = snapshot.value as? NSArray
                         print("exists!", postsArray ?? ["error in parsing posts"])
                         for onePost in  postsArray ?? ["error in parsing posts"] {
-                            
                             let exisitingPost = onePost as! String
                             if newSchedule.isEqual(exisitingPost) {
                                 return
@@ -155,13 +154,10 @@ class DateVC: UIViewController{
                         }
                         newPostsArray.append(newSchedule)
                         self.updatePostsRef.updateChildValues(["posts":newPostsArray])
-                        
                     }
                 }) { (error) in
                         print(error.localizedDescription)
                 }
-        
-        
         
     }
     @IBAction func deleteBtn(_ sender: Any) {
