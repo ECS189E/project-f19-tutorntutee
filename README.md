@@ -154,3 +154,9 @@ Google Map Api
 test plan:<br>
 Test out with friends before Push it to App store
 
+### Sprint Five
+Goals: 
+Basic implementation of the app is done however we need to polish the UI and make it look pleasing.  
+Implement better UI for all viewControllers including chat views.  
+Get ready for the final project presentation demo.  
+
