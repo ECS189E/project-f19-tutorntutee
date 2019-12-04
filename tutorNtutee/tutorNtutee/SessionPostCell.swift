@@ -14,6 +14,7 @@ class SessionPostCell: UITableViewCell {
     @IBOutlet weak var courseName: UILabel!
     @IBOutlet weak var backgroundImg: UIImageView!
     
+    @IBOutlet weak var money: UILabel!
     
     @IBOutlet weak var myimage: UIImageView!
     

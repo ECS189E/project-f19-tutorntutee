@@ -96,6 +96,7 @@ class HomeViewController: UIViewController,UITableViewDataSource, UITableViewDel
         }
         cell.courseName.text = className
         cell.avaliable.text = "\(date) \(timeS) to \(timeE)"
+        cell.money.text = cost
         cell.textLabel?.text = "\(indexPath.row)"
         cell.backgroundColor = UIColor.white
         cell.layer.borderColor = UIColor.black.cgColor

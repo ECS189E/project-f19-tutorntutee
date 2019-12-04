@@ -35,7 +35,7 @@ class ChatToSomeoneViewController: UIViewController,UITableViewDelegate,UITableV
         })
         
         observeMessage()
-        
+    
         self.tableView.delegate=self
         self.tableView.dataSource=self
     }
@@ -61,22 +61,43 @@ class ChatToSomeoneViewController: UIViewController,UITableViewDelegate,UITableV
                         messageRef.child(message.toId ?? "error").child(message.fromId ?? "error").updateChildValues(values)
                     }*/
                     
+                    
                     DispatchQueue.main.async(execute: {
                         self?.tableView.reloadData()
+                        if(self?.messageArray.count ?? 0>0){
+                            let indexPath = IndexPath(row: (self?.messageArray.count ?? 0)-1, section: 0)
+                            self?.tableView.scrollToRow(at: indexPath, at: UITableView.ScrollPosition.bottom, animated: true)
+                        }
                     })
                 }
             }
         })
     }
     
+    func isBlank(_ string: String) -> Bool {
+      for character in string {
+        if !character.isWhitespace {
+            return false
+        }
+      }
+      return true
+    }
+    
     @IBAction func sendMessage() {
         if let text =  messageTextField.text{
-            let ref = Database.database().reference().child("messages")
-            let childRef = ref.childByAutoId()
-            let timestamp:NSNumber = NSNumber(value: NSDate().timeIntervalSince1970)
-            let values=["text":text,"fromId":fromId,"toId":toId,"timestamp":timestamp] as [String : Any]
-            childRef.updateChildValues(values)
-            messageTextField.text=""
+            if(isBlank(text)){
+                let errorMessage = UIAlertController(title: "error", message: "message cannot be empty", preferredStyle: .alert)
+                let close = UIAlertAction(title: "close", style: .cancel, handler: nil)
+                errorMessage.addAction(close)
+                self.present(errorMessage,animated: true,completion: nil)
+            }else{
+                let ref = Database.database().reference().child("messages")
+                let childRef = ref.childByAutoId()
+                let timestamp:NSNumber = NSNumber(value: NSDate().timeIntervalSince1970)
+                let values=["text":text,"fromId":fromId,"toId":toId,"timestamp":timestamp] as [String : Any]
+                childRef.updateChildValues(values)
+                messageTextField.text=""
+            }
         }
     }
     
