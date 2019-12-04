@@ -129,6 +129,7 @@
 				D28DBACA23789D1000A7627E /* ViewController.swift */,
 				D2FE4E482378CF4C005F6797 /* SignUpVC.swift */,
 				D2DADE8A237B576400180A51 /* TutorVC.swift */,
+				D2918D9F2390B9E700FE8C73 /* CategoryVC.swift */,
 				D2DADE8C237B8C6800180A51 /* DateVC.swift */,
 				D28DBACC23789D1000A7627E /* Main.storyboard */,
 				D28DBACF23789D1200A7627E /* Assets.xcassets */,
@@ -147,7 +148,6 @@
 				7F6C63EF238B8EB800D01DE0 /* ReceiveTableViewCell.swift */,
 				7F6C63F1238BA08B00D01DE0 /* ChatBoxTableViewCell.swift */,
 				7F0D0852238E2CA400147B5B /* MessageUser.swift */,
-				D2918D9F2390B9E700FE8C73 /* CategoryVC.swift */,
 			);
 			path = tutorNtutee;
 			sourceTree = "<group>";
