@@ -252,7 +252,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="14" translatesAutoresizingMaskIntoConstraints="NO" id="U8H-VP-fYm">
-                                <rect key="frame" x="190" y="144" width="100.33333333333331" height="123.33333333333331"/>
+                                <rect key="frame" x="202" y="145" width="100.33333333333331" height="123.33333333333331"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TutorName" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x32-gP-s46">
                                         <rect key="frame" x="0.0" y="0.0" width="100.33333333333333" height="25.333333333333332"/>
@@ -282,21 +282,47 @@
                                 <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                             </navigationBar>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="className" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JrG-N3-H0c">
+                                <rect key="frame" x="49" y="322" width="84" height="20.333333333333314"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="description" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bWH-9y-0Fm">
+                                <rect key="frame" x="49.000000000000007" y="404" width="85.666666666666686" height="20.333333333333314"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="DateNtime" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pdI-IH-uuQ">
+                                <rect key="frame" x="49.000000000000007" y="361" width="81.666666666666686" height="20.333333333333314"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
+                            <constraint firstItem="JrG-N3-H0c" firstAttribute="top" secondItem="lbC-lH-Vsn" secondAttribute="bottom" constant="46" id="5Dp-an-jj3"/>
                             <constraint firstItem="n81-kg-ULN" firstAttribute="bottom" secondItem="lbC-lH-Vsn" secondAttribute="bottom" constant="586" id="6Vh-UN-nfo"/>
-                            <constraint firstItem="U8H-VP-fYm" firstAttribute="top" secondItem="n81-kg-ULN" secondAttribute="top" constant="56" id="GpP-ix-TZB"/>
+                            <constraint firstItem="bWH-9y-0Fm" firstAttribute="top" secondItem="pdI-IH-uuQ" secondAttribute="bottom" constant="22.670000000000002" id="8b0-G8-iGE"/>
+                            <constraint firstItem="U8H-VP-fYm" firstAttribute="top" secondItem="n81-kg-ULN" secondAttribute="top" constant="57" id="GpP-ix-TZB"/>
+                            <constraint firstItem="JrG-N3-H0c" firstAttribute="leading" secondItem="n81-kg-ULN" secondAttribute="leading" constant="49" id="N3r-yA-1Tk"/>
+                            <constraint firstItem="pdI-IH-uuQ" firstAttribute="leading" secondItem="n81-kg-ULN" secondAttribute="leading" constant="49" id="NZn-ws-5re"/>
                             <constraint firstItem="lbC-lH-Vsn" firstAttribute="top" secondItem="n81-kg-ULN" secondAttribute="top" constant="48" id="S4m-ei-O9c"/>
                             <constraint firstItem="lbC-lH-Vsn" firstAttribute="leading" secondItem="n81-kg-ULN" secondAttribute="leading" constant="30" id="gVc-sA-dbP"/>
-                            <constraint firstItem="U8H-VP-fYm" firstAttribute="leading" secondItem="lbC-lH-Vsn" secondAttribute="trailing" constant="8" id="l42-4d-fqX"/>
+                            <constraint firstItem="U8H-VP-fYm" firstAttribute="leading" secondItem="lbC-lH-Vsn" secondAttribute="trailing" constant="20" id="l42-4d-fqX"/>
+                            <constraint firstItem="pdI-IH-uuQ" firstAttribute="top" secondItem="JrG-N3-H0c" secondAttribute="bottom" constant="18.670000000000002" id="noH-bK-ETu"/>
+                            <constraint firstItem="bWH-9y-0Fm" firstAttribute="leading" secondItem="n81-kg-ULN" secondAttribute="leading" constant="49" id="xDS-3Q-chJ"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="n81-kg-ULN"/>
                     </view>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics"/>
                     <connections>
+                        <outlet property="className" destination="JrG-N3-H0c" id="fAa-60-BE5"/>
                         <outlet property="dImage" destination="lbC-lH-Vsn" id="lkP-lF-Dw7"/>
                         <outlet property="name" destination="x32-gP-s46" id="t5o-fS-bnp"/>
+                        <outlet property="timeLabel" destination="pdI-IH-uuQ" id="avV-6a-cjS"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="idg-vP-Xl9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
