@@ -9,11 +9,19 @@
 import UIKit
 
 class DetailVC: UIViewController {
-
+    
+    var detailedJson: String?
+    @IBOutlet weak var dImage: UIImageView!
+    @IBOutlet weak var name: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        print(detailedJson ?? "NIL")
+        
+    }
+    
+    func parseString(){
+        
     }
     
     @IBAction func chatWithTutor() {
@@ -21,10 +29,15 @@ class DetailVC: UIViewController {
         let vs = stotyboard.instantiateViewController(identifier: "ChatToSomeoneVC")
         let chatWithSomeoneVC = vs as! ChatToSomeoneViewController
         chatWithSomeoneVC.modalPresentationStyle = .fullScreen
+        chatWithSomeoneVC.toId = "lalala"
         self.present(chatWithSomeoneVC, animated: true, completion: nil)
     }
     
-    @IBAction func chatViewinit(_ sender: Any) {
-        
+    @IBAction func backToPost(_ sender: Any) {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let vs = storyboard.instantiateViewController(identifier: "MenuInitView")
+        let navControllerVC = vs as! UITabBarController
+        navControllerVC.modalPresentationStyle = .fullScreen
+        self.present(navControllerVC, animated: true, completion: nil)
     }
 }

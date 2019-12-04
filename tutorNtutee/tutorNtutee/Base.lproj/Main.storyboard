@@ -251,35 +251,37 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="23" translatesAutoresizingMaskIntoConstraints="NO" id="U8H-VP-fYm">
-                                <rect key="frame" x="190" y="144" width="159" height="131.33333333333337"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="14" translatesAutoresizingMaskIntoConstraints="NO" id="U8H-VP-fYm">
+                                <rect key="frame" x="190" y="144" width="100.33333333333331" height="123.33333333333331"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TutorName" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x32-gP-s46">
-                                        <rect key="frame" x="0.0" y="0.0" width="159" height="25.333333333333332"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="100.33333333333333" height="25.333333333333332"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="21"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U01-gk-ToK">
-                                        <rect key="frame" x="0.0" y="48.333333333333343" width="159" height="30"/>
-                                        <state key="normal" title="Chat With Tutor"/>
+                                        <rect key="frame" x="0.0" y="39.333333333333343" width="100.33333333333333" height="35"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                        <state key="normal" title="Chat ➤"/>
                                         <connections>
-                                            <action selector="chatViewinit:" destination="jSL-iE-sW4" eventType="touchUpInside" id="Pix-TE-Xj8"/>
                                             <action selector="chatWithTutor" destination="jSL-iE-sW4" eventType="touchUpInside" id="koQ-4n-A2V"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CQD-Gw-vga">
-                                        <rect key="frame" x="0.0" y="101.33333333333334" width="159" height="30"/>
-                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                        <state key="normal" title="Confirm Appointment">
-                                            <color key="titleColor" red="0.0" green="0.041787753769999998" blue="0.46591645079999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        </state>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Tn-B8-FnW">
+                                        <rect key="frame" x="0.0" y="88.333333333333343" width="100.33333333333333" height="35"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                        <state key="normal" title="Done"/>
                                         <connections>
-                                            <action selector="chatViewinit:" destination="jSL-iE-sW4" eventType="touchUpInside" id="4uG-B4-KKa"/>
+                                            <action selector="backToPost:" destination="jSL-iE-sW4" eventType="touchUpInside" id="aGT-na-dmV"/>
                                         </connections>
                                     </button>
                                 </subviews>
                             </stackView>
+                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="RcW-oK-CfJ">
+                                <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            </navigationBar>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
@@ -292,10 +294,14 @@
                         <viewLayoutGuide key="safeArea" id="n81-kg-ULN"/>
                     </view>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics"/>
+                    <connections>
+                        <outlet property="dImage" destination="lbC-lH-Vsn" id="lkP-lF-Dw7"/>
+                        <outlet property="name" destination="x32-gP-s46" id="t5o-fS-bnp"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="idg-vP-Xl9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="8461" y="371"/>
+            <point key="canvasLocation" x="8460.8695652173919" y="370.98214285714283"/>
         </scene>
         <!--Chat To Someone View Controller-->
         <scene sceneID="qz4-ht-leF">

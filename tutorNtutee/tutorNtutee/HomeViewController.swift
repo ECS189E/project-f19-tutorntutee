@@ -9,9 +9,8 @@
 import UIKit
 import FirebaseAuth
 import FirebaseDatabase
+import FirebaseStorage
 class HomeViewController: UIViewController,UITableViewDataSource, UITableViewDelegate  {
-    
-    
     @IBOutlet weak var tableView: UITableView!
     var ref:DatabaseReference!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
@@ -72,23 +71,36 @@ class HomeViewController: UIViewController,UITableViewDataSource, UITableViewDel
 //        }
         
         let fullName : String = self.postArray[indexPath.row+1]
-        print(fullName)
+//        print(fullName)
         let fullNameArr : [String] = fullName.components(separatedBy: " ")
-        let className : String = fullNameArr[0]
-        let date : String = fullNameArr[1]
-        let timeS : String = fullNameArr[2]
-        let timeE : String = fullNameArr[3]
-        let cost : String = fullNameArr[4]
+        let posterUid :String = fullNameArr[0]
+        let className : String = fullNameArr[1]
+        let date : String = fullNameArr[2]
+        let timeS : String = fullNameArr[3]
+        let timeE : String = fullNameArr[4]
+        let cost : String = fullNameArr[5]
+//        print(posterUid)
+        let imageName = "\(posterUid).png"
+        let imageRef = Storage.storage().reference().child(imageName)
+        imageRef.getData(maxSize: 20*2048*2048){ response, error in
+            if let err = error {
+                   print("\(err)")
+                   return
+            }
+            if let data = response {
+                print("Sucessfully download image.")
+                cell.myimage.image = UIImage(data: data)
+            }else{
+                cell.myimage.image = UIImage(named: "default.png")!
+            }
+        }
         cell.courseName.text = className
         cell.avaliable.text = "\(date) \(timeS) to \(timeE)"
-                    
         cell.textLabel?.text = "\(indexPath.row)"
         cell.backgroundColor = UIColor.white
         cell.layer.borderColor = UIColor.black.cgColor
         cell.layer.borderWidth = 1
         cell.layer.cornerRadius = 30
-        
-
         return cell
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -96,18 +108,8 @@ class HomeViewController: UIViewController,UITableViewDataSource, UITableViewDel
         let vc = storyboard.instantiateViewController(identifier: "DetailVC")
         let dVC = vc as! DetailVC
         dVC.modalPresentationStyle = .fullScreen
-        //self.tabBarController?.pushViewController(dVC, animated: true)
+        dVC.detailedJson = self.postArray[indexPath.row+1]
+        self.present(dVC,animated: true,completion: nil)
     }
-    
-    
-    /*
-     // MARK: - Navigation
-     
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     // Get the new view controller using segue.destination.
-     // Pass the selected object to the new view controller.
-     }
-     */
-    
 }
+
