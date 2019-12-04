@@ -647,8 +647,8 @@
                                                         <constraint firstAttribute="width" constant="398" id="qO0-ks-suU"/>
                                                     </constraints>
                                                 </imageView>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Xdt-cO-h2F">
-                                                    <rect key="frame" x="8" y="11" width="102" height="94"/>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Xdt-cO-h2F">
+                                                    <rect key="frame" x="4" y="11" width="102" height="94"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="94" id="1Zw-tP-6en"/>
                                                         <constraint firstAttribute="width" constant="102" id="bO1-6j-6yR"/>
@@ -666,23 +666,40 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="💰" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="djQ-7c-wNC">
+                                                    <rect key="frame" x="18" y="124" width="23" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Money" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d2Q-dN-Esg">
+                                                    <rect key="frame" x="45" y="124" width="52" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="bOG-Pu-oXj" firstAttribute="leading" secondItem="Xdt-cO-h2F" secondAttribute="trailing" constant="20" id="0Qj-dL-eH4"/>
                                                 <constraint firstItem="7Gw-8v-l4y" firstAttribute="leading" secondItem="Xdt-cO-h2F" secondAttribute="trailing" constant="20" id="67J-D5-FDm"/>
                                                 <constraint firstAttribute="bottomMargin" secondItem="Ihr-cC-CzA" secondAttribute="bottom" constant="-11" id="701-oF-7Yr"/>
+                                                <constraint firstItem="d2Q-dN-Esg" firstAttribute="leading" secondItem="djQ-7c-wNC" secondAttribute="trailing" constant="4" id="7Z6-4l-6zk"/>
                                                 <constraint firstItem="Xdt-cO-h2F" firstAttribute="top" secondItem="HQi-dS-O06" secondAttribute="topMargin" id="C5G-dG-fZL"/>
                                                 <constraint firstItem="7Gw-8v-l4y" firstAttribute="top" secondItem="bOG-Pu-oXj" secondAttribute="bottom" constant="15" id="Fjz-a0-ejN"/>
+                                                <constraint firstItem="djQ-7c-wNC" firstAttribute="leading" secondItem="HQi-dS-O06" secondAttribute="leadingMargin" constant="2" id="IKg-Bf-GSh"/>
                                                 <constraint firstItem="Ihr-cC-CzA" firstAttribute="top" secondItem="HQi-dS-O06" secondAttribute="topMargin" constant="-7" id="nRU-ke-Zk4"/>
                                                 <constraint firstItem="Xdt-cO-h2F" firstAttribute="top" secondItem="bOG-Pu-oXj" secondAttribute="top" id="oFd-d0-Pjp"/>
                                                 <constraint firstItem="Ihr-cC-CzA" firstAttribute="leading" secondItem="HQi-dS-O06" secondAttribute="leadingMargin" constant="-16" id="qMt-mC-2o2"/>
                                                 <constraint firstItem="Xdt-cO-h2F" firstAttribute="leading" secondItem="HQi-dS-O06" secondAttribute="leadingMargin" constant="-12" id="sW1-eL-M1Z"/>
+                                                <constraint firstItem="d2Q-dN-Esg" firstAttribute="top" secondItem="Xdt-cO-h2F" secondAttribute="bottom" constant="19" id="uMN-AN-hzb"/>
+                                                <constraint firstItem="djQ-7c-wNC" firstAttribute="top" secondItem="Xdt-cO-h2F" secondAttribute="bottom" constant="19" id="yOE-tw-zyR"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="avaliable" destination="7Gw-8v-l4y" id="iEO-rm-DT4"/>
                                             <outlet property="backgroundImg" destination="Ihr-cC-CzA" id="rdo-Xa-z1N"/>
                                             <outlet property="courseName" destination="bOG-Pu-oXj" id="yjm-63-QEy"/>
+                                            <outlet property="money" destination="d2Q-dN-Esg" id="0E0-u3-Oox"/>
                                             <outlet property="myimage" destination="Xdt-cO-h2F" id="kSd-kr-Rtc"/>
                                         </connections>
                                     </tableViewCell>
