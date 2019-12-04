@@ -85,8 +85,8 @@ class DateVC: UIViewController{
                 let endTime = eTime.replacingOccurrences(of: " ", with: "")
                 let myDate = d.replacingOccurrences(of: " ", with: "")
                 let myPrice = p.replacingOccurrences(of: " ", with: "")
-                
-                let newSchedule = "\(selectedClass) \(myDate) \(startTime) \(endTime) $\(myPrice)"
+                let userID = Auth.auth().currentUser?.uid
+                let newSchedule = "\(userID)\(selectedClass) \(myDate) \(startTime) \(endTime) $\(myPrice)"
                 
                 print(newSchedule)
                 

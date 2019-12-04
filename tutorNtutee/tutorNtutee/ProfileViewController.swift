@@ -10,27 +10,28 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
     var ref: DatabaseReference!
     let image = UIImagePickerController()
     var userID : String?
+    @IBOutlet weak var deltaInfoBtn: UIButton!
+    var updateRef: DatabaseReference!
     override func viewDidLoad() {
         super.viewDidLoad()
         ref = Database.database().reference()
-        //Bordersetup()
         updateUserInfo()
         // Do any additional setup after loading the view.
     }
+    
+    
     func updateUserInfo(){
         self.userID = Auth.auth().currentUser?.uid
-        ref.child("users").child(userID!).observeSingleEvent(of: .value, with: { (snapshot) in
+        ref.child("user").child(userID ?? "error with userID").observeSingleEvent(of: .value, with: { (snapshot) in
             // Get user value
             let value = snapshot.value as? NSDictionary
-            let usernamee = value?["username"] as? String ?? ""
-            let email = value?["email"] as? String ?? ""
+            let usernamee = value?["username"] as? String ?? "lala?"
+            let email = value?["email"] as? String ?? "lala?"
             let imageName = value?["image"] as? String ?? ""
             self.userName.text = usernamee
             self.emailLabel.text = email
             self.getUserImageFromFB(imageName: imageName)
-            //            print(usernamee)
-            //            print(email)
-            //            print(imageName)
+            print("Image name!!! ",imageName)
         }) { (error) in
             print(error.localizedDescription)
         }
@@ -60,64 +61,69 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
         }else if let original = info[.originalImage] as? UIImage{
             selected = original
         }
-        
         self.profileImage.image = selected!
-        uploadUserImageToFB()
         picker.dismiss(animated:true, completion:nil)
+        uploadUserImageToFB()
     }
     
     func getUserImageFromFB(imageName: String){
+        self.profileImage.image = UIImage(named: "default.png")!
         let imageRef = Storage.storage().reference().child(imageName)
-        imageRef.getData(maxSize: 1*1024*1024){ data, error in
-            if error != nil{
-                print("error: \(error.debugDescription)")
-                return
+        imageRef.getData(maxSize: 20*2048*2048){ response, error in
+            if let err = error {
+                   print("\(err)")
+                   return
             }
-            if let data = data {
+            if let data = response {
+                print("Sucessfully download image.")
                 self.profileImage.image = UIImage(data: data)
             }else{
                 self.profileImage.image = UIImage(named: "default.png")!
             }
         }
-        
-        
     }
-    func uploadUserImageToFB(){
+//    func uploadUserImageToFB(){
+//        if let img = self.profileImage.image {
+//            let imageName = "\(self.userID).png"
+//            let imageRef = Storage.storage().reference().child(imageName)
+//            if let uploadData = img.pngData(){
+//                imageRef.putData(uploadData, metadata:nil) { metadata, error in
+//                    if error != nil{
+//                        print("error: \(error.debugDescription)")
+//                        return
+//                    }
+//                    print("Sucessful!")
+//                    if let user=Auth.auth().currentUser { self.ref.child("user").child(user.uid).child("image").setValue(imageName)
+//                    }
+//                }
+//            }
+//        }
+//    }
+    func uploadUserImageToFB() {
         if let img = self.profileImage.image {
-            let imageName = "\(userID).png"
+            let imageName = "\(self.userID ?? "nilllll").png"
             let imageRef = Storage.storage().reference().child(imageName)
-            if let uploadData = img.pngData(){
-                imageRef.putData(uploadData, metadata:nil) { metadata, error in
-                    if error != nil{
-                        print("error: \(error.debugDescription)")
-                        return
+                if let uploadData = img.pngData() {
+                    imageRef.putData(uploadData, metadata: nil) { metadata, error in
+                        if error != nil {
+                            print("Error: \(error.debugDescription)")
+                            return
+                        } else {
+                            print("Sucessfully upload image.")
+                            if let user=Auth.auth().currentUser { self.ref.child("user").child(user.uid).child("image").setValue(imageName)}
+                        }
                     }
-                    print("Sucessful!")
-                    if let user=Auth.auth().currentUser { self.ref.child("user").child(user.uid).child("image").setValue(imageName)}
                 }
-            }
         }
     }
     
     
-    //    func Bordersetup(){
-    //           myPostBtn.layer.masksToBounds = true
-    //           myPostBtn.layer.cornerRadius = 2.0
-    //           myPostBtn.layer.borderColor = UIColor.blue.cgColor
-    //           myPostBtn.layer.borderWidth = 0.5
-    //           myPostBtn.layer.masksToBounds = true
-    //           changepswBtn.layer.cornerRadius = 2.0
-    //           changepswBtn.layer.borderColor = UIColor.blue.cgColor
-    //           changepswBtn.layer.borderWidth = 0.5
-    //           changepswBtn.layer.masksToBounds = true
-    //           bookmarkbtn.layer.cornerRadius = 2.0
-    //           bookmarkbtn.layer.borderColor = UIColor.blue.cgColor
-    //           bookmarkbtn.layer.borderWidth = 0.5
-    //           changepswBtn.layer.masksToBounds = true
-    //           setting.layer.cornerRadius = 2.0
-    //           setting.layer.borderColor = UIColor.blue.cgColor
-    //           setting.layer.borderWidth = 0.5
-    //          }
+    func signinBordersetup(){
+        deltaInfoBtn.layer.masksToBounds = true
+        deltaInfoBtn.layer.cornerRadius = 2.0
+        deltaInfoBtn.layer.borderColor = UIColor.black.cgColor
+        deltaInfoBtn.layer.borderWidth = 0.5
+    }
     
     /*
      // MARK: - Navigation
