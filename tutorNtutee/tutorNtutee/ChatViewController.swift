@@ -23,8 +23,8 @@ class ChatViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
     
         getMessageUser()
         
-        messageUserArray.sort(by: {$0.timestamp?.compare($1.timestamp ?? 0) == .orderedDescending}) //most recent contacts should be show on the top
-        
+        messageUserArray.sort(by: {$0.timestamp?.compare($1.timestamp ?? 0) == .orderedDescending})
+    
         self.tableView.delegate=self
         self.tableView.dataSource=self
     }

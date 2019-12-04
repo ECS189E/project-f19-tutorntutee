@@ -378,7 +378,7 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="04F-ef-kWB">
                                 <rect key="frame" x="91" y="69" width="95" height="38"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="23"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -560,19 +560,19 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="LastMessage" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FWS-Qi-GVc">
-                                                    <rect key="frame" x="155" y="86" width="102" height="18"/>
+                                                    <rect key="frame" x="152" y="67" width="102" height="18"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                     <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
                                             <constraints>
+                                                <constraint firstItem="FWS-Qi-GVc" firstAttribute="top" secondItem="EsF-Ij-K5b" secondAttribute="bottom" constant="9" id="CeX-so-dcx"/>
                                                 <constraint firstItem="zcd-55-MJh" firstAttribute="top" secondItem="1al-pd-gFq" secondAttribute="topMargin" constant="13" id="MfY-PE-MmV"/>
+                                                <constraint firstItem="FWS-Qi-GVc" firstAttribute="leading" secondItem="zcd-55-MJh" secondAttribute="trailing" constant="22" id="TZJ-Fy-ZQd"/>
                                                 <constraint firstItem="zcd-55-MJh" firstAttribute="leading" secondItem="1al-pd-gFq" secondAttribute="leadingMargin" id="aKo-rz-06w"/>
-                                                <constraint firstItem="EsF-Ij-K5b" firstAttribute="leading" secondItem="zcd-55-MJh" secondAttribute="trailing" constant="36" id="icB-rc-lv5"/>
-                                                <constraint firstItem="FWS-Qi-GVc" firstAttribute="top" secondItem="EsF-Ij-K5b" secondAttribute="bottom" constant="28" id="kwf-9e-oXI"/>
-                                                <constraint firstItem="FWS-Qi-GVc" firstAttribute="leading" secondItem="zcd-55-MJh" secondAttribute="trailing" constant="25" id="lMS-Sa-aFa"/>
-                                                <constraint firstItem="EsF-Ij-K5b" firstAttribute="top" secondItem="1al-pd-gFq" secondAttribute="topMargin" constant="24" id="skW-2f-8EP"/>
+                                                <constraint firstItem="EsF-Ij-K5b" firstAttribute="top" secondItem="1al-pd-gFq" secondAttribute="topMargin" constant="24" id="bb5-CH-2u1"/>
+                                                <constraint firstItem="EsF-Ij-K5b" firstAttribute="leading" secondItem="zcd-55-MJh" secondAttribute="trailing" constant="36" id="hNG-8h-Ft9"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
