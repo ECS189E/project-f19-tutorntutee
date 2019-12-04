@@ -22,8 +22,6 @@ class ChatViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
         }
     
         getMessageUser()
-        
-        messageUserArray.sort(by: {$0.timestamp?.compare($1.timestamp ?? 0) == .orderedDescending})
     
         self.tableView.delegate=self
         self.tableView.dataSource=self
@@ -37,6 +35,7 @@ class ChatViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
                     let messageUser = MessageUser(dictionary: dictionary)
                     messageUser.friendId = snapshot.key
                     self?.messageUserArray.append(messageUser)
+                    self?.messageUserArray.sort(by: {$0.timestamp?.compare($1.timestamp ?? 0) == .orderedDescending})
                     self?.tableView.reloadData()
                 }
             })
