@@ -14,7 +14,7 @@
 		7F6C63EC238B83D600D01DE0 /* SendTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F6C63EB238B83D600D01DE0 /* SendTableViewCell.swift */; };
 		7F6C63F0238B8EB800D01DE0 /* ReceiveTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F6C63EF238B8EB800D01DE0 /* ReceiveTableViewCell.swift */; };
 		7F6C63F2238BA08B00D01DE0 /* ChatBoxTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F6C63F1238BA08B00D01DE0 /* ChatBoxTableViewCell.swift */; };
-		7FB5092C23871654002FA08F /* ChatToSomeoneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FB5092B23871654002FA08F /* ChatToSomeoneViewController.swift */; };
+		7FA19DEA239787D1003FC2E1 /* ChatToSomeoneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FB5092B23871654002FA08F /* ChatToSomeoneViewController.swift */; };
 		C57B0321237BE97300183531 /* TutorMarketViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C57B0320237BE97300183531 /* TutorMarketViewController.swift */; };
 		C58B741C23849BF1005B5DC3 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C58B741B23849BF1005B5DC3 /* ProfileViewController.swift */; };
 		C58B741E23849C20005B5DC3 /* NewPostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C58B741D23849C20005B5DC3 /* NewPostViewController.swift */; };
@@ -269,7 +269,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7FB5092C23871654002FA08F /* ChatToSomeoneViewController.swift in Sources */,
 				C57B0321237BE97300183531 /* TutorMarketViewController.swift in Sources */,
 				D2DADE8D237B8C6800180A51 /* DateVC.swift in Sources */,
 				C59AC2C3237CC76A00CFCC09 /* SessionPostCell.swift in Sources */,
@@ -286,6 +285,7 @@
 				7F6C63F0238B8EB800D01DE0 /* ReceiveTableViewCell.swift in Sources */,
 				7F6C63E62388CC2200D01DE0 /* Message.swift in Sources */,
 				C58B742023849C67005B5DC3 /* HomeViewController.swift in Sources */,
+				7FA19DEA239787D1003FC2E1 /* ChatToSomeoneViewController.swift in Sources */,
 				7F6C63F2238BA08B00D01DE0 /* ChatBoxTableViewCell.swift in Sources */,
 				D28DBAC923789D1000A7627E /* SceneDelegate.swift in Sources */,
 				7F6C63EC238B83D600D01DE0 /* SendTableViewCell.swift in Sources */,

@@ -16,7 +16,7 @@ class ChatToSomeoneViewController: UIViewController,UITableViewDelegate,UITableV
     @IBOutlet weak var nameField: UILabel!
     
     var fromId:String? // = "0000"
-    var toId:String="V45TFWp0ahU0OfX8Kp5FPwxpvQA3"
+    var toId:String="qd1pYL2agYQB7b2TotHc9MbgtXC3"
     var messageArray:[Message]=[]
     var signal = 0
     
@@ -117,5 +117,9 @@ class ChatToSomeoneViewController: UIViewController,UITableViewDelegate,UITableV
         }
         receiveCell.messageLabel.text=message.text
         return receiveCell
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 100
     }
 }
