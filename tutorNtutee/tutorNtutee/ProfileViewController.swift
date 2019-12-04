@@ -10,6 +10,7 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
     var ref: DatabaseReference!
     let image = UIImagePickerController()
     var userID : String?
+    @IBOutlet weak var deltaInfoBtn: UIButton!
     var updateRef: DatabaseReference!
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -17,6 +18,8 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
         updateUserInfo()
         // Do any additional setup after loading the view.
     }
+    
+    
     func updateUserInfo(){
         self.userID = Auth.auth().currentUser?.uid
         ref.child("user").child(userID ?? "error with userID").observeSingleEvent(of: .value, with: { (snapshot) in
@@ -115,24 +118,12 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
     }
     
     
-    //    func Bordersetup(){
-    //           myPostBtn.layer.masksToBounds = true
-    //           myPostBtn.layer.cornerRadius = 2.0
-    //           myPostBtn.layer.borderColor = UIColor.blue.cgColor
-    //           myPostBtn.layer.borderWidth = 0.5
-    //           myPostBtn.layer.masksToBounds = true
-    //           changepswBtn.layer.cornerRadius = 2.0
-    //           changepswBtn.layer.borderColor = UIColor.blue.cgColor
-    //           changepswBtn.layer.borderWidth = 0.5
-    //           changepswBtn.layer.masksToBounds = true
-    //           bookmarkbtn.layer.cornerRadius = 2.0
-    //           bookmarkbtn.layer.borderColor = UIColor.blue.cgColor
-    //           bookmarkbtn.layer.borderWidth = 0.5
-    //           changepswBtn.layer.masksToBounds = true
-    //           setting.layer.cornerRadius = 2.0
-    //           setting.layer.borderColor = UIColor.blue.cgColor
-    //           setting.layer.borderWidth = 0.5
-    //          }
+    func signinBordersetup(){
+        deltaInfoBtn.layer.masksToBounds = true
+        deltaInfoBtn.layer.cornerRadius = 2.0
+        deltaInfoBtn.layer.borderColor = UIColor.black.cgColor
+        deltaInfoBtn.layer.borderWidth = 0.5
+    }
     
     /*
      // MARK: - Navigation

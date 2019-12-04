@@ -21,7 +21,7 @@ class SessionPostCell: UITableViewCell {
         super.awakeFromNib()
         backgroundImg.layer.masksToBounds = true
         backgroundImg.layer.cornerRadius = 10.0
-        // Initialization code
+        
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
