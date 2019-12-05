@@ -17,6 +17,9 @@ class ChatViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.tabBarController?.tabBar.isTranslucent = false
+        
         if let user = Auth.auth().currentUser{
             self.userId = user.uid
         }

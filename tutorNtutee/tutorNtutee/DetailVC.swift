@@ -71,7 +71,8 @@ class DetailVC: UIViewController {
         let vs = stotyboard.instantiateViewController(identifier: "ChatToSomeoneVC")
         let chatWithSomeoneVC = vs as! ChatToSomeoneViewController
         chatWithSomeoneVC.modalPresentationStyle = .fullScreen
-        chatWithSomeoneVC.toId = "lalala"
+        chatWithSomeoneVC.toId = self.tutorUid ?? "error"
+        chatWithSomeoneVC.post = self.detailedJson ?? "error"
         self.present(chatWithSomeoneVC, animated: true, completion: nil)
     }
     

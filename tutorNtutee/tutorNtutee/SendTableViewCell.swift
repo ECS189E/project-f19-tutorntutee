@@ -14,6 +14,6 @@ class SendTableViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        //messageLabel.numberOfLines = 0
     }
 }
