@@ -17,6 +17,7 @@ class ViewController: UIViewController, UITextFieldDelegate{
 //    @IBOutlet weak var signUpBtn: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
+        passwordField.isSecureTextEntry = true
         signinBordersetup()
         emailField.delegate = self
         passwordField.delegate = self

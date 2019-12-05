@@ -40,6 +40,8 @@ class ChatViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
                     self?.messageUserArray.append(messageUser)
                     self?.messageUserArray.sort(by: {$0.timestamp?.compare($1.timestamp ?? 0) == .orderedDescending})
                     self?.tableView.reloadData()
+                    print("............")
+                    print(messageUser.friendId)
                 }
             })
         }
@@ -61,7 +63,8 @@ class ChatViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
             cell.nameLabel.text = value?["username"] as? String
         })
         
-        let imageName = "\(messageUser.friendId).png"
+        let imageName = (messageUser.friendId ?? "error")+".png"
+        //let imageName = "\(messageUser.friendId).png"
         cell.icon.image = UIImage(named: "default.png")
         print(messageUser.friendId)
         let imageRef = Storage.storage().reference().child(imageName)

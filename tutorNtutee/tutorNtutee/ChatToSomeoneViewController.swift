@@ -140,7 +140,7 @@ class ChatToSomeoneViewController: UIViewController,UITableViewDelegate,UITableV
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let message = messageArray[indexPath.row]
-        if(message.fromId == fromId){
+        if(message.fromId == toId){
             guard let sendCell = tableView.dequeueReusableCell(withIdentifier: "sendCell") as? SendTableViewCell else{
                 return UITableViewCell()
             }
