@@ -30,16 +30,15 @@ class DetailVC: UIViewController, MFMailComposeViewControllerDelegate {
     }
     
     @IBAction func emailBtn(_ sender: Any) {
-        
-//        var emailTitle = "Tutoring Request"
-//        var messageBody = "Hi, I saw your tutoring post I would like to talk to you about ..."
-//        var toRecipents = [tutorEmail]
-//        var mc: MFMailComposeViewController = MFMailComposeViewController()
-//        mc.mailComposeDelegate = self
-//        mc.setSubject(emailTitle)
-//        mc.setMessageBody(messageBody, isHTML: false)
-//        mc.setToRecipients(toRecipents as? [String])
-//        self.present(mc, animated: true, completion: nil)
+        var emailTitle = "Tutoring Request"
+        var messageBody = "Hi, I saw your tutoring post I would like to talk to you about ..."
+        var toRecipents = [tutorEmail]
+        var mc: MFMailComposeViewController = MFMailComposeViewController()
+        mc.mailComposeDelegate = self
+        mc.setSubject(emailTitle)
+        mc.setMessageBody(messageBody, isHTML: false)
+        mc.setToRecipients(toRecipents as? [String])
+        self.present(mc, animated: true, completion: nil)
     }
     
     func parseString(){
