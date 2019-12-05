@@ -60,6 +60,25 @@ class ChatViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
             let value = snapshot.value as? NSDictionary
             cell.nameLabel.text = value?["username"] as? String
         })
+        
+        let imageName = "\(userId).png"
+        cell.icon.image = UIImage(named: "default.png")
+        let imageRef = Storage.storage().reference().child(imageName)
+        imageRef.getData(maxSize: 20*1024*1024){ response, error in
+            if let err = error{
+                return
+            }
+            if let data = response {
+                print(".............")
+                print("success")
+                cell.icon.image = UIImage(data: data)
+            }else{
+                print(".............")
+                print("fail")
+                //cell.icon.image = UIImage(named: "default.png")
+            }
+        }
+        
         return cell
     }
     

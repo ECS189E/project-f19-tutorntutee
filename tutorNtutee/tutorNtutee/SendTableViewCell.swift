@@ -14,6 +14,7 @@ class SendTableViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        //messageLabel.numberOfLines = 0
+        messageLabel.layer.cornerRadius=30
+        self.layer.cornerRadius=30
     }
 }

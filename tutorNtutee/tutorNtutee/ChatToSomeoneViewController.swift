@@ -37,6 +37,9 @@ class ChatToSomeoneViewController: UIViewController,UITableViewDelegate,UITableV
         })
         
         observeMessage()
+        
+        tableView.rowHeight = UITableView.automaticDimension
+        tableView.estimatedRowHeight = 50
     
         self.tableView.delegate=self
         self.tableView.dataSource=self
@@ -135,24 +138,43 @@ class ChatToSomeoneViewController: UIViewController,UITableViewDelegate,UITableV
             guard let sendCell = tableView.dequeueReusableCell(withIdentifier: "sendCell") as? SendTableViewCell else{
                 return UITableViewCell()
             }
-            sendCell.messageLabel.text=message.text
-            sendCell.messageLabel.numberOfLines=0
-            sendCell.messageLabel.sizeToFit()
-            sendCell.messageLabel.widthAnchor.constraint(lessThanOrEqualToConstant: 180).isActive = true
+            if let text = message.text{
+                sendCell.messageLabel.text=text+"  "
+                sendCell.messageLabel.numberOfLines=0
+                sendCell.messageLabel.sizeToFit()
+                sendCell.messageLabel.clipsToBounds=true
+                sendCell.messageLabel.layer.cornerRadius=10
+                sendCell.messageLabel.widthAnchor.constraint(lessThanOrEqualToConstant: 180).isActive = true
             return sendCell
+            }
         }
         
         guard let receiveCell = tableView.dequeueReusableCell(withIdentifier: "receiveCell") as? ReceiveTableViewCell else{
             return UITableViewCell()
         }
-        receiveCell.messageLabel.text=message.text
-        receiveCell.messageLabel.numberOfLines=0
-        receiveCell.messageLabel.sizeToFit()
-        receiveCell.messageLabel.widthAnchor.constraint(lessThanOrEqualToConstant: 180).isActive = true
+        if let text = message.text{
+            receiveCell.messageLabel.text=text+"  "
+            receiveCell.messageLabel.numberOfLines=0
+            receiveCell.messageLabel.sizeToFit()
+            receiveCell.messageLabel.clipsToBounds = true
+            receiveCell.messageLabel.layer.cornerRadius=10
+            receiveCell.messageLabel.widthAnchor.constraint(lessThanOrEqualToConstant: 180).isActive = true
+        }
         return receiveCell
     }
     
+    
+    /***
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 100
+        
+        if let text = messageArray[indexPath.row].text{
+            if(text.count <= 15){
+                return 40
+            }
+            
+            return CGFloat(30*(text.count/17-1)+40)
+        }
+        return 40
     }
+    */
 }
