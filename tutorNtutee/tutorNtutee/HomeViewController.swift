@@ -24,7 +24,7 @@ class HomeViewController: UIViewController,UITableViewDataSource, UITableViewDel
         loadPosts()
         activityIndicator.hidesWhenStopped = true
         self.activityIndicator.startAnimating()
-        DispatchQueue.main.asyncAfter(deadline: .now() + 2.0){
+        DispatchQueue.main.asyncAfter(deadline: .now() + 3.0){
             self.tableView.delegate = self
             self.tableView.dataSource = self
             self.tableView.allowsSelection = true

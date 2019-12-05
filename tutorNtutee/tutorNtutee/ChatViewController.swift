@@ -7,7 +7,9 @@
 //
 
 import UIKit
-import Firebase
+import FirebaseAuth
+import FirebaseDatabase
+import FirebaseStorage
 
 class ChatViewController: UIViewController,UITableViewDelegate,UITableViewDataSource {
     
@@ -17,18 +19,16 @@ class ChatViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         self.tabBarController?.tabBar.isTranslucent = false
-        
         if let user = Auth.auth().currentUser{
             self.userId = user.uid
         }
-    
         getMessageUser()
-    
         self.tableView.delegate=self
         self.tableView.dataSource=self
+       
     }
+    
     
     func getMessageUser(){
         if let userId = self.userId{
@@ -61,8 +61,9 @@ class ChatViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
             cell.nameLabel.text = value?["username"] as? String
         })
         
-        let imageName = "\(userId).png"
+        let imageName = "\(messageUser.friendId).png"
         cell.icon.image = UIImage(named: "default.png")
+        print(messageUser.friendId)
         let imageRef = Storage.storage().reference().child(imageName)
         imageRef.getData(maxSize: 20*1024*1024){ response, error in
             if let err = error{
@@ -78,7 +79,6 @@ class ChatViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
                 //cell.icon.image = UIImage(named: "default.png")
             }
         }
-        
         return cell
     }
     

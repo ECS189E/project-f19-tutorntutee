@@ -9,7 +9,7 @@
 import UIKit
 import Firebase
 
-class ChatToSomeoneViewController: UIViewController,UITableViewDelegate,UITableViewDataSource {
+class ChatToSomeoneViewController: UIViewController,UITableViewDelegate,UITableViewDataSource,UITextFieldDelegate {
     
     @IBOutlet weak var messageTextField: UITextField!
     @IBOutlet weak var tableView: UITableView!
@@ -28,6 +28,8 @@ class ChatToSomeoneViewController: UIViewController,UITableViewDelegate,UITableV
         if let sender=Auth.auth().currentUser{
             self.fromId=sender.uid
         }
+        let tap = UITapGestureRecognizer(target: self, action: #selector(ChatToSomeoneViewController.handleTap))
+               view.addGestureRecognizer(tap)
         
         tableView.separatorStyle = .none
         
@@ -43,6 +45,10 @@ class ChatToSomeoneViewController: UIViewController,UITableViewDelegate,UITableV
     
         self.tableView.delegate=self
         self.tableView.dataSource=self
+    }
+    @objc func handleTap() {
+        messageTextField.resignFirstResponder()
+        view.endEditing(true)
     }
     
     func observeMessage(){

@@ -73,9 +73,7 @@ class SignUpVC: UIViewController,UIApplicationDelegate {
 func uploaddefaultImage(){
     //var postImageView : UIImageView
     //postImageView.image = UIImage(named: "default.png")
-    let thisImage: UIImage = UIImage(named: "default.png")!
-    
-    //if let img = postImageView.image {
+    let thisImage: UIImage = UIImage(named: "default.png") ?? UIImage()
         let imageName = "default"
         let imageRef = Storage.storage().reference().child(imageName)
         if let uploadData = thisImage.pngData(){
@@ -87,5 +85,4 @@ func uploaddefaultImage(){
                 print("Sucessful!")
             }
         }
-    //}
 }
