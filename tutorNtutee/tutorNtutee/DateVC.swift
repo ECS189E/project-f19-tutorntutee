@@ -103,6 +103,7 @@ class DateVC: UIViewController{
         let newSchedule = "\(userID ?? "V45TFWp0ahU0OfX8Kp5FPwxpvQA3") \(selectedClass) \(myDate) \(startTime) \(endTime) $\(myPrice)"
         print(newSchedule)
         addNewSchedule(newSchedule: newSchedule)
+        
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let vs = storyboard.instantiateViewController(identifier: "MenuInitView")
         let navControllerVC = vs as! UITabBarController

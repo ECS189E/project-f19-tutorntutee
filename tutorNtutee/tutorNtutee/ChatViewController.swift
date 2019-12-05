@@ -29,7 +29,6 @@ class ChatViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
        
     }
     
-    
     func getMessageUser(){
         if let userId = self.userId{
             let messageRef = Database.database().reference().child("messageUser").child(userId)

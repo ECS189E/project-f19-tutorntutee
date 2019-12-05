@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14868" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="PsU-X0-mcC">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="PsU-X0-mcC">
     <device id="retina6_5" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14824"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -279,7 +279,7 @@
                                 </items>
                             </navigationBar>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="14" translatesAutoresizingMaskIntoConstraints="NO" id="U8H-VP-fYm">
-                                <rect key="frame" x="210.00000000000003" y="122.00000000000001" width="100.33333333333334" height="131.33333333333337"/>
+                                <rect key="frame" x="210.00000000000003" y="121.99999999999999" width="100.33333333333334" height="131.66666666666663"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TutorName" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x32-gP-s46">
                                         <rect key="frame" x="0.0" y="0.0" width="100.33333333333333" height="25.333333333333332"/>
@@ -298,7 +298,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oc0-wr-nJj">
-                                        <rect key="frame" x="0.0" y="96" width="100.33333333333333" height="35.333333333333343"/>
+                                        <rect key="frame" x="0.0" y="96" width="100.33333333333333" height="35.666666666666657"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                         <state key="normal" title="Button" image="envelope.fill" catalog="system">
                                             <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="28" scale="large" weight="bold"/>
@@ -415,7 +415,7 @@
                                 </prototypes>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hPZ-3i-DlT">
-                                <rect key="frame" x="343" y="732" width="26" height="42"/>
+                                <rect key="frame" x="343" y="732" width="25.666666666666686" height="42"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="35"/>
                                 <state key="normal" image="paperplane.fill" catalog="system">
                                     <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="17" scale="large"/>
@@ -424,36 +424,36 @@
                                     <action selector="sendMessage" destination="cIf-as-1QR" eventType="touchUpInside" id="3v4-Ia-HIU"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="04F-ef-kWB">
+                                <rect key="frame" x="26" y="79" width="368" height="27.666666666666671"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="23"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OWZ-ea-Nwd">
-                                <rect key="frame" x="20" y="37" width="40" height="34"/>
+                                <rect key="frame" x="26" y="37" width="40" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <state key="normal" title="Back"/>
                                 <connections>
                                     <action selector="back" destination="cIf-as-1QR" eventType="touchUpInside" id="tc2-IX-mBy"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="04F-ef-kWB">
-                                <rect key="frame" x="20" y="69" width="374" height="27.666666666666671"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="23"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="LM1-J0-JeG" firstAttribute="trailing" secondItem="Equ-XH-NZw" secondAttribute="trailingMargin" id="1eM-CK-d3j"/>
-                            <constraint firstItem="OWZ-ea-Nwd" firstAttribute="leading" secondItem="bKT-3E-aox" secondAttribute="leading" constant="20" id="1w8-tA-itZ"/>
+                            <constraint firstItem="bKT-3E-aox" firstAttribute="trailing" secondItem="04F-ef-kWB" secondAttribute="trailing" constant="20" id="2ql-qY-ctS"/>
+                            <constraint firstItem="OWZ-ea-Nwd" firstAttribute="leading" secondItem="bKT-3E-aox" secondAttribute="leading" constant="26" id="AsV-FE-me4"/>
                             <constraint firstItem="pUd-du-nNt" firstAttribute="top" secondItem="LM1-J0-JeG" secondAttribute="bottom" constant="8" id="BK5-zA-jd1"/>
                             <constraint firstItem="hPZ-3i-DlT" firstAttribute="leading" secondItem="pUd-du-nNt" secondAttribute="trailing" constant="10" id="D42-Kf-XcD"/>
                             <constraint firstItem="pUd-du-nNt" firstAttribute="leading" secondItem="bKT-3E-aox" secondAttribute="leading" constant="26" id="D6I-Xn-7dm"/>
+                            <constraint firstItem="LM1-J0-JeG" firstAttribute="top" secondItem="04F-ef-kWB" secondAttribute="bottom" constant="8.3300000000000001" id="KUJ-lZ-1BQ"/>
                             <constraint firstItem="LM1-J0-JeG" firstAttribute="leading" secondItem="Equ-XH-NZw" secondAttribute="leadingMargin" id="KmO-pz-tfz"/>
-                            <constraint firstItem="OWZ-ea-Nwd" firstAttribute="top" secondItem="bKT-3E-aox" secondAttribute="top" constant="37" id="MoC-WS-ERV"/>
-                            <constraint firstItem="04F-ef-kWB" firstAttribute="top" secondItem="bKT-3E-aox" secondAttribute="top" constant="69" id="S9F-dW-MuH"/>
-                            <constraint firstItem="bKT-3E-aox" firstAttribute="trailing" secondItem="04F-ef-kWB" secondAttribute="trailing" constant="20" id="eX2-9l-Ant"/>
-                            <constraint firstItem="04F-ef-kWB" firstAttribute="leading" secondItem="bKT-3E-aox" secondAttribute="leading" constant="20" id="i6t-Ie-sgY"/>
+                            <constraint firstItem="04F-ef-kWB" firstAttribute="top" secondItem="OWZ-ea-Nwd" secondAttribute="bottom" constant="8" id="S8W-cr-b3P"/>
+                            <constraint firstItem="04F-ef-kWB" firstAttribute="top" secondItem="OWZ-ea-Nwd" secondAttribute="bottom" constant="8" id="eck-RR-1G7"/>
+                            <constraint firstItem="04F-ef-kWB" firstAttribute="leading" secondItem="bKT-3E-aox" secondAttribute="leading" constant="26" id="i12-ET-Byp"/>
                             <constraint firstItem="LM1-J0-JeG" firstAttribute="top" secondItem="Equ-XH-NZw" secondAttribute="top" constant="115" id="jSQ-6d-vck"/>
                             <constraint firstItem="hPZ-3i-DlT" firstAttribute="top" secondItem="LM1-J0-JeG" secondAttribute="bottom" constant="9" id="rWL-OB-SAD"/>
-                            <constraint firstItem="LM1-J0-JeG" firstAttribute="top" secondItem="04F-ef-kWB" secondAttribute="bottom" constant="18.329999999999998" id="wPz-q4-80F"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="bKT-3E-aox"/>
                     </view>
