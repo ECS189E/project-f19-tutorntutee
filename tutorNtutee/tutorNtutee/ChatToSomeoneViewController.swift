@@ -114,7 +114,7 @@ class ChatToSomeoneViewController: UIViewController,UITableViewDelegate,UITableV
             let navControllerVC = vc as! UITabBarController
             navControllerVC.modalPresentationStyle = .fullScreen
             self.present(navControllerVC,animated: true, completion: nil)
-            navControllerVC.selectedIndex=2
+            navControllerVC.selectedIndex=1
         }else{
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
             let vc = storyboard.instantiateViewController(identifier: "DetailVC")
