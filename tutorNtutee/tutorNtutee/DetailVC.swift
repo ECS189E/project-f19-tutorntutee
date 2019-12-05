@@ -90,7 +90,8 @@ class DetailVC: UIViewController, MFMailComposeViewControllerDelegate {
         let vs = stotyboard.instantiateViewController(identifier: "ChatToSomeoneVC")
         let chatWithSomeoneVC = vs as! ChatToSomeoneViewController
         chatWithSomeoneVC.modalPresentationStyle = .fullScreen
-        chatWithSomeoneVC.toId =  self.tutorUid ?? "error"
+        chatWithSomeoneVC.toId = self.tutorUid ?? "error"
+        chatWithSomeoneVC.post = self.detailedJson ?? "error"
         self.present(chatWithSomeoneVC, animated: true, completion: nil)
     }
     

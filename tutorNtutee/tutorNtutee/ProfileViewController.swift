@@ -57,13 +57,10 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
         }
         // update databse:
         dataUpdated(newUsername: trimmedNewUsername, newPassword: noSpaceNewPassword)
-        
-        
         updatePasswordTF.text = ""
         updateUsernameTF.text = ""
         updateView.isHidden = true
         self.view.endEditing(true)
-
     }
     func dataUpdated(newUsername:String, newPassword: String) {
         self.userID = Auth.auth().currentUser?.uid
@@ -74,7 +71,9 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
 
             Auth.auth().currentUser?.updatePassword(to: newPassword) { (error) in
                 print("ERROR MESSAGE:", error)
+                
             }
+
             self.ref.updateChildValues(["username" : newUsername])
         } else if newPassword != "" && newUsername == "" {
             Auth.auth().currentUser?.updatePassword(to: newPassword) { (error) in

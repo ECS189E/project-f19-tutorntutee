@@ -16,8 +16,9 @@ class ChatToSomeoneViewController: UIViewController,UITableViewDelegate,UITableV
     @IBOutlet weak var nameField: UILabel!
     
     var fromId:String? // = "0000"
-    var toId:String="qd1pYL2agYQB7b2TotHc9MbgtXC3"
+    var toId:String="error"
     var messageArray:[Message]=[]
+    var post:String = ""
     var signal = 0
     
     override func viewDidLoad() {
@@ -28,6 +29,7 @@ class ChatToSomeoneViewController: UIViewController,UITableViewDelegate,UITableV
             self.fromId=sender.uid
         }
         
+        tableView.separatorStyle = .none
         
         Database.database().reference().child("user").child(toId).observeSingleEvent(of: .value, with: {(snapshot) in
             let value = snapshot.value as? NSDictionary
@@ -102,19 +104,23 @@ class ChatToSomeoneViewController: UIViewController,UITableViewDelegate,UITableV
     }
     
     @IBAction func back() {
+        
         if(self.signal == 1){
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
-            let vc = storyboard.instantiateViewController(identifier: "ChatViewController")
-            let chatViewVC = vc as! ChatViewController
-            chatViewVC.modalPresentationStyle = .fullScreen
-            self.present(chatViewVC,animated: true, completion: nil)
+            let vc = storyboard.instantiateViewController(identifier: "MenuInitView")
+            let navControllerVC = vc as! UITabBarController
+            navControllerVC.modalPresentationStyle = .fullScreen
+            self.present(navControllerVC,animated: true, completion: nil)
+            navControllerVC.selectedIndex=2
         }else{
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
             let vc = storyboard.instantiateViewController(identifier: "DetailVC")
-            let detailVC = vc as! DetailVC
-            detailVC.modalPresentationStyle = .fullScreen
-            self.present(detailVC,animated: true, completion: nil)
+            let dVC = vc as! DetailVC
+            dVC.detailedJson=self.post
+            dVC.modalPresentationStyle = .fullScreen
+            self.present(dVC,animated: true, completion: nil)
         }
+        
     }
     
     
@@ -130,6 +136,9 @@ class ChatToSomeoneViewController: UIViewController,UITableViewDelegate,UITableV
                 return UITableViewCell()
             }
             sendCell.messageLabel.text=message.text
+            sendCell.messageLabel.numberOfLines=0
+            sendCell.messageLabel.sizeToFit()
+            sendCell.messageLabel.widthAnchor.constraint(lessThanOrEqualToConstant: 180).isActive = true
             return sendCell
         }
         
@@ -137,10 +146,13 @@ class ChatToSomeoneViewController: UIViewController,UITableViewDelegate,UITableV
             return UITableViewCell()
         }
         receiveCell.messageLabel.text=message.text
+        receiveCell.messageLabel.numberOfLines=0
+        receiveCell.messageLabel.sizeToFit()
+        receiveCell.messageLabel.widthAnchor.constraint(lessThanOrEqualToConstant: 180).isActive = true
         return receiveCell
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 40
+        return 100
     }
 }

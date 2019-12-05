@@ -86,6 +86,9 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zic-kX-zgx">
                                 <rect key="frame" x="271" y="457" width="123" height="30"/>
                                 <state key="normal" title="Forgot Password?"/>
+                                <connections>
+                                    <action selector="resetPasswordBtn:" destination="eb8-Rg-O8T" eventType="touchUpInside" id="uBM-Q6-2w1"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="egM-12-2Zp">
                                 <rect key="frame" x="113" y="495" width="188" height="36"/>
