@@ -40,11 +40,11 @@ class CategoryVC: UIViewController {
     }
     
     @IBAction func tutorBtn(_ sender: Any) {
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let vc = storyboard.instantiateViewController(identifier: "searchID")
-        let push = vc as! TutorVC
-        push.closestBuilding = self.nearestBuilding
-        self.navigationController?.pushViewController(push, animated: true)
+//        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+//        let vc = storyboard.instantiateViewController(identifier: "searchID")
+//        let push = vc as! TutorVC
+//        push.closestBuilding = self.nearestBuilding
+//        self.navigationController?.pushViewController(push, animated: true)
     }
     
     func startLocationManager() {
@@ -57,9 +57,7 @@ class CategoryVC: UIViewController {
             let goAction = UIAlertAction(title: "Close", style: .default, handler: nil)
             alert.addAction(goAction)
             self.present(alert, animated: true, completion: nil)
-
         }
-        
     }
     
 //    func stopLocationManager() {

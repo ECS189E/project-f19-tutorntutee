@@ -60,8 +60,6 @@ class SignUpVC: UIViewController,UIApplicationDelegate {
                             errorMessage.addAction(close)
                             self.present(errorMessage,animated: true,completion: nil)
                         }
-                                
-                            
                     }
                         
                 }

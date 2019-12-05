@@ -86,15 +86,14 @@ class DateVC: UIViewController{
                 let myDate = d.replacingOccurrences(of: " ", with: "")
                 let myPrice = p.replacingOccurrences(of: " ", with: "")
                 let userID = Auth.auth().currentUser?.uid
-                let newSchedule = "\(userID)\(selectedClass) \(myDate) \(startTime) \(endTime) $\(myPrice)"
-                
+                let newSchedule = "\(userID ?? "V45TFWp0ahU0OfX8Kp5FPwxpvQA3") \(selectedClass) \(myDate) \(startTime) \(endTime) $\(myPrice)"
                 print(newSchedule)
-                
-                
-                
                 addNewSchedule(newSchedule: newSchedule)
-                
-                
+                let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                let vs = storyboard.instantiateViewController(identifier: "MenuInitView")
+                let navControllerVC = vs as! UITabBarController
+                       navControllerVC.modalPresentationStyle = .fullScreen
+                self.present(navControllerVC, animated: true, completion: nil)
     }
     
     func addNewSchedule(newSchedule: String) {
@@ -106,7 +105,6 @@ class DateVC: UIViewController{
                     
                     
                     // Get user value
-
         //            let value = snapshot.value as? NSDictionary
                     let scheduleDB = snapshot.value as? NSArray
         //            guard let val = snapshot.value else {
