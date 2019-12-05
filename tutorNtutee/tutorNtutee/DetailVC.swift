@@ -65,7 +65,6 @@ class DetailVC: UIViewController, MFMailComposeViewControllerDelegate {
             DispatchQueue.main.async(execute: {
                  self.tutorName = value?["username"] as? String ?? "NIL"
             })
-           
             print(self.tutorName)
         })
     }

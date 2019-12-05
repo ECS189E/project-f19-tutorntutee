@@ -17,7 +17,6 @@
 		7FA19DEA239787D1003FC2E1 /* ChatToSomeoneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FB5092B23871654002FA08F /* ChatToSomeoneViewController.swift */; };
 		C57B0321237BE97300183531 /* TutorMarketViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C57B0320237BE97300183531 /* TutorMarketViewController.swift */; };
 		C58B741C23849BF1005B5DC3 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C58B741B23849BF1005B5DC3 /* ProfileViewController.swift */; };
-		C58B741E23849C20005B5DC3 /* NewPostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C58B741D23849C20005B5DC3 /* NewPostViewController.swift */; };
 		C58B742023849C67005B5DC3 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C58B741F23849C67005B5DC3 /* HomeViewController.swift */; };
 		C59AC2C3237CC76A00CFCC09 /* SessionPostCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C59AC2C2237CC76A00CFCC09 /* SessionPostCell.swift */; };
 		C59AC2CB237CD17600CFCC09 /* DetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C59AC2CA237CD17600CFCC09 /* DetailVC.swift */; };
@@ -48,7 +47,6 @@
 		C276862310DD127343FAF98C /* Pods-tutorNtutee.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-tutorNtutee.debug.xcconfig"; path = "Target Support Files/Pods-tutorNtutee/Pods-tutorNtutee.debug.xcconfig"; sourceTree = "<group>"; };
 		C57B0320237BE97300183531 /* TutorMarketViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorMarketViewController.swift; sourceTree = "<group>"; };
 		C58B741B23849BF1005B5DC3 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
-		C58B741D23849C20005B5DC3 /* NewPostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPostViewController.swift; sourceTree = "<group>"; };
 		C58B741F23849C67005B5DC3 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		C59AC2C2237CC76A00CFCC09 /* SessionPostCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionPostCell.swift; sourceTree = "<group>"; };
 		C59AC2CA237CD17600CFCC09 /* DetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailVC.swift; sourceTree = "<group>"; };
@@ -140,7 +138,6 @@
 				C59AC2CA237CD17600CFCC09 /* DetailVC.swift */,
 				7F548B302383A0C300BC9720 /* ChatViewController.swift */,
 				C58B741B23849BF1005B5DC3 /* ProfileViewController.swift */,
-				C58B741D23849C20005B5DC3 /* NewPostViewController.swift */,
 				C58B741F23849C67005B5DC3 /* HomeViewController.swift */,
 				7FB5092B23871654002FA08F /* ChatToSomeoneViewController.swift */,
 				7F6C63E52388CC2200D01DE0 /* Message.swift */,
@@ -275,7 +272,6 @@
 				7F0D0853238E2CA400147B5B /* MessageUser.swift in Sources */,
 				D2FE4E492378CF4C005F6797 /* SignUpVC.swift in Sources */,
 				D2DADE8B237B576400180A51 /* TutorVC.swift in Sources */,
-				C58B741E23849C20005B5DC3 /* NewPostViewController.swift in Sources */,
 				C59AC2CB237CD17600CFCC09 /* DetailVC.swift in Sources */,
 				C58B741C23849BF1005B5DC3 /* ProfileViewController.swift in Sources */,
 				D2918DA02390B9E700FE8C73 /* CategoryVC.swift in Sources */,

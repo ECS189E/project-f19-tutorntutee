@@ -19,12 +19,12 @@ class HomeViewController: UIViewController,UITableViewDataSource, UITableViewDel
     var postArray = [String]()
     override func viewDidLoad() {
         super.viewDidLoad()
+//        Analytics.setAnalyticsCollectionEnabled(true)
         ref = Database.database().reference()
         loadPosts()
-        
         activityIndicator.hidesWhenStopped = true
         self.activityIndicator.startAnimating()
-        DispatchQueue.main.asyncAfter(deadline: .now() + 3.0){
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2.0){
             self.tableView.delegate = self
             self.tableView.dataSource = self
             self.tableView.allowsSelection = true
@@ -32,7 +32,6 @@ class HomeViewController: UIViewController,UITableViewDataSource, UITableViewDel
             self.tableView.reloadData()
             self.activityIndicator.isHidden = true
         }
-        
         // Do any additional setup after loading the view.
     }
     func loadPosts(){
@@ -48,7 +47,6 @@ class HomeViewController: UIViewController,UITableViewDataSource, UITableViewDel
         }){ (error) in
             print(error.localizedDescription)
         }
-//        print(self.postArray.count)
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -61,7 +59,6 @@ class HomeViewController: UIViewController,UITableViewDataSource, UITableViewDel
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "reusecell", for: indexPath) as! SessionPostCell
-        
         cell.myimage.image = UIImage(named: "user.png")
         cell.backgroundImg.layer.masksToBounds = true
         cell.backgroundImg.layer.cornerRadius = 10.0
@@ -97,7 +94,7 @@ class HomeViewController: UIViewController,UITableViewDataSource, UITableViewDel
         cell.courseName.text = className
         cell.avaliable.text = "\(date) \(timeS) to \(timeE)"
         cell.money.text = cost
-        cell.textLabel?.text = "\(indexPath.row)"
+//        cell.textLabel?.text = "\(indexPath.row)"
         cell.backgroundColor = UIColor.white
         cell.layer.borderColor = UIColor.black.cgColor
         cell.layer.borderWidth = 1
