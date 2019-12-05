@@ -66,6 +66,8 @@ class TutorVC: UIViewController, UITableViewDelegate, UITableViewDataSource  {
             let goAction = UIAlertAction(title: "Close", style: .default, handler: nil)
             alert.addAction(goAction)
             self.present(alert, animated: true, completion: nil)
+            
+            
         }
     }
     
@@ -180,7 +182,6 @@ extension TutorVC: CLLocationManagerDelegate {
         print("latitude:", currLocation.coordinate.latitude)
         print("longitude:", currLocation.coordinate.longitude)
         
-//        let test_coordinates = CLLocation(latitude: 38.544000, longitude: -121.758060)
         var counter = 0
         var selected = -1
         var shortestDistance = 9999999 as CLLocationDistance
@@ -199,8 +200,13 @@ extension TutorVC: CLLocationManagerDelegate {
         print(shortestDistance)
         print(selected)
         self.nearestBuilding = selected
-        
         chooseClassSet()
+        
+        let locations = [" ", "Hutchinson Hall","Giet", "Wellman Hall", "Haring Hall"]
+        let errorMessage=UIAlertController(title: "You are Near \(locations[nearestBuilding])", message: "Based on your location, we detected that these classes happens near you. Click Expand if you can't find your class ", preferredStyle: .alert)
+        let close = UIAlertAction(title:"OK",style: .cancel,handler: nil)
+        errorMessage.addAction(close)
+        self.present(errorMessage,animated: true,completion: nil)
         
         stopLocationManager()
     }
