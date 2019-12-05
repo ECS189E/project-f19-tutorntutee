@@ -7,18 +7,85 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
     @IBOutlet var userName: UILabel!
     @IBOutlet var emailLabel: UILabel!
     @IBOutlet var profileImage: UIImageView!
+    @IBOutlet weak var updateUsernameTF: UITextField!
+    @IBOutlet weak var updatePasswordTF: UITextField!
+    @IBOutlet weak var updateView: UIStackView!
+    
+    
     var ref: DatabaseReference!
     let image = UIImagePickerController()
     var userID : String?
-    @IBOutlet weak var deltaInfoBtn: UIButton!
     var updateRef: DatabaseReference!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        updateView.isHidden = true
         ref = Database.database().reference()
         updateUserInfo()
         // Do any additional setup after loading the view.
     }
+    @IBAction func updateMyInfoBtn(_ sender: Any) {
+        if updateView.isHidden == false {
+            updateView.isHidden = true
+            self.view.endEditing(true)
+        } else {
+            updateView.isHidden = false
+        }
+        
+    }
     
+    @IBAction func updateBtn(_ sender: Any) {
+        guard let newUsernameStr = updateUsernameTF.text else {
+            print("Error in parsing the New Username")
+            return
+        }
+        guard let newPasswordStr = updatePasswordTF.text else {
+            print("Error in parsing the New Password")
+            return
+        }
+
+        let noSpaceNewPassword =  newPasswordStr.replacingOccurrences(of: " ", with: "")
+        let trimmedNewUsername = newUsernameStr.trimmingCharacters(in: .whitespaces)
+        if noSpaceNewPassword.count <= 5 && noSpaceNewPassword != ""{
+            print("invalid password ")
+            let alert = UIAlertController(title: "Password NOT Updated", message: "The new password has to be at least 6 characters", preferredStyle: .alert)
+            let goAction = UIAlertAction(title: "Close", style: .default, handler: nil)
+            alert.addAction(goAction)
+            self.present(alert, animated: true, completion: nil)
+            updatePasswordTF.text = ""
+            return
+        }
+        // update databse:
+        dataUpdated(newUsername: trimmedNewUsername, newPassword: noSpaceNewPassword)
+        updatePasswordTF.text = ""
+        updateUsernameTF.text = ""
+        updateView.isHidden = true
+        self.view.endEditing(true)
+    }
+    func dataUpdated(newUsername:String, newPassword: String) {
+        self.userID = Auth.auth().currentUser?.uid
+        ref = Database.database().reference().child("user").child(userID ?? "error with userID")
+        
+        if (newPassword != "" && newUsername != "") {
+            self.userName.text = newUsername
+
+            Auth.auth().currentUser?.updatePassword(to: newPassword) { (error) in
+                print("ERROR MESSAGE:", error)
+                
+            }
+
+            self.ref.updateChildValues(["username" : newUsername])
+        } else if newPassword != "" && newUsername == "" {
+            Auth.auth().currentUser?.updatePassword(to: newPassword) { (error) in
+              print("ERROR MESSAGE:", error)
+            }
+            
+        } else if newUsername != ""  {
+            self.ref.updateChildValues(["username" : newUsername])
+            self.userName.text = newUsername
+        }
+        
+    }
     
     func updateUserInfo(){
         self.userID = Auth.auth().currentUser?.uid
@@ -118,13 +185,7 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
     }
     
     
-    func signinBordersetup(){
-        deltaInfoBtn.layer.masksToBounds = true
-        deltaInfoBtn.layer.cornerRadius = 2.0
-        deltaInfoBtn.layer.borderColor = UIColor.black.cgColor
-        deltaInfoBtn.layer.borderWidth = 0.5
-    }
-    
+
     /*
      // MARK: - Navigation
      

@@ -21,10 +21,19 @@ class ViewController: UIViewController, UITextFieldDelegate{
         emailField.delegate = self
         passwordField.delegate = self
         ref=Database.database().reference()
-        emailField.text = "aadila@ucdavis.edu"
-        passwordField.text = "Adila1628"
+        emailField.text = "aleliu@ucdavis.edu"
+        passwordField.text = "123456789"
     }
-
+    @IBAction func resetPasswordBtn(_ sender: Any) {
+        guard let emailStr = emailField.text else {
+            print("Error in getting the emailField.text")
+            return
+        }
+        Auth.auth().sendPasswordReset(withEmail: emailStr) { error in
+          // ...
+        }
+    }
+    
     func signinBordersetup(){
         SignInBt.layer.masksToBounds = true
         SignInBt.layer.cornerRadius = 2.0
@@ -38,6 +47,24 @@ class ViewController: UIViewController, UITextFieldDelegate{
                 guard let strongSelf = self else { return }
                 if let _ = authResult{
                     let user=Auth.auth().currentUser
+                    if user != nil && !user!.isEmailVerified {
+                        user!.sendEmailVerification(completion: { (error) in
+                            print("sendEmailVerification sent!")
+                            let errorMessage=UIAlertController(title: "Email Not Verified", message: "Verify Your Account and Try Again", preferredStyle: .alert)
+                            let close = UIAlertAction(title:"Close",style: .cancel,handler: nil)
+                            errorMessage.addAction(close)
+                            self?.present(errorMessage,animated: true,completion: nil)
+                        })
+                    }
+                    else {
+                        print("Either the user is not available, or the user is already verified.")
+                        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                        let vs = storyboard.instantiateViewController(identifier: "MenuInitView")
+                        let navControllerVC = vs as! UITabBarController
+                        navControllerVC.modalPresentationStyle = .fullScreen
+                        self?.present(navControllerVC, animated: true, completion: nil)
+                    }
+                    
                     /**
                     if let user=user{
                         self?.ref.child("user").child(user.uid).observeSingleEvent(of: .value, with: {(snapshot) in
@@ -54,15 +81,11 @@ class ViewController: UIViewController, UITextFieldDelegate{
 //                    TapHomeVC.modalPresentationStyle = .fullScreen
 //                    self?.present(TapHomeVC, animated: true, completion: nil)
 //
-                    let storyboard = UIStoryboard(name: "Main", bundle: nil)
-                    let vs = storyboard.instantiateViewController(identifier: "MenuInitView")
-                    let navControllerVC = vs as! UITabBarController
-                    navControllerVC.modalPresentationStyle = .fullScreen
-                    self?.present(navControllerVC, animated: true, completion: nil)
+                    
 
                 }
                 if let _ = error{
-                    let errorMessage=UIAlertController(title: "error", message: "error occurs", preferredStyle: .alert)
+                    let errorMessage=UIAlertController(title: "error", message: "Wrong ID or Password. Please, try again.", preferredStyle: .alert)
                     let close = UIAlertAction(title:"close",style: .cancel,handler: nil)
                     errorMessage.addAction(close)
                     self?.present(errorMessage,animated: true,completion: nil)
