@@ -16,6 +16,8 @@ Responsible for Post ViewController, Profile ViewController, general UI implemen
 Resiponsible for chat parts, sign up and log in ViewController, and some firebase stuff. I make chat part in our app similiar to standard chat app like facebook or wechat using firebase. User who send message write data in firebase and user who receive message read data from firebase.
 
 ##### Alessandro Liu
+Implemented firebase storage json structure and logic to store and update all new gobal and local tutor posts, and error checking and handling. Responsible for TutorVC, SignUpVC, CategoryVC, DateVC, firebase updates, firebase email authentication, password reset, alert messages, and initial UI design. Implemented the user coordinate tracking system (latitude and longitude) for the automation system (calculate the closest UC Davis building and display its classes).
+
 
 
 # Previous Sprint Planning Documentation
