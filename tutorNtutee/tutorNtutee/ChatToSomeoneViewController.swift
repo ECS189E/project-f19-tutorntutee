@@ -29,7 +29,7 @@ class ChatToSomeoneViewController: UIViewController,UITableViewDelegate,UITableV
             self.fromId=sender.uid
         }
         let tap = UITapGestureRecognizer(target: self, action: #selector(ChatToSomeoneViewController.handleTap))
-               view.addGestureRecognizer(tap)
+        view.addGestureRecognizer(tap)
         
         tableView.separatorStyle = .none
         
@@ -42,7 +42,7 @@ class ChatToSomeoneViewController: UIViewController,UITableViewDelegate,UITableV
         
         tableView.rowHeight = UITableView.automaticDimension
         tableView.estimatedRowHeight = 50
-    
+        
         self.tableView.delegate=self
         self.tableView.dataSource=self
     }
@@ -66,11 +66,11 @@ class ChatToSomeoneViewController: UIViewController,UITableViewDelegate,UITableV
                     messageRef.child(message.toId ?? "error").child(message.fromId ?? "error").updateChildValues(values)
                     
                     /*
-                    if(message.fromId == self?.fromId){
-                        messageRef.child(message.fromId ?? "error").child(message.toId ?? "error").updateChildValues(values)
-                    }else{
-                        messageRef.child(message.toId ?? "error").child(message.fromId ?? "error").updateChildValues(values)
-                    }*/
+                     if(message.fromId == self?.fromId){
+                     messageRef.child(message.fromId ?? "error").child(message.toId ?? "error").updateChildValues(values)
+                     }else{
+                     messageRef.child(message.toId ?? "error").child(message.fromId ?? "error").updateChildValues(values)
+                     }*/
                     
                     
                     DispatchQueue.main.async(execute: {
@@ -86,12 +86,12 @@ class ChatToSomeoneViewController: UIViewController,UITableViewDelegate,UITableV
     }
     
     func isBlank(_ string: String) -> Bool {
-      for character in string {
-        if !character.isWhitespace {
-            return false
+        for character in string {
+            if !character.isWhitespace {
+                return false
+            }
         }
-      }
-      return true
+        return true
     }
     
     @IBAction func sendMessage() {
@@ -150,7 +150,7 @@ class ChatToSomeoneViewController: UIViewController,UITableViewDelegate,UITableV
                 sendCell.messageLabel.clipsToBounds=true
                 sendCell.messageLabel.layer.cornerRadius=10
                 sendCell.messageLabel.widthAnchor.constraint(lessThanOrEqualToConstant: 180).isActive = true
-            return sendCell
+                return sendCell
             }
         }
         
@@ -170,16 +170,16 @@ class ChatToSomeoneViewController: UIViewController,UITableViewDelegate,UITableV
     
     
     /***
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        
-        if let text = messageArray[indexPath.row].text{
-            if(text.count <= 15){
-                return 40
-            }
-            
-            return CGFloat(30*(text.count/17-1)+40)
-        }
-        return 40
-    }
-    */
+     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+     
+     if let text = messageArray[indexPath.row].text{
+     if(text.count <= 15){
+     return 40
+     }
+     
+     return CGFloat(30*(text.count/17-1)+40)
+     }
+     return 40
+     }
+     */
 }

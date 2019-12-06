@@ -16,7 +16,7 @@ class ChatViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
     @IBOutlet weak var tableView: UITableView!
     var userId:String?
     var messageUserArray:[MessageUser]=[]
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.tabBarController?.tabBar.isTranslucent = false
@@ -26,7 +26,7 @@ class ChatViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
         getMessageUser()
         self.tableView.delegate=self
         self.tableView.dataSource=self
-       
+        
     }
     
     func getMessageUser(){
@@ -100,4 +100,4 @@ class ChatViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
     }
     
 }
-    
+

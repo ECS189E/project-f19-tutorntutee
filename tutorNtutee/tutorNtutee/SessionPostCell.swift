@@ -25,7 +25,7 @@ class SessionPostCell: UITableViewCell {
         backgroundImg.layer.cornerRadius = 10.0
         
     }
-
+    
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
     }

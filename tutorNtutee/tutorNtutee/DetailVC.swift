@@ -63,10 +63,10 @@ class DetailVC: UIViewController, MFMailComposeViewControllerDelegate {
     func getTutorNamefromUID(){
         Database.database().reference().child("user").child(self.tutorUid ?? "qd1pYL2agYQB7b2TotHc9MbgtXC3").observeSingleEvent(of: .value, with: {(snapshot) in
             let value = snapshot.value as? NSDictionary
-                self.tutorName = "\(value?["first_name"] as? String ?? "NIL") \(value?["last_name"] as? String ?? "NIL")"
-                print("We are INnnnnnnnnn")
-                print(value?["first_name"] ?? "DNE")
-                self.name.text = self.tutorName
+            self.tutorName = "\(value?["first_name"] as? String ?? "NIL") \(value?["last_name"] as? String ?? "NIL")"
+            print("We are INnnnnnnnnn")
+            print(value?["first_name"] ?? "DNE")
+            self.name.text = self.tutorName
         })
     }
     func getUserImageFromFB(imageName: String){

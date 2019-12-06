@@ -10,11 +10,11 @@ import UIKit
 import CoreLocation
 
 class TutorVC: UIViewController, UITableViewDelegate, UITableViewDataSource  {
-
+    
     @IBOutlet weak var srcBar: UISearchBar!
     @IBOutlet weak var classTable: UITableView!
     
-//    var closestBuilding = -1
+    //    var closestBuilding = -1
     var isShowAll = false
     var isExpanded = false
     var closestClassSet = [String]()
@@ -47,13 +47,13 @@ class TutorVC: UIViewController, UITableViewDelegate, UITableViewDataSource  {
                                                longitude: -121.753557)
         coordinatesArray.append(hutchison_coordinates)
         let giedt_coordinates = CLLocation(latitude: 38.537837,
-        longitude: -121.755666)
+                                           longitude: -121.755666)
         coordinatesArray.append(giedt_coordinates)
         let wellman_coordinates = CLLocation(latitude: 38.541351,
-        longitude: -121.751413)
+                                             longitude: -121.751413)
         coordinatesArray.append(wellman_coordinates)
         let haring_coordinates = CLLocation(latitude: 38.539707,
-        longitude: -121.753408)
+                                            longitude: -121.753408)
         coordinatesArray.append(haring_coordinates)
     }
     func startLocationManager() {
@@ -92,7 +92,7 @@ class TutorVC: UIViewController, UITableViewDelegate, UITableViewDataSource  {
     func chooseClassSet() {
         print("-----------------------------",nearestBuilding)
         if (isShowAll || nearestBuilding == -1){
-       
+            
             self.closestClassSet = classArray
             self.isShowAll = false
         } else {
@@ -154,17 +154,17 @@ extension TutorVC: UISearchBarDelegate {
     }
 }
 extension TutorVC: CLLocationManagerDelegate {
-//    func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
-//        print("there is an error in retrieving the location:", error)
-//        stopLocationManager()
-//    }
+    //    func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
+    //        print("there is an error in retrieving the location:", error)
+    //        stopLocationManager()
+    //    }
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         location = locations.last
         
         guard let currLocation = location else{
             print("error in trying to unwrap location")
-//            stopLocationManager()
+            //            stopLocationManager()
             return
         }
         print(currLocation)
@@ -174,7 +174,7 @@ extension TutorVC: CLLocationManagerDelegate {
         var counter = 0
         var selected = -1
         var shortestDistance = 9999999 as CLLocationDistance
-         // result is in meters
+        // result is in meters
         for new_coord in coordinatesArray {
             counter += 1
             let distanceInMeters = currLocation.distance(from: new_coord)

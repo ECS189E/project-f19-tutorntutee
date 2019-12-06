@@ -14,7 +14,7 @@ class ViewController: UIViewController, UITextFieldDelegate{
     @IBOutlet weak var emailField: UITextField!
     @IBOutlet weak var passwordField: UITextField!
     @IBOutlet weak var SignInBt: UIButton!
-//    @IBOutlet weak var signUpBtn: UIButton!
+    //    @IBOutlet weak var signUpBtn: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
         passwordField.isSecureTextEntry = true
@@ -31,7 +31,7 @@ class ViewController: UIViewController, UITextFieldDelegate{
             return
         }
         Auth.auth().sendPasswordReset(withEmail: emailStr) { error in
-          // ...
+            // ...
         }
     }
     
@@ -67,23 +67,23 @@ class ViewController: UIViewController, UITextFieldDelegate{
                     }
                     
                     /**
-                    if let user=user{
-                        self?.ref.child("user").child(user.uid).observeSingleEvent(of: .value, with: {(snapshot) in
-                            let value=snapshot.value as? NSDictionary
-                            let username=value?["username"] as? String ?? ""
-                            print("-------------")
-                            print(username)
-                        })
-                    }
-                    */
-//                    let storyboard = UIStoryboard(name: "Main", bundle: nil)
-//                    let vs = storyboard.instantiateViewController(identifier: "LoggedInNavController")
-//                    let TapHomeVC = vs as! UINavigationController
-//                    TapHomeVC.modalPresentationStyle = .fullScreen
-//                    self?.present(TapHomeVC, animated: true, completion: nil)
-//
+                     if let user=user{
+                     self?.ref.child("user").child(user.uid).observeSingleEvent(of: .value, with: {(snapshot) in
+                     let value=snapshot.value as? NSDictionary
+                     let username=value?["username"] as? String ?? ""
+                     print("-------------")
+                     print(username)
+                     })
+                     }
+                     */
+                    //                    let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                    //                    let vs = storyboard.instantiateViewController(identifier: "LoggedInNavController")
+                    //                    let TapHomeVC = vs as! UINavigationController
+                    //                    TapHomeVC.modalPresentationStyle = .fullScreen
+                    //                    self?.present(TapHomeVC, animated: true, completion: nil)
+                    //
                     
-
+                    
                 }
                 if let _ = error{
                     let errorMessage=UIAlertController(title: "error", message: "Wrong ID or Password. Please, try again.", preferredStyle: .alert)
@@ -104,11 +104,11 @@ class ViewController: UIViewController, UITextFieldDelegate{
     }
     
     //    @IBAction func SignUpClicked(_ sender: Any) {
-//        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-//        let vs = storyboard.instantiateViewController(identifier: "SignUpVC")
-//        let signupview = vs as! SignUpVC
-//        signupview.modalPresentationStyle = .fullScreen
-//        self.present(signupview, animated: true, completion: nil)
-//    }
+    //        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+    //        let vs = storyboard.instantiateViewController(identifier: "SignUpVC")
+    //        let signupview = vs as! SignUpVC
+    //        signupview.modalPresentationStyle = .fullScreen
+    //        self.present(signupview, animated: true, completion: nil)
+    //    }
 }
 

@@ -35,23 +35,23 @@ class SignUpVC: UIViewController,UIApplicationDelegate {
                 Auth.auth().createUser(withEmail: email, password: password) { authResult, error in
                     if let _ = authResult {
                         if let user=Auth.auth().currentUser {
-                                
-                                self.ref.child("user").child(user.uid).child("username").setValue(self  .userNameField.text)
-                                
-                                self.ref.child("user").child(user.uid).child("first_name").setValue(self    .firstNameField.text)
-                                
-                                self.ref.child("user").child(user.uid).child("last_name").setValue(self .lastNameField.text)
-                                
-                                self.ref.child("user").child(user.uid).child("email")
-                                    .setValue(email)
-                                self.ref.child("user").child(user.uid).child("tutor_class_time")
+                            
+                            self.ref.child("user").child(user.uid).child("username").setValue(self  .userNameField.text)
+                            
+                            self.ref.child("user").child(user.uid).child("first_name").setValue(self    .firstNameField.text)
+                            
+                            self.ref.child("user").child(user.uid).child("last_name").setValue(self .lastNameField.text)
+                            
+                            self.ref.child("user").child(user.uid).child("email")
+                                .setValue(email)
+                            self.ref.child("user").child(user.uid).child("tutor_class_time")
                                 .setValue(["dummy"])
-                                self.ref.child("user").child(user.uid).child("image").setValue("default")
-                            }
-                            let storyboard = UIStoryboard(name: "Main", bundle: nil)
-                            let vs = storyboard.instantiateViewController(identifier: "LoginNavControler")
-                            let navControllerVC = vs as! UINavigationController
-                            self.present(navControllerVC, animated: true, completion: nil)
+                            self.ref.child("user").child(user.uid).child("image").setValue("default")
+                        }
+                        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                        let vs = storyboard.instantiateViewController(identifier: "LoginNavControler")
+                        let navControllerVC = vs as! UINavigationController
+                        self.present(navControllerVC, animated: true, completion: nil)
                         
                         
                         if let _ = error{
@@ -61,7 +61,7 @@ class SignUpVC: UIViewController,UIApplicationDelegate {
                             self.present(errorMessage,animated: true,completion: nil)
                         }
                     }
-                        
+                    
                 }
             }
         }
@@ -71,15 +71,15 @@ func uploaddefaultImage(){
     //var postImageView : UIImageView
     //postImageView.image = UIImage(named: "default.png")
     let thisImage: UIImage = UIImage(named: "default.png") ?? UIImage()
-        let imageName = "default"
-        let imageRef = Storage.storage().reference().child(imageName)
-        if let uploadData = thisImage.pngData(){
-            imageRef.putData(uploadData, metadata:nil) { metadata, error in
-                if error != nil{
-                    print("error: \(error.debugDescription)")
-                    return
-                }
-                print("Sucessful!")
+    let imageName = "default"
+    let imageRef = Storage.storage().reference().child(imageName)
+    if let uploadData = thisImage.pngData(){
+        imageRef.putData(uploadData, metadata:nil) { metadata, error in
+            if error != nil{
+                print("error: \(error.debugDescription)")
+                return
             }
+            print("Sucessful!")
         }
+    }
 }

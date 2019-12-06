@@ -43,7 +43,7 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
             print("Error in parsing the New Password")
             return
         }
-
+        
         let noSpaceNewPassword =  newPasswordStr.replacingOccurrences(of: " ", with: "")
         let trimmedNewUsername = newUsernameStr.trimmingCharacters(in: .whitespaces)
         if noSpaceNewPassword.count <= 5 && noSpaceNewPassword != ""{
@@ -68,16 +68,16 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
         
         if (newPassword != "" && newUsername != "") {
             self.userName.text = newUsername
-
+            
             Auth.auth().currentUser?.updatePassword(to: newPassword) { (error) in
                 print("ERROR MESSAGE:", error)
                 
             }
-
+            
             self.ref.updateChildValues(["username" : newUsername])
         } else if newPassword != "" && newUsername == "" {
             Auth.auth().currentUser?.updatePassword(to: newPassword) { (error) in
-              print("ERROR MESSAGE:", error)
+                print("ERROR MESSAGE:", error)
             }
             
         } else if newUsername != ""  {
@@ -138,8 +138,8 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
         let imageRef = Storage.storage().reference().child(imageName)
         imageRef.getData(maxSize: 20*2048*2048){ response, error in
             if let err = error {
-                   print("\(err)")
-                   return
+                print("\(err)")
+                return
             }
             if let data = response {
                 print("Sucessfully download image.")
@@ -149,52 +149,42 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
             }
         }
     }
-//    func uploadUserImageToFB(){
-//        if let img = self.profileImage.image {
-//            let imageName = "\(self.userID).png"
-//            let imageRef = Storage.storage().reference().child(imageName)
-//            if let uploadData = img.pngData(){
-//                imageRef.putData(uploadData, metadata:nil) { metadata, error in
-//                    if error != nil{
-//                        print("error: \(error.debugDescription)")
-//                        return
-//                    }
-//                    print("Sucessful!")
-//                    if let user=Auth.auth().currentUser { self.ref.child("user").child(user.uid).child("image").setValue(imageName)
-//                    }
-//                }
-//            }
-//        }
-//    }
+    //    func uploadUserImageToFB(){
+    //        if let img = self.profileImage.image {
+    //            let imageName = "\(self.userID).png"
+    //            let imageRef = Storage.storage().reference().child(imageName)
+    //            if let uploadData = img.pngData(){
+    //                imageRef.putData(uploadData, metadata:nil) { metadata, error in
+    //                    if error != nil{
+    //                        print("error: \(error.debugDescription)")
+    //                        return
+    //                    }
+    //                    print("Sucessful!")
+    //                    if let user=Auth.auth().currentUser { self.ref.child("user").child(user.uid).child("image").setValue(imageName)
+    //                    }
+    //                }
+    //            }
+    //        }
+    //    }
     func uploadUserImageToFB() {
         if let img = self.profileImage.image {
             let imageName = "\(self.userID ?? "nilllll").png"
             let imageRef = Storage.storage().reference().child(imageName)
-                if let uploadData = img.pngData() {
-                    imageRef.putData(uploadData, metadata: nil) { metadata, error in
-                        if error != nil {
-                            print("Error: \(error.debugDescription)")
-                            return
-                        } else {
-                            print("Sucessfully upload image.")
-                            if let user=Auth.auth().currentUser { self.ref.child("user").child(user.uid).child("image").setValue(imageName)}
-                        }
+            if let uploadData = img.pngData() {
+                imageRef.putData(uploadData, metadata: nil) { metadata, error in
+                    if error != nil {
+                        print("Error: \(error.debugDescription)")
+                        return
+                    } else {
+                        print("Sucessfully upload image.")
+                        if let user=Auth.auth().currentUser { self.ref.child("user").child(user.uid).child("image").setValue(imageName)}
                     }
                 }
+            }
         }
     }
     
     
-
-    /*
-     // MARK: - Navigation
-     
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     // Get the new view controller using segue.destination.
-     // Pass the selected object to the new view controller.
-     }
-     */
     
     
 }

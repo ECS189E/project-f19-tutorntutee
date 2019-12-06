@@ -15,7 +15,6 @@
 		7F6C63F0238B8EB800D01DE0 /* ReceiveTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F6C63EF238B8EB800D01DE0 /* ReceiveTableViewCell.swift */; };
 		7F6C63F2238BA08B00D01DE0 /* ChatBoxTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F6C63F1238BA08B00D01DE0 /* ChatBoxTableViewCell.swift */; };
 		7FA19DEA239787D1003FC2E1 /* ChatToSomeoneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FB5092B23871654002FA08F /* ChatToSomeoneViewController.swift */; };
-		C57B0321237BE97300183531 /* TutorMarketViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C57B0320237BE97300183531 /* TutorMarketViewController.swift */; };
 		C58B741C23849BF1005B5DC3 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C58B741B23849BF1005B5DC3 /* ProfileViewController.swift */; };
 		C58B742023849C67005B5DC3 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C58B741F23849C67005B5DC3 /* HomeViewController.swift */; };
 		C59AC2C3237CC76A00CFCC09 /* SessionPostCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C59AC2C2237CC76A00CFCC09 /* SessionPostCell.swift */; };
@@ -28,7 +27,6 @@
 		D28DBACE23789D1000A7627E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D28DBACC23789D1000A7627E /* Main.storyboard */; };
 		D28DBAD023789D1200A7627E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D28DBACF23789D1200A7627E /* Assets.xcassets */; };
 		D28DBAD323789D1200A7627E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D28DBAD123789D1200A7627E /* LaunchScreen.storyboard */; };
-		D2918DA02390B9E700FE8C73 /* CategoryVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2918D9F2390B9E700FE8C73 /* CategoryVC.swift */; };
 		D2918DA22390BA3000FE8C73 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D2918DA12390BA3000FE8C73 /* CoreLocation.framework */; };
 		D2DADE8B237B576400180A51 /* TutorVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2DADE8A237B576400180A51 /* TutorVC.swift */; };
 		D2DADE8D237B8C6800180A51 /* DateVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2DADE8C237B8C6800180A51 /* DateVC.swift */; };
@@ -45,7 +43,6 @@
 		7FB5092B23871654002FA08F /* ChatToSomeoneViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatToSomeoneViewController.swift; sourceTree = "<group>"; };
 		8C5B72971EB42BA371BFCE2A /* Pods_tutorNtutee.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_tutorNtutee.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C276862310DD127343FAF98C /* Pods-tutorNtutee.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-tutorNtutee.debug.xcconfig"; path = "Target Support Files/Pods-tutorNtutee/Pods-tutorNtutee.debug.xcconfig"; sourceTree = "<group>"; };
-		C57B0320237BE97300183531 /* TutorMarketViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorMarketViewController.swift; sourceTree = "<group>"; };
 		C58B741B23849BF1005B5DC3 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		C58B741F23849C67005B5DC3 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		C59AC2C2237CC76A00CFCC09 /* SessionPostCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionPostCell.swift; sourceTree = "<group>"; };
@@ -60,7 +57,6 @@
 		D28DBACF23789D1200A7627E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D28DBAD223789D1200A7627E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D28DBAD423789D1200A7627E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		D2918D9F2390B9E700FE8C73 /* CategoryVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryVC.swift; sourceTree = "<group>"; };
 		D2918DA12390BA3000FE8C73 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		D2DADE8A237B576400180A51 /* TutorVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorVC.swift; sourceTree = "<group>"; };
 		D2DADE8C237B8C6800180A51 /* DateVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateVC.swift; sourceTree = "<group>"; };
@@ -127,13 +123,11 @@
 				D28DBACA23789D1000A7627E /* ViewController.swift */,
 				D2FE4E482378CF4C005F6797 /* SignUpVC.swift */,
 				D2DADE8A237B576400180A51 /* TutorVC.swift */,
-				D2918D9F2390B9E700FE8C73 /* CategoryVC.swift */,
 				D2DADE8C237B8C6800180A51 /* DateVC.swift */,
 				D28DBACC23789D1000A7627E /* Main.storyboard */,
 				D28DBACF23789D1200A7627E /* Assets.xcassets */,
 				D28DBAD123789D1200A7627E /* LaunchScreen.storyboard */,
 				D28DBAD423789D1200A7627E /* Info.plist */,
-				C57B0320237BE97300183531 /* TutorMarketViewController.swift */,
 				C59AC2C2237CC76A00CFCC09 /* SessionPostCell.swift */,
 				C59AC2CA237CD17600CFCC09 /* DetailVC.swift */,
 				7F548B302383A0C300BC9720 /* ChatViewController.swift */,
@@ -266,7 +260,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C57B0321237BE97300183531 /* TutorMarketViewController.swift in Sources */,
 				D2DADE8D237B8C6800180A51 /* DateVC.swift in Sources */,
 				C59AC2C3237CC76A00CFCC09 /* SessionPostCell.swift in Sources */,
 				7F0D0853238E2CA400147B5B /* MessageUser.swift in Sources */,
@@ -274,7 +267,6 @@
 				D2DADE8B237B576400180A51 /* TutorVC.swift in Sources */,
 				C59AC2CB237CD17600CFCC09 /* DetailVC.swift in Sources */,
 				C58B741C23849BF1005B5DC3 /* ProfileViewController.swift in Sources */,
-				D2918DA02390B9E700FE8C73 /* CategoryVC.swift in Sources */,
 				D28DBACB23789D1000A7627E /* ViewController.swift in Sources */,
 				D28DBAC723789D1000A7627E /* AppDelegate.swift in Sources */,
 				7F548B312383A0C300BC9720 /* ChatViewController.swift in Sources */,
