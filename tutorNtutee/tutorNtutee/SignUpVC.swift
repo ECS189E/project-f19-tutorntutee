@@ -32,6 +32,7 @@ class SignUpVC: UIViewController,UIApplicationDelegate {
     
     @IBAction func doneButtonPress() {
         if let email=emailField.text,let password=passwordField.text {
+//            permit only uc davis students to register for tutors
             if email.hasSuffix("@ucdavis.edu") {
                 
                 //create user
@@ -48,6 +49,7 @@ class SignUpVC: UIViewController,UIApplicationDelegate {
                             
                             self.ref.child("user").child(user.uid).child("email")
                                 .setValue(email)
+//                          create a dummy value for the child branch to exist upton creation
                             self.ref.child("user").child(user.uid).child("tutor_class_time")
                                 .setValue(["dummy"])
                             self.ref.child("user").child(user.uid).child("image").setValue("default")

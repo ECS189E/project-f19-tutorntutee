@@ -65,6 +65,7 @@ class DateVC: UIViewController{
     }
     
     @IBAction func doneBtn(_ sender: Any) {
+//        data parsing and building the correct json string to send the firebase database
         guard let sTime = timeTextField.text, (timeTextField.text ?? "") != ""  else {
             let errorMessage=UIAlertController(title: "Invalid Start Time", message: "End time has an error", preferredStyle: .alert)
             let close = UIAlertAction(title:"OK",style: .cancel,handler: nil)
@@ -115,16 +116,7 @@ class DateVC: UIViewController{
         
         var scheduleArray = [String]()
         ref.observeSingleEvent(of: .value, with: { (snapshot) in
-            
-            
-            // Get user value
-            //            let value = snapshot.value as? NSDictionary
             let scheduleDB = snapshot.value as? NSArray
-            //            guard let val = snapshot.value else {
-            //                print("error in getting snapshot.value")
-            //                return
-            //            }
-            
             for oneSchedule in scheduleDB ?? ["error in getting the nsarray elements"] {
                 let exisitingSchedule = oneSchedule as! String
                 
@@ -143,9 +135,6 @@ class DateVC: UIViewController{
             }
             scheduleArray.append(newSchedule)
             self.updateRef.updateChildValues(["tutor_class_time":scheduleArray])
-            
-            //          let sss = scheduleDB?[0] as? String ?? "error in the class"
-            //          print("sss -->", sss)
             
         }) { (error) in
             print(error.localizedDescription)
@@ -171,25 +160,12 @@ class DateVC: UIViewController{
         }
         
     }
-    //    @IBAction func deleteBtn(_ sender: Any) {
-    //        print("delete clicked")
-    //        deleteSelectedSchedule(deleteSchedule: deleteText.text ?? "")
-    //    }
-    //
+
+//    deletes the json schedule/post on the firebase databse (global and local at the same time)
     func deleteSelectedSchedule(deleteSchedule : String) {
         var scheduleArray2 = [String]()
-        
         ref.observeSingleEvent(of: .value, with: { (snapshot) in
-            
-            // Get user value
-            
-            //            let value = snapshot.value as? NSDictionary
             let scheduleDB = snapshot.value as? NSArray
-            //            guard let val = snapshot.value else {
-            //                print("error in getting snapshot.value")
-            //                return
-            //            }
-            
             for oneSchedule in scheduleDB ?? ["error in getting the nsarray elements"] {
                 let dbSchedule = oneSchedule as! String
                 
@@ -199,22 +175,11 @@ class DateVC: UIViewController{
                     continue
                 }
                 scheduleArray2.append(dbSchedule)
-                
             }
             self.updateRef.updateChildValues(["tutor_class_time":scheduleArray2])
-            
-            //          let sss = scheduleDB?[0] as? String ?? "error in the class"
-            //          print("sss -->", sss)
-            
         }) { (error) in
             print(error.localizedDescription)
         }
-        
-        //        let oldPost = onePost as! String
-        //        if deleteSchedule.isEqual(oldPost) {
-        //            continue
-        //        }
-        
         var newPostsArray = [String]()
         postsRef.observeSingleEvent(of: .value, with: { (snapshot) in
             if (snapshot.exists()){
@@ -226,11 +191,9 @@ class DateVC: UIViewController{
                         print("removed from global database: \(oldPost)")
                         continue
                     }
-                    
                     newPostsArray.append(oldPost)
                 }
                 self.updatePostsRef.updateChildValues(["posts":newPostsArray])
-                
             }
         }) { (error) in
             print(error.localizedDescription)

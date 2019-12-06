@@ -28,6 +28,7 @@ class ViewController: UIViewController, UITextFieldDelegate{
             print("Error in getting the emailField.text")
             return
         }
+        // send the reset password email
         Auth.auth().sendPasswordReset(withEmail: emailStr) { error in
             // ...
         }

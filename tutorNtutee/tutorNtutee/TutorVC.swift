@@ -19,11 +19,13 @@ class TutorVC: UIViewController, UITableViewDelegate, UITableViewDataSource  {
     var isExpanded = false
     var closestClassSet = [String]()
     
+//    declase uc davis buildings and their classes
     let hutchinson_array = ["ECS189E", "ECS050", "ECS122A", "NUT010", "UWP101", "MAT127A"]
     let giedt_array = ["ECS154A", "ECS153", "ECS171", "ECS020", "MAT022A", "MAT145"]
     let wellman_array = ["ECS036A", "ECS036B", "ECS036C", "MAT180", "MAT150A", "MAT021A", "MAT021B", "MAT021C", "MAT021D"]
     let haring_array = ["ECS150", "ECS189G", "MAT108", "MAT115A", "MAT118A", "MAT119A", "MAT127A", "MAT127B", "MAT127C"]
     
+//   declare all classes of ECS and MAT, and several other classes such as NUT and UWP.
     let classArray = ["ECS020","ECS032A","ECS032B","ECS032C","ECS034","ECS036A","ECS036B","ECS036C","ECS050","ECS120","ECS122A","ECS122B","ECS132","ECS140A","ECS153","ECS154A","ECS160","ECS171","ECS175","ECS188","ECS189G","ECS150", "ECS189E", "MAT012","MAT016A","MAT016B","MAT016C","MAT017A", "MAT017B","MAT017C", "MAT021A", "MAT021B", "MAT021C", "MAT021D", "MAT022A", "MAT022B", "MAT108", "MAT115A", "MAT118A", "MAT119A", "MAT127A", "MAT127B", "MAT127C", "MAT128A","MAT135A", "MAT145", "MAT150A", "MAT167", "MAT168", "MAT180", "MAT185A", "UWP101", "NUT010"]
     var autofillArray = [String]()
     var isSearching = false
@@ -33,8 +35,11 @@ class TutorVC: UIViewController, UITableViewDelegate, UITableViewDataSource  {
     var coordinatesArray = [CLLocation]()
     override func viewDidLoad() {
         super.viewDidLoad()
+//      create the coordinate (longitude and latitude) array for the uc davis buildings declared above.
         createCoordinates()
+//        specify the accuracy level you want to use
         locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
+//        start tracking the user location (longitude and latitude) if permitted.
         startLocationManager()
         
         classTable.delegate = self
@@ -57,6 +62,7 @@ class TutorVC: UIViewController, UITableViewDelegate, UITableViewDataSource  {
         coordinatesArray.append(haring_coordinates)
     }
     func startLocationManager() {
+//        check if the GPS service is up
         if CLLocationManager.locationServicesEnabled() {
             locationManager.delegate = self
             locationManager.requestWhenInUseAuthorization()
@@ -71,11 +77,13 @@ class TutorVC: UIViewController, UITableViewDelegate, UITableViewDataSource  {
         }
     }
     
+//    stop traking the user location
     func stopLocationManager() {
         locationManager.stopUpdatingLocation()
         locationManager.delegate = nil
     }
     
+//   to show all classes when wanted
     @IBAction func expandBtn(_ sender: Any) {
         if !isExpanded{
             self.isShowAll = true
@@ -89,10 +97,12 @@ class TutorVC: UIViewController, UITableViewDelegate, UITableViewDataSource  {
         
     }
     
+    
     func chooseClassSet() {
         print("-----------------------------",nearestBuilding)
+//        based on the closest building, it will select the appropriate class set
+//        if the gps service is not up, just show all classes
         if (isShowAll || nearestBuilding == -1){
-            
             self.closestClassSet = classArray
             self.isShowAll = false
         } else {
@@ -114,6 +124,7 @@ class TutorVC: UIViewController, UITableViewDelegate, UITableViewDataSource  {
                 break
             }
         }
+//        reload the table view
         classTable.reloadData()
     }
     
