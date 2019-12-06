@@ -18,7 +18,7 @@ Resiponsible for chat parts, sign up and log in ViewController, and some firebas
 ##### Alessandro Liu
 Implemented firebase storage json structure and logic to store and update all new gobal and local tutor posts, and error checking and handling. Responsible for TutorVC, SignUpVC, CategoryVC, DateVC, firebase updates, firebase email authentication, password reset, alert messages, and initial UI design. Implemented the user coordinate tracking system (latitude and longitude) for the automation system (calculate the closest UC Davis building and display its classes).
 
-
+![WechatIMG81](https://user-images.githubusercontent.com/56142553/70294114-57471c00-1797-11ea-981e-9bd9b55ea29c.jpeg)
 
 # Previous Sprint Planning Documentation
 ### Sprint One
