@@ -2,7 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15509"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -30,11 +30,10 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="01K-oI-hTL" firstAttribute="centerX" secondItem="9ud-hO-4go" secondAttribute="centerX" id="6b8-0P-ARO"/>
-                            <constraint firstItem="9ud-hO-4go" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="Iuk-84-jbw"/>
+                            <constraint firstItem="9ud-hO-4go" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="4yc-3z-FN2"/>
+                            <constraint firstItem="9ud-hO-4go" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="LxX-fd-ijP"/>
                             <constraint firstItem="01K-oI-hTL" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="167" id="cLr-gh-5Em"/>
-                            <constraint firstItem="9ud-hO-4go" firstAttribute="top" secondItem="01K-oI-hTL" secondAttribute="bottom" constant="57" id="dyv-cl-GyZ"/>
-                            <constraint firstItem="9ud-hO-4go" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="uKi-VF-O0I"/>
+                            <constraint firstItem="9ud-hO-4go" firstAttribute="centerX" secondItem="01K-oI-hTL" secondAttribute="centerX" id="jPr-ay-cWR"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>

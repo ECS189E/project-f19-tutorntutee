@@ -19,51 +19,50 @@ class HomeViewController: UIViewController,UITableViewDataSource, UITableViewDel
     let cellSpacingHeight: CGFloat = 200
     var userID : String?
     var postArray = [String]()
-    
+    var postArrayR = [String]()
     override func viewDidLoad() {
         super.viewDidLoad()
-        NotificationCenter.default.addObserver(self, selector: Selector(("OnAppBecameActive")), name: UIApplication.didBecomeActiveNotification, object: nil)
-        ref = Database.database().reference()
         refreshView()
-        
         // Do any additional setup after loading the view.
     }
     
-    func OnAppBecameActive()
-    {
-        refreshView()
-    }
-    
     func refreshView(){
+        ref = Database.database().reference()
+        postArray.removeAll()
         loadPosts()
+//        self.postArray.removeFirst(1)
+//        self.postArray = postArray.reversed()
         activityIndicator.hidesWhenStopped = true
         self.activityIndicator.startAnimating()
         DispatchQueue.main.asyncAfter(deadline: .now() + 3.0){
             self.tableView.delegate = self
             self.tableView.dataSource = self
             self.tableView.allowsSelection = true
-            print(self.postArray.count)
             self.tableView.reloadData()
-//            self.postArray.reverse()
             self.activityIndicator.isHidden = true
+//            self.postArray = self.postArray.reversed()
         }
+    }
+
+    @IBAction func freshItUp(_ sender: Any) {
+        refreshView()
     }
     func loadPosts(){
         Database.database().reference().child("posts").observeSingleEvent(of: .value, with: { (snapshot) in
             let posts = snapshot.value as? NSArray
             for onePost in posts ?? ["error in getting the nsarray elements"] {
-                print("----------------------------")
+//                print("----------------------------")
                 let po = onePost as! String
-                print(po)
+//                print(po)
                 self.postArray.append(po)
             }
-            //             self.tableView.reloadData()
         }){ (error) in
             print(error.localizedDescription)
         }
+//        self.postArray = postArray.reversed()
     }
         func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-            return self.postArray.count-1
+            return self.postArray.count - 1
         }
         
         func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -75,13 +74,13 @@ class HomeViewController: UIViewController,UITableViewDataSource, UITableViewDel
             cell.myimage.image = UIImage(named: "user.png")
             cell.backgroundImg.layer.masksToBounds = true
             cell.backgroundImg.layer.cornerRadius = 10.0
-            print("Generating table view!!",self.postArray.count)
+//            print("Generating table view!!",self.postArray.count)
             //        for n in 0...self.postArray.count-1 {
             //            print(self.postArray[n])
             //        }
             
             let fullName : String = self.postArray[indexPath.row+1]
-            //        print(fullName)
+                    print(fullName)
             let fullNameArr : [String] = fullName.components(separatedBy: " ")
             let posterUid :String = fullNameArr[0]
             let className : String = fullNameArr[1]
@@ -105,9 +104,10 @@ class HomeViewController: UIViewController,UITableViewDataSource, UITableViewDel
                 }
             }
             cell.courseName.text = className
-            cell.avaliable.text = "\(date) \(timeS) to \(timeE)"
+            cell.avaliable.text = "\(date)"
+            cell.timeLabel.text = "\(timeS) To \(timeE)"
             cell.money.text = cost
-            //        cell.textLabel?.text = "\(indexPath.row)"
+           
             cell.backgroundColor = UIColor.white
             cell.layer.borderColor = UIColor.black.cgColor
             cell.layer.borderWidth = 1

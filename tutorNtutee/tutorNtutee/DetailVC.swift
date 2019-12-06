@@ -16,7 +16,8 @@ class DetailVC: UIViewController, MFMailComposeViewControllerDelegate {
     var detailedJson: String?
     @IBOutlet weak var dImage: UIImageView!
     @IBOutlet weak var name: UILabel!
-    
+    @IBOutlet weak var Timee: UILabel!
+    var ref:DatabaseReference!
     @IBOutlet weak var timeLabel: UILabel!
     @IBOutlet weak var className: UILabel!
     var tutorName: String?
@@ -55,17 +56,17 @@ class DetailVC: UIViewController, MFMailComposeViewControllerDelegate {
         
         let imageName = "\(posterUid).png"
         getUserImageFromFB(imageName: imageName)
-        name.text = tutorName
-        timeLabel.text = "\(date) \(timeS) to \(timeE)"
+        
+        timeLabel.text = "\(date)"
+        Timee.text = "\(timeS) To \(timeE)"
     }
     func getTutorNamefromUID(){
-        
         Database.database().reference().child("user").child(self.tutorUid ?? "qd1pYL2agYQB7b2TotHc9MbgtXC3").observeSingleEvent(of: .value, with: {(snapshot) in
             let value = snapshot.value as? NSDictionary
-            DispatchQueue.main.async(execute: {
-                 self.tutorName = value?["username"] as? String ?? "NIL"
-            })
-            print(self.tutorName)
+                self.tutorName = "\(value?["first_name"] as? String ?? "NIL") \(value?["last_name"] as? String ?? "NIL")"
+                print("We are INnnnnnnnnn")
+                print(value?["first_name"] ?? "DNE")
+                self.name.text = self.tutorName
         })
     }
     func getUserImageFromFB(imageName: String){

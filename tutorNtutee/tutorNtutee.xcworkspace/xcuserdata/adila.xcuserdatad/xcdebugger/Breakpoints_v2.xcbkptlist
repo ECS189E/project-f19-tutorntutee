@@ -62,8 +62,8 @@
             filePath = "tutorNtutee/DetailVC.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "58"
-            endingLineNumber = "58"
+            startingLineNumber = "59"
+            endingLineNumber = "59"
             landmarkName = "parseString()"
             landmarkType = "7">
          </BreakpointContent>
@@ -78,8 +78,8 @@
             filePath = "tutorNtutee/DetailVC.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "54"
-            endingLineNumber = "54"
+            startingLineNumber = "55"
+            endingLineNumber = "55"
             landmarkName = "parseString()"
             landmarkType = "7">
          </BreakpointContent>
@@ -98,6 +98,118 @@
             endingLineNumber = "66"
             landmarkName = "tableView(_:cellForRowAt:)"
             landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "B8D958B0-E56B-400C-9DC4-02F6CB26DC70"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "tutorNtutee/DetailVC.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "65"
+            endingLineNumber = "65"
+            landmarkName = "getTutorNamefromUID()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "15E94F1A-1794-4F59-A938-D3DF4FF311F6"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "tutorNtutee/DetailVC.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "64"
+            endingLineNumber = "64"
+            landmarkName = "getTutorNamefromUID()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "15E94F1A-1794-4F59-A938-D3DF4FF311F6 - e81a56b8d7d13830"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "tutorNtutee.DetailVC.getTutorNamefromUID() -&gt; ()"
+                  moduleName = "tutorNtutee"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/adila/Desktop/project-f19-tutorntutee/tutorNtutee/tutorNtutee/DetailVC.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "64"
+                  endingLineNumber = "64"
+                  offsetFromSymbolStart = "44">
+               </Location>
+               <Location
+                  uuid = "15E94F1A-1794-4F59-A938-D3DF4FF311F6 - ddee0f4bfb28883b"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (__C.FIRDataSnapshot) -&gt; () in tutorNtutee.DetailVC.getTutorNamefromUID() -&gt; ()"
+                  moduleName = "tutorNtutee"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/adila/Desktop/project-f19-tutorntutee/tutorNtutee/tutorNtutee/DetailVC.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "65"
+                  endingLineNumber = "65"
+                  offsetFromSymbolStart = "191">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "50B1726D-AD1F-49C8-8A12-9E14EDE124C0"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "tutorNtutee/DetailVC.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "66"
+            endingLineNumber = "66"
+            landmarkName = "getTutorNamefromUID()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "50B1726D-AD1F-49C8-8A12-9E14EDE124C0 - ddee0f4bfb28883b"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (__C.FIRDataSnapshot) -&gt; () in tutorNtutee.DetailVC.getTutorNamefromUID() -&gt; ()"
+                  moduleName = "tutorNtutee"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/adila/Desktop/project-f19-tutorntutee/tutorNtutee/tutorNtutee/DetailVC.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "66"
+                  endingLineNumber = "66"
+                  offsetFromSymbolStart = "588">
+               </Location>
+               <Location
+                  uuid = "50B1726D-AD1F-49C8-8A12-9E14EDE124C0 - 838e12c1a435f078"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 () -&gt; () in closure #1 (__C.FIRDataSnapshot) -&gt; () in tutorNtutee.DetailVC.getTutorNamefromUID() -&gt; ()"
+                  moduleName = "tutorNtutee"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/adila/Desktop/project-f19-tutorntutee/tutorNtutee/tutorNtutee/DetailVC.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "67"
+                  endingLineNumber = "67"
+                  offsetFromSymbolStart = "111">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>
