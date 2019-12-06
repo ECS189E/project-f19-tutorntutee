@@ -26,10 +26,10 @@ class DetailVC: UIViewController, MFMailComposeViewControllerDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        print(detailedJson ?? "NIL")
+//        print(detailedJson ?? "NIL")
         parseString()
     }
-    
+    /* Init and open the gmail with prefilled email address from User*/
     @IBAction func emailBtn(_ sender: Any) {
         var emailTitle = "Tutoring Request"
         var messageBody = "Hi, I saw your tutoring post I would like to talk to you about ..."
@@ -42,6 +42,7 @@ class DetailVC: UIViewController, MFMailComposeViewControllerDelegate {
         self.present(mc, animated: true, completion: nil)
     }
     
+    /*Parsing the strings inorder to present on the View.*/
     func parseString(){
         let fullNameArr : [String] = self.detailedJson?.components(separatedBy: " ") ?? ["la la la"]
         let posterUid :String = fullNameArr[0]
@@ -60,6 +61,7 @@ class DetailVC: UIViewController, MFMailComposeViewControllerDelegate {
         timeLabel.text = "\(date)"
         Timee.text = "\(timeS) To \(timeE)"
     }
+    /* Getting the User's first and last name using firebase*/
     func getTutorNamefromUID(){
         Database.database().reference().child("user").child(self.tutorUid ?? "qd1pYL2agYQB7b2TotHc9MbgtXC3").observeSingleEvent(of: .value, with: {(snapshot) in
             let value = snapshot.value as? NSDictionary
@@ -69,6 +71,7 @@ class DetailVC: UIViewController, MFMailComposeViewControllerDelegate {
             self.name.text = self.tutorName
         })
     }
+    /* Getting user's image from Firebase Storage */
     func getUserImageFromFB(imageName: String){
         let imageRef = Storage.storage().reference().child(imageName)
         imageRef.getData(maxSize: 20*2048*2048){ response, error in
@@ -84,7 +87,7 @@ class DetailVC: UIViewController, MFMailComposeViewControllerDelegate {
             }
         }
     }
-    
+    /* Redirect the User to the chat view with selected person*/
     @IBAction func chatWithTutor() {
         let stotyboard = UIStoryboard(name: "Main", bundle: nil)
         let vs = stotyboard.instantiateViewController(identifier: "ChatToSomeoneVC")
@@ -94,7 +97,7 @@ class DetailVC: UIViewController, MFMailComposeViewControllerDelegate {
         chatWithSomeoneVC.post = self.detailedJson ?? "error"
         self.present(chatWithSomeoneVC, animated: true, completion: nil)
     }
-    
+    /* Redirect the User to the previous view */
     @IBAction func backbtn(_ sender: Any) {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let vs = storyboard.instantiateViewController(identifier: "MenuInitView")

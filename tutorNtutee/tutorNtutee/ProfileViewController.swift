@@ -10,8 +10,7 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
     @IBOutlet weak var updateUsernameTF: UITextField!
     @IBOutlet weak var updatePasswordTF: UITextField!
     @IBOutlet weak var updateView: UIStackView!
-    
-    
+
     var ref: DatabaseReference!
     let image = UIImagePickerController()
     var userID : String?
@@ -24,6 +23,7 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
         updateUserInfo()
         // Do any additional setup after loading the view.
     }
+    /* Update button where correctly display the views*/
     @IBAction func updateMyInfoBtn(_ sender: Any) {
         if updateView.isHidden == false {
             updateView.isHidden = true
@@ -33,7 +33,7 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
         }
         
     }
-    
+    /* Update botton trigger to show the textfields where user can change their info*/
     @IBAction func updateBtn(_ sender: Any) {
         guard let newUsernameStr = updateUsernameTF.text else {
             print("Error in parsing the New Username")
@@ -62,6 +62,7 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
         updateView.isHidden = true
         self.view.endEditing(true)
     }
+    /* Update the information from user if it is needed to the Firebase*/
     func dataUpdated(newUsername:String, newPassword: String) {
         self.userID = Auth.auth().currentUser?.uid
         ref = Database.database().reference().child("user").child(userID ?? "error with userID")
@@ -86,7 +87,7 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
         }
         
     }
-    
+    /* Getting the most updated information from Firebase*/
     func updateUserInfo(){
         self.userID = Auth.auth().currentUser?.uid
         ref.child("user").child(userID ?? "error with userID").observeSingleEvent(of: .value, with: { (snapshot) in
@@ -103,7 +104,7 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
             print(error.localizedDescription)
         }
     }
-    
+    /* Log out the user to the login view */
     @IBAction func logout(_ sender: Any) {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let vs = storyboard.instantiateViewController(identifier: "LoginNavControler")
@@ -115,12 +116,16 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
     @IBAction func changeProfilebtn(_ sender: Any) {
         initPicker()
     }
+    /* Init the photo picker */
     func initPicker(){
         image.sourceType = .photoLibrary
         image.allowsEditing = true
         image.delegate = self
         self.present(image,animated: true)
     }
+    /*  Place the user's selected image and dismiss the photo picker
+        Also uploadthe user's selected image to the firebase
+     */
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         var selected : UIImage?
         if let edited = info[.editedImage] as? UIImage{
@@ -132,7 +137,7 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
         picker.dismiss(animated:true, completion:nil)
         uploadUserImageToFB()
     }
-    
+    /* Get user's profile image from firebase and if user's image has not been set up, then set the user's image as default grey image.*/
     func getUserImageFromFB(imageName: String){
         self.profileImage.image = UIImage(named: "default.png")!
         let imageRef = Storage.storage().reference().child(imageName)
@@ -149,23 +154,8 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
             }
         }
     }
-    //    func uploadUserImageToFB(){
-    //        if let img = self.profileImage.image {
-    //            let imageName = "\(self.userID).png"
-    //            let imageRef = Storage.storage().reference().child(imageName)
-    //            if let uploadData = img.pngData(){
-    //                imageRef.putData(uploadData, metadata:nil) { metadata, error in
-    //                    if error != nil{
-    //                        print("error: \(error.debugDescription)")
-    //                        return
-    //                    }
-    //                    print("Sucessful!")
-    //                    if let user=Auth.auth().currentUser { self.ref.child("user").child(user.uid).child("image").setValue(imageName)
-    //                    }
-    //                }
-    //            }
-    //        }
-    //    }
+    
+    /* Upload the user's image to firebase */
     func uploadUserImageToFB() {
         if let img = self.profileImage.image {
             let imageName = "\(self.userID ?? "nilllll").png"

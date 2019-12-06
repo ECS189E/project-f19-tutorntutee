@@ -26,6 +26,11 @@ class HomeViewController: UIViewController,UITableViewDataSource, UITableViewDel
         // Do any additional setup after loading the view.
     }
     
+    /*
+     Init postArrays
+     Get post information
+     Set all delegates
+     */
     func refreshView(){
         ref = Database.database().reference()
         postArray.removeAll()
@@ -47,6 +52,10 @@ class HomeViewController: UIViewController,UITableViewDataSource, UITableViewDel
     @IBAction func freshItUp(_ sender: Any) {
         refreshView()
     }
+    /*
+     Retrive posts from Firebase as json strings
+     Parsing the post Json arrays and store them in self.array
+     */
     func loadPosts(){
         Database.database().reference().child("posts").observeSingleEvent(of: .value, with: { (snapshot) in
             let posts = snapshot.value as? NSArray
@@ -68,17 +77,12 @@ class HomeViewController: UIViewController,UITableViewDataSource, UITableViewDel
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return CGFloat(cellSpacingHeight)
     }
-    
+    /* Parsing the arrays and display them in table view cell by orders */
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "reusecell", for: indexPath) as! SessionPostCell
         cell.myimage.image = UIImage(named: "user.png")
         cell.backgroundImg.layer.masksToBounds = true
         cell.backgroundImg.layer.cornerRadius = 10.0
-        //            print("Generating table view!!",self.postArray.count)
-        //        for n in 0...self.postArray.count-1 {
-        //            print(self.postArray[n])
-        //        }
-        
         let fullName : String = self.postArray[indexPath.row+1]
         print(fullName)
         let fullNameArr : [String] = fullName.components(separatedBy: " ")
@@ -88,7 +92,6 @@ class HomeViewController: UIViewController,UITableViewDataSource, UITableViewDel
         let timeS : String = fullNameArr[3]
         let timeE : String = fullNameArr[4]
         let cost : String = fullNameArr[5]
-        //        print(posterUid)
         let imageName = "\(posterUid).png"
         let imageRef = Storage.storage().reference().child(imageName)
         imageRef.getData(maxSize: 20*2048*2048){ response, error in
@@ -107,13 +110,13 @@ class HomeViewController: UIViewController,UITableViewDataSource, UITableViewDel
         cell.avaliable.text = "\(date)"
         cell.timeLabel.text = "\(timeS) To \(timeE)"
         cell.money.text = cost
-        
         cell.backgroundColor = UIColor.white
         cell.layer.borderColor = UIColor.black.cgColor
         cell.layer.borderWidth = 1
         cell.layer.cornerRadius = 30
         return cell
     }
+    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let vc = storyboard.instantiateViewController(identifier: "DetailVC")
@@ -122,6 +125,5 @@ class HomeViewController: UIViewController,UITableViewDataSource, UITableViewDel
         dVC.detailedJson = self.postArray[indexPath.row+1]
         self.present(dVC,animated: true,completion: nil)
     }
-    
 }
 
