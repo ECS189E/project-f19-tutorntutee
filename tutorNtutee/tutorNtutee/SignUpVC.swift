@@ -9,6 +9,7 @@
 import UIKit
 import Firebase
 
+//view that for user to register
 class SignUpVC: UIViewController,UIApplicationDelegate {
     
     @IBOutlet weak var firstNameField: UITextField!
@@ -32,10 +33,13 @@ class SignUpVC: UIViewController,UIApplicationDelegate {
     @IBAction func doneButtonPress() {
         if let email=emailField.text,let password=passwordField.text {
             if email.hasSuffix("@ucdavis.edu") {
+                
+                //create user
                 Auth.auth().createUser(withEmail: email, password: password) { authResult, error in
                     if let _ = authResult {
                         if let user=Auth.auth().currentUser {
                             
+                            //write user information into firebase
                             self.ref.child("user").child(user.uid).child("username").setValue(self  .userNameField.text)
                             
                             self.ref.child("user").child(user.uid).child("first_name").setValue(self    .firstNameField.text)

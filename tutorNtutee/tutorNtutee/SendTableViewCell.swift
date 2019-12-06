@@ -8,6 +8,7 @@
 
 import UIKit
 
+//tableView cell that show message sent
 class SendTableViewCell: UITableViewCell {
     
     @IBOutlet weak var messageLabel: UILabel!

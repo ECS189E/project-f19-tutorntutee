@@ -11,11 +11,12 @@ import FirebaseAuth
 import FirebaseDatabase
 import FirebaseStorage
 
+//this view is show information of recent contact of user,like icon, name and last message. And user can open the chat by tapping cells
 class ChatViewController: UIViewController,UITableViewDelegate,UITableViewDataSource {
     
     @IBOutlet weak var tableView: UITableView!
     var userId:String?
-    var messageUserArray:[MessageUser]=[]
+    var messageUserArray:[MessageUser]=[]  //array of contacts
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,6 +30,7 @@ class ChatViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
         
     }
     
+    //get recently contacts information from firebase
     func getMessageUser(){
         if let userId = self.userId{
             let messageRef = Database.database().reference().child("messageUser").child(userId)
@@ -37,10 +39,8 @@ class ChatViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
                     let messageUser = MessageUser(dictionary: dictionary)
                     messageUser.friendId = snapshot.key
                     self?.messageUserArray.append(messageUser)
-                    self?.messageUserArray.sort(by: {$0.timestamp?.compare($1.timestamp ?? 0) == .orderedDescending})
+                    self?.messageUserArray.sort(by: {$0.timestamp?.compare($1.timestamp ?? 0) == .orderedDescending}) //sort contacts array by timestamp. newest contact will be on the top
                     self?.tableView.reloadData()
-                    print("............")
-                    print(messageUser.friendId)
                 }
             })
         }
@@ -51,6 +51,7 @@ class ChatViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
         return messageUserArray.count
     }
     
+
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let messageUser = messageUserArray[indexPath.row]
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "cell") as? ChatBoxTableViewCell else{
@@ -62,6 +63,7 @@ class ChatViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
             cell.nameLabel.text = value?["username"] as? String
         })
         
+        //load icon image of contacts
         let imageName = (messageUser.friendId ?? "error")+".png"
         //let imageName = "\(messageUser.friendId).png"
         cell.icon.image = UIImage(named: "default.png")
@@ -88,6 +90,7 @@ class ChatViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
         return 100
     }
     
+    //open the chat by tapping tableView cell
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         let storyboard = UIStoryboard(name: "Main", bundle: nil)

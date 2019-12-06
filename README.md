@@ -13,6 +13,7 @@ Junjie Han
 Responsible for Post ViewController, Profile ViewController, general UI implementations(Polishing), most of the allerts, Using firebase storage and interaction between storage and our app for images, also interaction with database systems from firebase to display most updated posts and informations.  
 
 ##### JunJie Han
+Resiponsible for chat parts, sign up and log in ViewController, and some firebase stuff. I make chat part in our app similiar to standard chat app like facebook or wechat using firebase. User who send message write data in firebase and user who receive message read data from firebase.
 
 ##### Alessandro Liu
 

@@ -8,6 +8,7 @@
 
 import UIKit
 
+//information about contacts. including lastMessage, friendId and timestamp
 class MessageUser: NSObject {
     var lastMessage:String?
     var friendId:String?

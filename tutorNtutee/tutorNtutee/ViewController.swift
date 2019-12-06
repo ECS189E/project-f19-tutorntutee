@@ -17,13 +17,11 @@ class ViewController: UIViewController, UITextFieldDelegate{
     //    @IBOutlet weak var signUpBtn: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
-        passwordField.isSecureTextEntry = true
+        passwordField.isSecureTextEntry = true   //hide password
         signinBordersetup()
         emailField.delegate = self
         passwordField.delegate = self
         ref=Database.database().reference()
-        emailField.text = "aadila@ucdavis.edu"
-        passwordField.text = "Adila1628"
     }
     @IBAction func resetPasswordBtn(_ sender: Any) {
         guard let emailStr = emailField.text else {
@@ -42,6 +40,7 @@ class ViewController: UIViewController, UITextFieldDelegate{
         SignInBt.layer.borderWidth = 0.5
     }
     
+    //sign in
     @IBAction func signInPress() {
         if let email=emailField.text,let password=passwordField.text{
             Auth.auth().signIn(withEmail: email, password: password) { [weak self] authResult, error in
@@ -65,25 +64,6 @@ class ViewController: UIViewController, UITextFieldDelegate{
                         navControllerVC.modalPresentationStyle = .fullScreen
                         self?.present(navControllerVC, animated: true, completion: nil)
                     }
-                    
-                    /**
-                     if let user=user{
-                     self?.ref.child("user").child(user.uid).observeSingleEvent(of: .value, with: {(snapshot) in
-                     let value=snapshot.value as? NSDictionary
-                     let username=value?["username"] as? String ?? ""
-                     print("-------------")
-                     print(username)
-                     })
-                     }
-                     */
-                    //                    let storyboard = UIStoryboard(name: "Main", bundle: nil)
-                    //                    let vs = storyboard.instantiateViewController(identifier: "LoggedInNavController")
-                    //                    let TapHomeVC = vs as! UINavigationController
-                    //                    TapHomeVC.modalPresentationStyle = .fullScreen
-                    //                    self?.present(TapHomeVC, animated: true, completion: nil)
-                    //
-                    
-                    
                 }
                 if let _ = error{
                     let errorMessage=UIAlertController(title: "error", message: "Wrong ID or Password. Please, try again.", preferredStyle: .alert)
@@ -102,13 +82,5 @@ class ViewController: UIViewController, UITextFieldDelegate{
     @IBAction func clearEfield(_ sender: Any) {
         self.passwordField.text = ""
     }
-    
-    //    @IBAction func SignUpClicked(_ sender: Any) {
-    //        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-    //        let vs = storyboard.instantiateViewController(identifier: "SignUpVC")
-    //        let signupview = vs as! SignUpVC
-    //        signupview.modalPresentationStyle = .fullScreen
-    //        self.present(signupview, animated: true, completion: nil)
-    //    }
 }
 

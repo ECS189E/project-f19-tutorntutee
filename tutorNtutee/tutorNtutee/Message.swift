@@ -8,6 +8,7 @@
 
 import UIKit
 
+//this class is about message informations. including text, fromId,toId and timestamp
 class Message: NSObject {
     var text:String?
     var fromId:String?
