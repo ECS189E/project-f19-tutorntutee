@@ -7,7 +7,19 @@ Abudureheman Adila
 Alessandro Liu  
 Junjie Han  
 
+# Final Documentation
+WHAT DOES OUR APP DO??? (What we have implemented, simple words)
+### Work Distributions
 
+##### Abudureheman Adila
+Responsible for Post ViewController, Profile ViewController, general UI implementations(Polishing), most of the allerts, Using firebase storage and interaction between storage and our app for images, also interaction with database systems from firebase to display most updated posts and informations.  
+
+##### JunJie Han
+
+##### Alessandro Liu
+
+
+# Previous Sprint Planning Documentations
 ### Sprint One
 Link to Trello: https://trello.com/b/Gw47mmuc/milestone-1  
 
